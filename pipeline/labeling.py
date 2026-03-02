@@ -1,6 +1,8 @@
 """Stage 3: Generate cluster labels using Groq API."""
 
 import os
+import re
+import time
 
 from groq import Groq
 
@@ -31,18 +33,33 @@ def _format_documents(docs: list[dict], max_words: int = 300) -> str:
     return "\n\n".join(parts)
 
 
+def _parse_retry_seconds(error_msg: str) -> float:
+    """Extract wait time from Groq rate-limit error message."""
+    match = re.search(r"try again in (\d+(?:\.\d+)?)s", str(error_msg))
+    if match:
+        return float(match.group(1))
+    match = re.search(r"try again in (\d+)m([\d.]+)s", str(error_msg))
+    if match:
+        return int(match.group(1)) * 60 + float(match.group(2))
+    return 60.0
+
+
 def generate_label(
     docs: list[dict],
-    model: str = "llama-3.3-70b-versatile",
+    client: Groq,
+    model: str = "llama-3.1-8b-instant",
     max_words: int = 300,
+    max_retries: int = 5,
 ) -> str:
     """
     Generate a cluster label from representative documents using Groq.
 
     Args:
         docs: List of dicts with at least a "text" key.
+        client: Groq client instance.
         model: Groq model name.
         max_words: Max words per document in the prompt.
+        max_retries: Max retries on rate-limit errors.
 
     Returns:
         Generated label string.
@@ -52,28 +69,36 @@ def generate_label(
         k=len(docs), documents_block=documents_block
     )
 
-    client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
-    try:
-        response = client.chat.completions.create(
-            model=model,
-            messages=[{"role": "user", "content": prompt}],
-            temperature=0.0,
-            max_tokens=30,
-        )
-    except Exception as e:
-        print(f"    ERROR: {e}")
-        return "[no label generated]"
+    for attempt in range(max_retries):
+        try:
+            response = client.chat.completions.create(
+                model=model,
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0.0,
+                max_tokens=30,
+            )
+            text = response.choices[0].message.content
+            if text is None:
+                print(f"    ERROR: Groq returned empty response")
+                return "[no label generated]"
+            return text.strip()
+        except Exception as e:
+            error_str = str(e)
+            if "429" in error_str or "rate_limit" in error_str:
+                wait = _parse_retry_seconds(error_str)
+                print(f"    Rate limited, waiting {wait:.0f}s...")
+                time.sleep(wait)
+            else:
+                print(f"    ERROR: {e}")
+                return "[no label generated]"
 
-    text = response.choices[0].message.content
-    if text is None:
-        print(f"    ERROR: Groq returned empty response")
-        return "[no label generated]"
-    return text.strip()
+    print(f"    ERROR: Max retries exceeded")
+    return "[no label generated]"
 
 
 def label_all_clusters(
     central_docs: dict[str, list[dict]],
-    model: str = "llama-3.3-70b-versatile",
+    model: str = "llama-3.1-8b-instant",
     max_words: int = 300,
 ) -> dict[str, str]:
     """
@@ -87,9 +112,10 @@ def label_all_clusters(
     Returns:
         dict mapping ground-truth label -> generated label.
     """
+    client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
     labels = {}
     for cluster_label, docs in central_docs.items():
-        generated = generate_label(docs, model=model, max_words=max_words)
+        generated = generate_label(docs, client, model=model, max_words=max_words)
         labels[cluster_label] = generated
         print(f"  '{cluster_label}' -> '{generated}'")
     return labels

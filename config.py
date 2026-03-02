@@ -11,7 +11,7 @@ class PipelineConfig:
     # Embedding
     embedding_model: str = "all-MiniLM-L6-v2"
     embedding_batch_size: int = 256
-    embedding_device: str = "cpu"
+    embedding_device: str | None = None  # None = auto-detect GPU
 
     # Graph construction
     similarity_threshold: float = 0.5
@@ -22,7 +22,7 @@ class PipelineConfig:
     pagerank_alpha: float = 0.85
 
     # Generative labeling (Groq)
-    labeling_model: str = "llama-3.3-70b-versatile"
+    labeling_model: str = "llama-3.1-8b-instant"
     max_doc_words: int = 300
 
     # Caching
