@@ -51,6 +51,9 @@ def build_cluster_graph(
     return G
 
 
+_graph_cache: dict[tuple, dict[str, nx.Graph]] = {}
+
+
 def build_all_graphs(
     df: pd.DataFrame,
     embeddings: np.ndarray,
@@ -59,6 +62,9 @@ def build_all_graphs(
 ) -> dict[str, nx.Graph]:
     """
     Build one graph per unique label in the DataFrame.
+    Results are cached in memory by (threshold, chunk_size) so repeated
+    calls with the same parameters (e.g. during a hyperparameter sweep)
+    skip the expensive graph construction.
 
     Args:
         df: DataFrame with columns [text, label].
@@ -69,6 +75,13 @@ def build_all_graphs(
     Returns:
         dict mapping label -> nx.Graph.
     """
+    cache_key = (id(embeddings), similarity_threshold, chunk_size)
+    if cache_key in _graph_cache:
+        graphs = _graph_cache[cache_key]
+        for label, g in graphs.items():
+            print(f"  Cluster '{label}': {g.number_of_nodes()} docs, {g.number_of_edges()} edges (cached)")
+        return graphs
+
     graphs = {}
     for label, group in df.groupby("label"):
         idx = group.index.tolist()
@@ -80,4 +93,6 @@ def build_all_graphs(
             f"  Cluster '{label}': {len(idx)} docs, "
             f"{graphs[label].number_of_edges()} edges"
         )
+
+    _graph_cache[cache_key] = graphs
     return graphs

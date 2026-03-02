@@ -114,8 +114,10 @@ def label_all_clusters(
     """
     client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
     labels = {}
+    i = 0
     for cluster_label, docs in central_docs.items():
         generated = generate_label(docs, client, model=model, max_words=max_words)
         labels[cluster_label] = generated
-        print(f"  '{cluster_label}' -> '{generated}'")
+        print(f"  '[{i+1}/{len(central_docs)}] {cluster_label}' -> '{generated}'")
+        i += 1
     return labels

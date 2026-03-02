@@ -133,6 +133,10 @@ def run_hyperparameter_sweep(
     ]
     total = len(combos)
 
+    output_dir = config_overrides.get("output_dir", "results")
+    os.makedirs(output_dir, exist_ok=True)
+    out_path = os.path.join(output_dir, f"{dataset}_sweep.json")
+
     for i, (threshold, top_k, alpha) in enumerate(combos, 1):
         print(f"\n{'='*60}")
         print(f"Run {i}/{total}: threshold={threshold}, top_k={top_k}, alpha={alpha}")
@@ -148,12 +152,9 @@ def run_hyperparameter_sweep(
         result = run(cfg)
         all_results.append(result)
 
-    # Save all results as a list
-    output_dir = config_overrides.get("output_dir", "results")
-    os.makedirs(output_dir, exist_ok=True)
-    out_path = os.path.join(output_dir, f"{dataset}_sweep.json")
-    with open(out_path, "w") as f:
-        json.dump(all_results, f, indent=2, default=str)
+        with open(out_path, "w") as f:
+            json.dump(all_results, f, indent=2, default=str)
+
     print(f"\nSweep results saved to {out_path}")
 
     return all_results
@@ -182,6 +183,10 @@ def run_full_sweep(
     if datasets is None:
         datasets = list(LOADERS.keys())
 
+    output_dir = config_overrides.get("output_dir", "results")
+    os.makedirs(output_dir, exist_ok=True)
+    out_path = os.path.join(output_dir, "full_sweep.json")
+
     all_results = {}
     for dataset in datasets:
         print(f"\n{'#'*60}")
@@ -195,12 +200,9 @@ def run_full_sweep(
             **config_overrides,
         )
 
-    # Save combined results
-    output_dir = config_overrides.get("output_dir", "results")
-    os.makedirs(output_dir, exist_ok=True)
-    out_path = os.path.join(output_dir, "full_sweep.json")
-    with open(out_path, "w") as f:
-        json.dump(all_results, f, indent=2, default=str)
+        with open(out_path, "w") as f:
+            json.dump(all_results, f, indent=2, default=str)
+
     print(f"\nFull sweep results saved to {out_path}")
 
     return all_results
