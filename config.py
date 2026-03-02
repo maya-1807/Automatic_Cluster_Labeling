@@ -7,6 +7,7 @@ from dataclasses import dataclass
 class PipelineConfig:
     # Dataset
     dataset: str = "bbc_news"  # 20newsgroups, ag_news, banking77, bbc_news
+    split: str = ""  # "", "dev", or "test"
 
     # Embedding
     embedding_model: str = "all-MiniLM-L6-v2"

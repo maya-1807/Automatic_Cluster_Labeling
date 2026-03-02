@@ -9,7 +9,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+import pandas as pd
+
 from config import PipelineConfig
+from data_collection.split import stratified_split
 from pipeline.embeddings import embed_documents
 from pipeline.graph import build_all_graphs
 from pipeline.centrality import select_all_central_documents
@@ -18,10 +21,10 @@ from evaluation.metrics import evaluate_labels
 
 # Maps dataset name -> (module path, function name)
 LOADERS = {
+    "bbc_news": ("data_collection.bbc_news", "load_bbc_news"),
+    "banking77": ("data_collection.banking77", "load_banking77"),
     "20newsgroups": ("data_collection.20newsgroups", "load_20newsgroups"),
     "ag_news": ("data_collection.ag_news", "load_ag_news"),
-    "banking77": ("data_collection.banking77", "load_banking77"),
-    "bbc_news": ("data_collection.bbc_news", "load_bbc_news"),
 }
 
 
@@ -32,35 +35,47 @@ def load_dataset(name: str):
     return getattr(module, func_name)()
 
 
-def run(cfg: PipelineConfig):
+def run(
+    cfg: PipelineConfig,
+    df: pd.DataFrame | None = None,
+    embeddings: np.ndarray | None = None,
+):
+    split_tag = f" ({cfg.split})" if cfg.split else ""
     print("=== Graph Guided RAG Pipeline ===")
-    print(f"Dataset: {cfg.dataset}")
+    print(f"Dataset: {cfg.dataset}{split_tag}")
 
     # --- Load data ---
-    print("\n[1/5] Loading dataset...")
-    df = load_dataset(cfg.dataset)
+    if df is None:
+        print("\n[1/5] Loading dataset...")
+        df = load_dataset(cfg.dataset)
+    else:
+        print("\n[1/5] Using pre-loaded dataset...")
     print(f"  {len(df)} documents, {df['label'].nunique()} clusters")
 
     # --- Embed ---
     print("\n[2/5] Embedding documents...")
-    cache_path = os.path.join(
-        cfg.cache_dir, f"{cfg.dataset}_{cfg.embedding_model}.npy"
-    )
-
-    if cfg.use_cache and os.path.exists(cache_path):
-        print(f"  Loading cached embeddings from {cache_path}")
-        embeddings = np.load(cache_path)
+    if embeddings is not None:
+        print("  Using pre-loaded embeddings")
     else:
-        embeddings = embed_documents(
-            df["text"].tolist(),
-            model_name=cfg.embedding_model,
-            batch_size=cfg.embedding_batch_size,
-            device=cfg.embedding_device,
+        split_suffix = f"_{cfg.split}" if cfg.split else ""
+        cache_path = os.path.join(
+            cfg.cache_dir, f"{cfg.dataset}{split_suffix}_{cfg.embedding_model}.npy"
         )
-        if cfg.use_cache:
-            os.makedirs(cfg.cache_dir, exist_ok=True)
-            np.save(cache_path, embeddings)
-            print(f"  Cached embeddings to {cache_path}")
+
+        if cfg.use_cache and os.path.exists(cache_path):
+            print(f"  Loading cached embeddings from {cache_path}")
+            embeddings = np.load(cache_path)
+        else:
+            embeddings = embed_documents(
+                df["text"].tolist(),
+                model_name=cfg.embedding_model,
+                batch_size=cfg.embedding_batch_size,
+                device=cfg.embedding_device,
+            )
+            if cfg.use_cache:
+                os.makedirs(cfg.cache_dir, exist_ok=True)
+                np.save(cache_path, embeddings)
+                print(f"  Cached embeddings to {cache_path}")
 
     # --- Build graphs ---
     print("\n[3/5] Building cluster graphs...")
@@ -110,9 +125,12 @@ def run_hyperparameter_sweep(
     top_ks: list[int] = [5, 10, 15],
     pagerank_alphas: list[float] = [0.85],
     **config_overrides,
-) -> list[dict]:
+) -> dict:
     """
-    Run the pipeline on a dataset across combinations of hyperparameters.
+    Sweep hyperparameters on an 80/20 dev/test split.
+
+    Runs all combinations on the dev split, picks the best config by
+    mean semantic similarity, then evaluates once on the held-out test split.
 
     Args:
         dataset: Dataset name (e.g. "bbc_news").
@@ -122,9 +140,37 @@ def run_hyperparameter_sweep(
         **config_overrides: Any other PipelineConfig fields to override.
 
     Returns:
-        List of result dicts, one per hyperparameter combination.
+        dict with keys: dev_sweep, best_config, best_dev_metrics, test_result.
     """
-    all_results = []
+    # --- Load and split once ---
+    print(f"\nLoading and splitting {dataset}...")
+    full_df = load_dataset(dataset)
+    split = stratified_split(full_df, test_size=0.2, dataset_name=dataset)
+    print(f"  Full: {len(full_df)} docs | Dev: {len(split.dev)} docs | Test: {len(split.test)} docs")
+
+    # --- Pre-compute dev embeddings once ---
+    base_cfg = PipelineConfig(dataset=dataset, split="dev", **config_overrides)
+    cache_path = os.path.join(
+        base_cfg.cache_dir, f"{dataset}_dev_{base_cfg.embedding_model}.npy"
+    )
+    if base_cfg.use_cache and os.path.exists(cache_path):
+        print(f"  Loading cached dev embeddings from {cache_path}")
+        dev_embeddings = np.load(cache_path)
+    else:
+        print("  Computing dev embeddings...")
+        dev_embeddings = embed_documents(
+            split.dev["text"].tolist(),
+            model_name=base_cfg.embedding_model,
+            batch_size=base_cfg.embedding_batch_size,
+            device=base_cfg.embedding_device,
+        )
+        if base_cfg.use_cache:
+            os.makedirs(base_cfg.cache_dir, exist_ok=True)
+            np.save(cache_path, dev_embeddings)
+            print(f"  Cached dev embeddings to {cache_path}")
+
+    # --- Sweep on dev ---
+    dev_results = []
     combos = [
         (t, k, a)
         for t in similarity_thresholds
@@ -135,29 +181,74 @@ def run_hyperparameter_sweep(
 
     output_dir = config_overrides.get("output_dir", "results")
     os.makedirs(output_dir, exist_ok=True)
-    out_path = os.path.join(output_dir, f"{dataset}_sweep.json")
+    sweep_path = os.path.join(output_dir, f"{dataset}_sweep.json")
 
     for i, (threshold, top_k, alpha) in enumerate(combos, 1):
         print(f"\n{'='*60}")
-        print(f"Run {i}/{total}: threshold={threshold}, top_k={top_k}, alpha={alpha}")
+        print(f"[Dev] Run {i}/{total}: threshold={threshold}, top_k={top_k}, alpha={alpha}")
         print(f"{'='*60}")
 
         cfg = PipelineConfig(
             dataset=dataset,
+            split="dev",
             similarity_threshold=threshold,
             top_k=top_k,
             pagerank_alpha=alpha,
             **config_overrides,
         )
-        result = run(cfg)
-        all_results.append(result)
+        result = run(cfg, df=split.dev, embeddings=dev_embeddings)
+        dev_results.append(result)
 
-        with open(out_path, "w") as f:
-            json.dump(all_results, f, indent=2, default=str)
+        with open(sweep_path, "w") as f:
+            json.dump(dev_results, f, indent=2, default=str)
 
-    print(f"\nSweep results saved to {out_path}")
+    # --- Select best config by mean semantic similarity on dev ---
+    best_idx = max(
+        range(len(dev_results)),
+        key=lambda i: dev_results[i]["metrics"]["semantic_similarity"]["__mean__"],
+    )
+    best_dev = dev_results[best_idx]
+    best_params = best_dev["config"]
+    print(f"\n{'='*60}")
+    print(f"Best dev config (run {best_idx + 1}/{total}):")
+    print(f"  threshold={best_params['similarity_threshold']}, "
+          f"top_k={best_params['top_k']}, alpha={best_params['pagerank_alpha']}")
+    print(f"  Dev semantic similarity: {best_dev['metrics']['semantic_similarity']['__mean__']:.3f}")
+    print(f"{'='*60}")
 
-    return all_results
+    # --- Final evaluation on test split ---
+    print(f"\n{'='*60}")
+    print(f"[Test] Final evaluation with best config")
+    print(f"{'='*60}")
+
+    test_cfg = PipelineConfig(
+        dataset=dataset,
+        split="test",
+        similarity_threshold=best_params["similarity_threshold"],
+        top_k=best_params["top_k"],
+        pagerank_alpha=best_params["pagerank_alpha"],
+        **config_overrides,
+    )
+    test_result = run(test_cfg, df=split.test)
+
+    # --- Save combined output ---
+    sweep_output = {
+        "dev_sweep": dev_results,
+        "best_config": {
+            "similarity_threshold": best_params["similarity_threshold"],
+            "top_k": best_params["top_k"],
+            "pagerank_alpha": best_params["pagerank_alpha"],
+        },
+        "best_dev_metrics": best_dev["metrics"],
+        "test_result": test_result,
+    }
+
+    results_path = os.path.join(output_dir, f"{dataset}_results.json")
+    with open(results_path, "w") as f:
+        json.dump(sweep_output, f, indent=2, default=str)
+    print(f"\nDev+test results saved to {results_path}")
+
+    return sweep_output
 
 
 def run_full_sweep(
@@ -166,9 +257,9 @@ def run_full_sweep(
     top_ks: list[int] = [3, 5, 10],
     pagerank_alphas: list[float] = [0.5, 0.85, 0.95],
     **config_overrides,
-) -> dict[str, list[dict]]:
+) -> dict[str, dict]:
     """
-    Run hyperparameter sweep across all datasets.
+    Run hyperparameter sweep with dev/test evaluation across all datasets.
 
     Args:
         datasets: List of dataset names. Defaults to all available datasets.
@@ -178,7 +269,7 @@ def run_full_sweep(
         **config_overrides: Any other PipelineConfig fields to override.
 
     Returns:
-        dict mapping dataset name -> list of result dicts.
+        dict mapping dataset name -> sweep output dict.
     """
     if datasets is None:
         datasets = list(LOADERS.keys())
