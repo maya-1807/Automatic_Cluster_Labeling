@@ -90,7 +90,7 @@ def run(cfg: PipelineConfig):
 
     # --- Evaluate ---
     print("\n=== Evaluation ===")
-    results = evaluate_labels(generated_labels, cfg.embedding_model)
+    results = evaluate_labels(generated_labels, cfg.embedding_model, device=cfg.embedding_device)
 
     # --- Save results ---
     os.makedirs(cfg.output_dir, exist_ok=True)

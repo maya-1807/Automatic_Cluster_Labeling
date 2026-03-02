@@ -7,6 +7,7 @@ from sentence_transformers import SentenceTransformer
 def semantic_similarity(
     generated_labels: dict[str, str],
     model_name: str = "all-MiniLM-L6-v2",
+    device: str | None = None,
 ) -> dict[str, float]:
     """
     Cosine similarity between ground-truth and generated label embeddings.
@@ -14,11 +15,13 @@ def semantic_similarity(
     Args:
         generated_labels: dict mapping ground-truth label -> generated label.
         model_name: Sentence-transformer model for encoding labels.
+        device: Device for the model (e.g. "cpu", "cuda"). None = auto-detect.
 
     Returns:
         dict with per-cluster scores and a "__mean__" key.
     """
-    model = SentenceTransformer(model_name)
+    kwargs = {"device": device} if device else {}
+    model = SentenceTransformer(model_name, **kwargs)
 
     gt_labels = list(generated_labels.keys())
     gen_labels = list(generated_labels.values())
@@ -68,6 +71,7 @@ def token_overlap_f1(generated_labels: dict[str, str]) -> dict[str, float]:
 def evaluate_labels(
     generated_labels: dict[str, str],
     embedding_model: str = "all-MiniLM-L6-v2",
+    device: str | None = None,
 ) -> dict:
     """
     Run all evaluation metrics and return combined results.
@@ -75,11 +79,12 @@ def evaluate_labels(
     Args:
         generated_labels: dict mapping ground-truth label -> generated label.
         embedding_model: Model for semantic similarity computation.
+        device: Device for the model (e.g. "cpu", "cuda"). None = auto-detect.
 
     Returns:
         dict with "semantic_similarity" and "token_overlap_f1" results.
     """
-    sem_sim = semantic_similarity(generated_labels, embedding_model)
+    sem_sim = semantic_similarity(generated_labels, embedding_model, device=device)
     tok_f1 = token_overlap_f1(generated_labels)
 
     print(f"  Semantic Similarity (mean): {sem_sim['__mean__']:.3f}")
