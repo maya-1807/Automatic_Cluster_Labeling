@@ -11,7 +11,7 @@ class PipelineConfig:
     # Embedding
     embedding_model: str = "all-MiniLM-L6-v2"
     embedding_batch_size: int = 256
-    embedding_device: str | None = None  # None = auto-detect GPU
+    embedding_device: str = "cpu"
 
     # Graph construction
     similarity_threshold: float = 0.5
