@@ -1,7 +1,6 @@
 .env
 venv/
 cache/
-results/
 __pycache__/
 *.pyc
 data_collection/bbc/

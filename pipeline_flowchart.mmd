@@ -1,0 +1,62 @@
+---
+config:
+  layout: dagre
+title: Graph-Guided RAG Pipeline for Automatic Cluster Labeling
+---
+flowchart LR
+ subgraph S1["Document Embedding"]
+    direction TB
+        EMB["Text Embedding Model<br>(all-MiniLM-L6-v2)"]
+        VEC["Document Vectors<br>(Dense Representations)"]
+  end
+ subgraph S2["Graph Construction"]
+    direction TB
+        SIM["Semantic Similarity<br>(Cosine Similarity)<br>"]
+        GRAPH["Document Similarity Graph<br>Nodes = Documents<br>Edges = Similarity &gt; Threshold"]
+        GRAPHDEF["Graph G = (V, E)"]
+  end
+ subgraph S3["Centrality-Based Selection"]
+    direction TB
+        PR["PageRank<br>(Centrality Scoring)"]
+        RANK["Rank Documents<br>by Centrality Score"]
+        TOPK["Top-k Documents<br>(Most Representative)"]
+  end
+ subgraph S4["LLM-Based Label Generation (RAG)"]
+    direction TB
+        PROMPT["Prompt Template +<br>Top-k Documents"]
+        LLM["LLM (LLaMA-3.1-8b)<br>Label Generation"]
+        LABEL["Generated Cluster Label"]
+  end
+    EMB --> VEC
+    SIM --> GRAPH
+    GRAPH --> GRAPHDEF
+    PR --> RANK
+    RANK --> TOPK
+    PROMPT --> LLM
+    LLM --> LABEL
+    INPUT[("Clustered<br>Documents")] --> S1
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+
+     EMB:::embedStyle
+     VEC:::embedStyle
+     SIM:::graphStyle
+     GRAPH:::graphStyle
+     GRAPHDEF:::graphStyle
+     PR:::centStyle
+     RANK:::centStyle
+     TOPK:::centStyle
+     PROMPT:::llmStyle
+     LLM:::llmStyle
+     LABEL:::llmStyle
+     INPUT:::inputStyle
+    classDef inputStyle fill:#e8eef5,stroke:#8faabe,color:#333,font-weight:bold
+    classDef embedStyle fill:#fdf5e6,stroke:#d4a843,color:#333
+    classDef graphStyle fill:#e8f5e9,stroke:#66bb6a,color:#333
+    classDef centStyle fill:#e3f2fd,stroke:#42a5f5,color:#333
+    classDef llmStyle fill:#f3e5f5,stroke:#ab47bc,color:#333
+    style S1 fill:#fdf5e620,stroke:#d4a843,stroke-width:2px
+    style S2 fill:#e8f5e920,stroke:#66bb6a,stroke-width:2px
+    style S3 fill:#e3f2fd20,stroke:#42a5f5,stroke-width:2px
+    style S4 fill:#f3e5f520,stroke:#ab47bc,stroke-width:2px

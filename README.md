@@ -4,38 +4,6 @@ Automatically generates descriptive labels for document clusters using a graph-b
 
 ## Pipeline Overview
 
-```mermaid
-flowchart TD
-    A[Load Dataset] --> B[Stratified Split\n80% Dev / 20% Test]
-
-    B --> DEV[Dev Split]
-    B --> TEST[Test Split]
-
-    subgraph sweep["Hyperparameter Sweep (on Dev)"]
-        DEV --> C[Embed Documents\nall-MiniLM-L6-v2]
-        C --> D[Build Similarity Graphs\nper cluster, cosine threshold]
-        D --> E[PageRank Centrality\nselect top-k documents]
-        E --> F[Generate Labels\nGroq LLM]
-        F --> G[Evaluate on Dev\nsemantic similarity + token F1]
-        G --> H{More\nhyperparameter\ncombos?}
-        H -- Yes --> D
-        H -- No --> I[Select Best Config\nhighest mean semantic similarity]
-    end
-
-    I --> J[Run Pipeline on Test\nwith best hyperparameters]
-
-    subgraph test_eval["Final Evaluation (on Test)"]
-        TEST --> J
-        J --> K[Embed Test Documents]
-        K --> L[Build Graphs]
-        L --> M[PageRank + Top-k]
-        M --> N[Generate Labels]
-        N --> O[Evaluate on Test]
-    end
-
-    O --> P[Save Results\ndev sweep + best config + test metrics]
-```
-
 1. **Embed** documents using `all-MiniLM-L6-v2` (sentence-transformers)
 2. **Build graphs** — connect documents within each cluster whose cosine similarity exceeds a threshold
 3. **Select central documents** — run weighted PageRank and pick the top-k highest-scoring documents

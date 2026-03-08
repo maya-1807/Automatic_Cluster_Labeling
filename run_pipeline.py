@@ -170,7 +170,6 @@ def run_hyperparameter_sweep(
             print(f"  Cached dev embeddings to {cache_path}")
 
     # --- Sweep on dev ---
-    dev_results = []
     combos = [
         (t, k, a)
         for t in similarity_thresholds
@@ -183,7 +182,18 @@ def run_hyperparameter_sweep(
     os.makedirs(output_dir, exist_ok=True)
     sweep_path = os.path.join(output_dir, f"{dataset}_sweep.json")
 
+    # Resume from partial results if they exist
+    dev_results = []
+    if os.path.exists(sweep_path):
+        with open(sweep_path) as f:
+            dev_results = json.load(f)
+        if dev_results:
+            print(f"  Resuming from run {len(dev_results) + 1}/{total} (loaded {len(dev_results)} saved results)")
+
     for i, (threshold, top_k, alpha) in enumerate(combos, 1):
+        if i <= len(dev_results):
+            print(f"[Dev] Run {i}/{total}: threshold={threshold}, top_k={top_k}, alpha={alpha} (skipped - already done)")
+            continue
         print(f"\n{'='*60}")
         print(f"[Dev] Run {i}/{total}: threshold={threshold}, top_k={top_k}, alpha={alpha}")
         print(f"{'='*60}")
@@ -278,8 +288,20 @@ def run_full_sweep(
     os.makedirs(output_dir, exist_ok=True)
     out_path = os.path.join(output_dir, "full_sweep.json")
 
+    # Resume from partial full_sweep.json if it exists
     all_results = {}
+    if os.path.exists(out_path):
+        with open(out_path) as f:
+            all_results = json.load(f)
+        if all_results:
+            print(f"  Resuming full sweep - already completed: {list(all_results.keys())}")
+
     for dataset in datasets:
+        if dataset in all_results:
+            print(f"\n{'#'*60}")
+            print(f"# Dataset: {dataset} (skipped - already complete)")
+            print(f"{'#'*60}")
+            continue
         print(f"\n{'#'*60}")
         print(f"# Dataset: {dataset}")
         print(f"{'#'*60}")
