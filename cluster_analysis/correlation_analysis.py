@@ -206,6 +206,92 @@ def plot_scatter(df: pd.DataFrame, dataset: str, output_dir: str) -> None:
     print(f"  Saved {path}")
 
 
+def plot_cluster_heatmap(df: pd.DataFrame, dataset: str, output_dir: str) -> None:
+    """
+    Per-dataset heatmap: rows = clusters (sorted by sem_sim descending),
+    columns = quality measures + labeling scores.
+
+    Cell colour is min-max normalised within each column so all measures are
+    visually comparable on a [0, 1] scale (higher = better in all columns;
+    kl_divergence is already negated by load_quality).
+    Cell annotation shows the raw value.
+    A vertical line separates quality measures from labeling scores.
+    """
+    col_order = [m for m in QUALITY_MEASURES if m in df.columns] + \
+                [m for m in LABELING_METRICS if m in df.columns]
+    col_display = {
+        "voorhees_nn":   "Voorhees NN",
+        "overlap":       "Overlap",
+        "kl_divergence": "−KL div",
+        "density":       "Density",
+        "nmrd":          "nMRD",
+        "sem_sim":       "Sem. Sim.",
+        "tok_f1":        "Token F1",
+    }
+
+    sort_col = "sem_sim" if "sem_sim" in df.columns else col_order[0]
+    plot_df = (
+        df[["cluster"] + col_order]
+        .set_index("cluster")
+        .sort_values(sort_col, ascending=False)
+    )
+
+    # Min-max normalise each column for colouring
+    norm_df = plot_df.copy()
+    for col in col_order:
+        lo, hi = plot_df[col].min(), plot_df[col].max()
+        norm_df[col] = (plot_df[col] - lo) / (hi - lo) if hi > lo else 0.5
+
+    norm_df.columns = [col_display.get(c, c) for c in col_order]
+
+    # Annotation array: raw values formatted to 2 d.p.
+    annot_df = plot_df.map(lambda v: f"{v:.2f}" if pd.notna(v) else "")
+    annot_df.columns = norm_df.columns
+
+    n_rows, n_cols = len(plot_df), len(col_order)
+    row_h = 0.28 if n_rows > 30 else 0.38
+    fig_h = max(4, n_rows * row_h)
+    fig_w = max(6, n_cols * 1.4)
+    font_sz = max(5, min(8, int(80 / n_rows)))
+
+    fig, ax = plt.subplots(figsize=(fig_w, fig_h))
+    sns.heatmap(
+        norm_df,
+        annot=annot_df,
+        fmt="",
+        cmap="RdYlGn",
+        vmin=0,
+        vmax=1,
+        linewidths=0.3,
+        linecolor="white",
+        ax=ax,
+        annot_kws={"size": font_sz},
+        cbar_kws={"label": "Column-normalised score (higher = better)", "shrink": 0.6},
+    )
+
+    # Vertical separator between quality measures and labeling scores
+    n_quality = sum(1 for m in QUALITY_MEASURES if m in df.columns)
+    ax.axvline(x=n_quality, color="black", linewidth=2)
+
+    ax.set_title(
+        f"Per-cluster quality measures & labeling scores — {dataset}",
+        fontsize=11,
+        pad=10,
+    )
+    ax.set_xlabel("")
+    ax.set_ylabel("")
+    ax.tick_params(axis="y", labelsize=font_sz)
+    ax.tick_params(axis="x", labelsize=9)
+    plt.xticks(rotation=30, ha="right")
+    plt.yticks(rotation=0)
+
+    fig.tight_layout()
+    path = Path(output_dir) / f"cluster_heatmap_{dataset}.png"
+    fig.savefig(path, dpi=150, bbox_inches="tight")
+    plt.close(fig)
+    print(f"  Saved {path}")
+
+
 def plot_correlation_heatmap(corr_df: pd.DataFrame, output_dir: str) -> None:
     """
     One heatmap per labeling metric showing Spearman rho for each
@@ -307,6 +393,7 @@ def main() -> None:
         all_corr.append(corr)
 
         plot_scatter(df, dataset, args.output_dir)
+        plot_cluster_heatmap(df, dataset, args.output_dir)
 
     if not all_corr:
         print("\nNo datasets with both quality and results files found.")

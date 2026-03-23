@@ -1,0 +1,142 @@
+{
+  "alt.atheism": {
+    "voorhees_nn": 0.8,
+    "overlap": 0.09620895609259605,
+    "kl_divergence": 8.42593830507774,
+    "density": 0.008573300245111796,
+    "nmrd": 0.4321415822529373
+  },
+  "comp.graphics": {
+    "voorhees_nn": 0.9,
+    "overlap": 0.10443821176886559,
+    "kl_divergence": 9.085764496691194,
+    "density": 0.006805442688692597,
+    "nmrd": 0.537074493588657
+  },
+  "comp.os.ms-windows.misc": {
+    "voorhees_nn": 0.7,
+    "overlap": 0.08764634653925896,
+    "kl_divergence": 9.24231154080802,
+    "density": 0.002684451302639985,
+    "nmrd": 0.49393424514375545
+  },
+  "comp.sys.ibm.pc.hardware": {
+    "voorhees_nn": 0.6,
+    "overlap": 0.11537504568696022,
+    "kl_divergence": 8.847939661186457,
+    "density": 0.007516459933632034,
+    "nmrd": 0.5035575799138511
+  },
+  "comp.sys.mac.hardware": {
+    "voorhees_nn": 0.8,
+    "overlap": 0.1042327843606472,
+    "kl_divergence": 8.949899245362907,
+    "density": 0.007254407526240866,
+    "nmrd": 0.48149160458487744
+  },
+  "comp.windows.x": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.1300996858626604,
+    "kl_divergence": 8.985668645230994,
+    "density": 0.005498689030942902,
+    "nmrd": 0.6383790961361334
+  },
+  "misc.forsale": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.15511389821767807,
+    "kl_divergence": 9.82520526969431,
+    "density": 0.006139404572347455,
+    "nmrd": 0.6356532746569713
+  },
+  "rec.autos": {
+    "voorhees_nn": 0.9,
+    "overlap": 0.09579640254378319,
+    "kl_divergence": 8.83974002085681,
+    "density": 0.007171677479708915,
+    "nmrd": 0.5710089220307438
+  },
+  "rec.motorcycles": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.08694640919566154,
+    "kl_divergence": 9.093720779290003,
+    "density": 0.006403803011578689,
+    "nmrd": 0.5921537924645002
+  },
+  "rec.sport.baseball": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.1974401492625475,
+    "kl_divergence": 9.186033865521186,
+    "density": 0.008210429434080858,
+    "nmrd": 0.7505994870755685
+  },
+  "rec.sport.hockey": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.22864787839353085,
+    "kl_divergence": 9.274600835249498,
+    "density": 0.0074838597757026296,
+    "nmrd": 0.8330948661449021
+  },
+  "sci.crypt": {
+    "voorhees_nn": 0.9,
+    "overlap": 0.14830438420176506,
+    "kl_divergence": 8.541941651503828,
+    "density": 0.007320615698275273,
+    "nmrd": 0.6870567828692822
+  },
+  "sci.electronics": {
+    "voorhees_nn": 0.4,
+    "overlap": 0.05857490189373493,
+    "kl_divergence": 9.067841469018534,
+    "density": 0.006731887345078581,
+    "nmrd": 0.39897433010493044
+  },
+  "sci.med": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.08479359745979309,
+    "kl_divergence": 8.662258759389625,
+    "density": 0.0062261328630539,
+    "nmrd": 0.6601337988249364
+  },
+  "sci.space": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.07478391751646996,
+    "kl_divergence": 8.779118200293246,
+    "density": 0.006538800230089786,
+    "nmrd": 0.5832980564032846
+  },
+  "soc.religion.christian": {
+    "voorhees_nn": 0.5,
+    "overlap": 0.14412447065114975,
+    "kl_divergence": 7.833497179596719,
+    "density": 0.00864228255404726,
+    "nmrd": 0.6052553327130492
+  },
+  "talk.politics.guns": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.1259944885969162,
+    "kl_divergence": 8.568374587381898,
+    "density": 0.006620344860380176,
+    "nmrd": 0.5717202131897102
+  },
+  "talk.politics.mideast": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.18389597535133362,
+    "kl_divergence": 8.401668175627128,
+    "density": 0.008837316991409768,
+    "nmrd": 0.727627872619673
+  },
+  "talk.politics.misc": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.0855492353439331,
+    "kl_divergence": 8.36592014416571,
+    "density": 0.009070334986936646,
+    "nmrd": 0.42513814794137944
+  },
+  "talk.religion.misc": {
+    "voorhees_nn": 0.4,
+    "overlap": 0.09681206569075584,
+    "kl_divergence": 8.48202885890513,
+    "density": 0.009404048265886918,
+    "nmrd": 0.3117974093121106
+  }
+}

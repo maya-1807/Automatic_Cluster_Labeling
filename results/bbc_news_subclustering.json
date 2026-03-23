@@ -1,0 +1,96 @@
+{
+  "dataset": "bbc_news",
+  "baseline": {
+    "config": {
+      "dataset": "bbc_news",
+      "split": "test",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_batch_size": 256,
+      "embedding_device": "cpu",
+      "similarity_threshold": 0.3,
+      "chunk_size": 1000,
+      "top_k": 3,
+      "pagerank_alpha": 0.5,
+      "labeling_model": "llama-3.1-8b-instant",
+      "max_doc_words": 300,
+      "cache_dir": "cache",
+      "use_cache": true,
+      "output_dir": "results"
+    },
+    "labels": {
+      "business": {
+        "generated": "US Corporate Consolidation"
+      },
+      "entertainment": {
+        "generated": "Celebrity and Film Awards"
+      },
+      "politics": {
+        "generated": "UK Conservative Policy"
+      },
+      "sport": {
+        "generated": "Six Nations Rugby"
+      },
+      "tech": {
+        "generated": "Mobile Technology Adoption"
+      }
+    },
+    "metrics": {
+      "semantic_similarity": {
+        "business": 0.3630962669849396,
+        "entertainment": 0.3576897978782654,
+        "politics": 0.3177068829536438,
+        "sport": 0.417784184217453,
+        "tech": 0.32021957635879517,
+        "__mean__": 0.3552993416786194
+      },
+      "token_overlap_f1": {
+        "business": 0.0,
+        "entertainment": 0.0,
+        "politics": 0.0,
+        "sport": 0.0,
+        "tech": 0.0,
+        "__mean__": 0.0
+      }
+    }
+  },
+  "sweep": [
+    {
+      "n_subclusters": 4,
+      "labels": {
+        "business": {
+          "generated": "Corporate Financial Scandals"
+        },
+        "entertainment": {
+          "generated": "Entertainment Industry News"
+        },
+        "politics": {
+          "generated": "UK Labour Party Politics"
+        },
+        "sport": {
+          "generated": "Sports Team Selection"
+        },
+        "tech": {
+          "generated": "Consumer Technology Trends"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "business": 0.3421436548233032,
+          "entertainment": 0.5550256967544556,
+          "politics": 0.4966200888156891,
+          "sport": 0.49740201234817505,
+          "tech": 0.33869749307632446,
+          "__mean__": 0.4459777891635895
+        },
+        "token_overlap_f1": {
+          "business": 0.0,
+          "entertainment": 0.5,
+          "politics": 0.4,
+          "sport": 0.0,
+          "tech": 0.0,
+          "__mean__": 0.18
+        }
+      }
+    }
+  ]
+}

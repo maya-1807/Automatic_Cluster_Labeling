@@ -1,0 +1,3641 @@
+{
+  "dev_sweep": [
+    {
+      "config": {
+        "dataset": "20newsgroups",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.3,
+        "chunk_size": 1000,
+        "top_k": 3,
+        "pagerank_alpha": 0.5,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "alt.atheism": {
+          "generated": "Alt.Atheism Discussions"
+        },
+        "comp.graphics": {
+          "generated": "Computer Graphics Software"
+        },
+        "comp.os.ms-windows.misc": {
+          "generated": "MS Windows Discussion"
+        },
+        "comp.sys.ibm.pc.hardware": {
+          "generated": "486 Era Computer Hardware"
+        },
+        "comp.sys.mac.hardware": {
+          "generated": "Macintosh Upgrades and Sales"
+        },
+        "comp.windows.x": {
+          "generated": "X Window System Programming"
+        },
+        "misc.forsale": {
+          "generated": "Old Computer Sales"
+        },
+        "rec.autos": {
+          "generated": "Car Enthusiast Discussions"
+        },
+        "rec.motorcycles": {
+          "generated": "Motorcycle Enthusiasts Online"
+        },
+        "rec.sport.baseball": {
+          "generated": "Baseball Discussion Forum"
+        },
+        "rec.sport.hockey": {
+          "generated": "NHL Hockey News and Rumors"
+        },
+        "sci.crypt": {
+          "generated": "Clipper Chip Controversy"
+        },
+        "sci.electronics": {
+          "generated": "Ham Radio and Electronics"
+        },
+        "sci.med": {
+          "generated": "Critique of Alternative Medicine"
+        },
+        "sci.space": {
+          "generated": "Space Program Criticism"
+        },
+        "soc.religion.christian": {
+          "generated": "Christian Theological Unity"
+        },
+        "talk.politics.guns": {
+          "generated": "Gun Rights Advocacy"
+        },
+        "talk.politics.mideast": {
+          "generated": "Israel-Palestine Conflict"
+        },
+        "talk.politics.misc": {
+          "generated": "Waco Siege and Gun Rights"
+        },
+        "talk.religion.misc": {
+          "generated": "Christian Fundamentalism Critique"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "alt.atheism": 0.9170068502426147,
+          "comp.graphics": 0.6513491868972778,
+          "comp.os.ms-windows.misc": 0.4240363836288452,
+          "comp.sys.ibm.pc.hardware": 0.4612376391887665,
+          "comp.sys.mac.hardware": 0.3785741627216339,
+          "comp.windows.x": 0.41823136806488037,
+          "misc.forsale": 0.3052765727043152,
+          "rec.autos": 0.38329777121543884,
+          "rec.motorcycles": 0.5975117683410645,
+          "rec.sport.baseball": 0.5104324817657471,
+          "rec.sport.hockey": 0.4312576353549957,
+          "sci.crypt": 0.1797831952571869,
+          "sci.electronics": 0.5328600406646729,
+          "sci.med": 0.34287264943122864,
+          "sci.space": 0.5188891887664795,
+          "soc.religion.christian": 0.40287214517593384,
+          "talk.politics.guns": 0.5082869529724121,
+          "talk.politics.mideast": 0.2371431142091751,
+          "talk.politics.misc": 0.16539892554283142,
+          "talk.religion.misc": 0.2374592423439026,
+          "__mean__": 0.4301888637244701
+        },
+        "token_overlap_f1": {
+          "alt.atheism": 0.0,
+          "comp.graphics": 0.4,
+          "comp.os.ms-windows.misc": 0.0,
+          "comp.sys.ibm.pc.hardware": 0.22222222222222224,
+          "comp.sys.mac.hardware": 0.0,
+          "comp.windows.x": 0.28571428571428575,
+          "misc.forsale": 0.0,
+          "rec.autos": 0.0,
+          "rec.motorcycles": 0.0,
+          "rec.sport.baseball": 0.3333333333333333,
+          "rec.sport.hockey": 0.25,
+          "sci.crypt": 0.0,
+          "sci.electronics": 0.3333333333333333,
+          "sci.med": 0.0,
+          "sci.space": 0.4,
+          "soc.religion.christian": 0.3333333333333333,
+          "talk.politics.guns": 0.0,
+          "talk.politics.mideast": 0.0,
+          "talk.politics.misc": 0.0,
+          "talk.religion.misc": 0.0,
+          "__mean__": 0.1278968253968254
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "20newsgroups",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.3,
+        "chunk_size": 1000,
+        "top_k": 3,
+        "pagerank_alpha": 0.85,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "alt.atheism": {
+          "generated": "Atheism and Debate"
+        },
+        "comp.graphics": {
+          "generated": "Computer Graphics Software"
+        },
+        "comp.os.ms-windows.misc": {
+          "generated": "Windows Customization"
+        },
+        "comp.sys.ibm.pc.hardware": {
+          "generated": "486 Era Computer Hardware"
+        },
+        "comp.sys.mac.hardware": {
+          "generated": "Mac Upgrade Advice"
+        },
+        "comp.windows.x": {
+          "generated": "X Window System Programming"
+        },
+        "misc.forsale": {
+          "generated": "Old Computer Sales"
+        },
+        "rec.autos": {
+          "generated": "Classic American Muscle Cars"
+        },
+        "rec.motorcycles": {
+          "generated": "Motorcycle and Cycling Culture"
+        },
+        "rec.sport.baseball": {
+          "generated": "Baseball Discussion Forum"
+        },
+        "rec.sport.hockey": {
+          "generated": "1989 NHL Playoffs"
+        },
+        "sci.crypt": {
+          "generated": "Clipper Chip Controversy"
+        },
+        "sci.electronics": {
+          "generated": "Ham Radio and Electronics"
+        },
+        "sci.med": {
+          "generated": "Critique of Alternative Medicine"
+        },
+        "sci.space": {
+          "generated": "Space Program Criticism"
+        },
+        "soc.religion.christian": {
+          "generated": "Christianity and Sin"
+        },
+        "talk.politics.guns": {
+          "generated": "Gun Rights Advocacy"
+        },
+        "talk.politics.mideast": {
+          "generated": "Israel-Palestine Conflict"
+        },
+        "talk.politics.misc": {
+          "generated": "Government vs. Individual Rights"
+        },
+        "talk.religion.misc": {
+          "generated": "Christian Fundamentalism Critique"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "alt.atheism": 0.5876051187515259,
+          "comp.graphics": 0.6513491868972778,
+          "comp.os.ms-windows.misc": 0.3417421579360962,
+          "comp.sys.ibm.pc.hardware": 0.4612376391887665,
+          "comp.sys.mac.hardware": 0.34023594856262207,
+          "comp.windows.x": 0.41823136806488037,
+          "misc.forsale": 0.3052765727043152,
+          "rec.autos": 0.39544349908828735,
+          "rec.motorcycles": 0.6180769205093384,
+          "rec.sport.baseball": 0.5104324817657471,
+          "rec.sport.hockey": 0.4774071276187897,
+          "sci.crypt": 0.17978321015834808,
+          "sci.electronics": 0.5328600406646729,
+          "sci.med": 0.342872679233551,
+          "sci.space": 0.5188892483711243,
+          "soc.religion.christian": 0.4711286425590515,
+          "talk.politics.guns": 0.5082869529724121,
+          "talk.politics.mideast": 0.23714309930801392,
+          "talk.politics.misc": 0.08501191437244415,
+          "talk.religion.misc": 0.2374592125415802,
+          "__mean__": 0.41102365106344224
+        },
+        "token_overlap_f1": {
+          "alt.atheism": 0.4,
+          "comp.graphics": 0.4,
+          "comp.os.ms-windows.misc": 0.0,
+          "comp.sys.ibm.pc.hardware": 0.22222222222222224,
+          "comp.sys.mac.hardware": 0.28571428571428575,
+          "comp.windows.x": 0.28571428571428575,
+          "misc.forsale": 0.0,
+          "rec.autos": 0.0,
+          "rec.motorcycles": 0.0,
+          "rec.sport.baseball": 0.3333333333333333,
+          "rec.sport.hockey": 0.0,
+          "sci.crypt": 0.0,
+          "sci.electronics": 0.3333333333333333,
+          "sci.med": 0.0,
+          "sci.space": 0.4,
+          "soc.religion.christian": 0.0,
+          "talk.politics.guns": 0.0,
+          "talk.politics.mideast": 0.0,
+          "talk.politics.misc": 0.0,
+          "talk.religion.misc": 0.0,
+          "__mean__": 0.13301587301587303
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "20newsgroups",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.3,
+        "chunk_size": 1000,
+        "top_k": 3,
+        "pagerank_alpha": 0.95,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "alt.atheism": {
+          "generated": "Atheism and Debate"
+        },
+        "comp.graphics": {
+          "generated": "Graphics File Conversion"
+        },
+        "comp.os.ms-windows.misc": {
+          "generated": "Windows Customization"
+        },
+        "comp.sys.ibm.pc.hardware": {
+          "generated": "486 Era Computer Hardware"
+        },
+        "comp.sys.mac.hardware": {
+          "generated": "Macintosh Hardware Upgrades"
+        },
+        "comp.windows.x": {
+          "generated": "X Window System Programming"
+        },
+        "misc.forsale": {
+          "generated": "Old Computer Sales"
+        },
+        "rec.autos": {
+          "generated": "Classic American Muscle Cars"
+        },
+        "rec.motorcycles": {
+          "generated": "Motorcycle Enthusiasts"
+        },
+        "rec.sport.baseball": {
+          "generated": "Baseball Statistic Debate"
+        },
+        "rec.sport.hockey": {
+          "generated": "Hockey Playoff Rumors"
+        },
+        "sci.crypt": {
+          "generated": "Clipper Chip Controversy"
+        },
+        "sci.electronics": {
+          "generated": "Vintage Electronics Marketplace"
+        },
+        "sci.med": {
+          "generated": "Critique of Alternative Medicine"
+        },
+        "sci.space": {
+          "generated": "Critique of Space Programs"
+        },
+        "soc.religion.christian": {
+          "generated": "Christian Theological Debates"
+        },
+        "talk.politics.guns": {
+          "generated": "Gun Rights Advocacy"
+        },
+        "talk.politics.mideast": {
+          "generated": "Israel-Palestine Conflict"
+        },
+        "talk.politics.misc": {
+          "generated": "Anti-LGBT Sentiment"
+        },
+        "talk.religion.misc": {
+          "generated": "Christian Apologetic Critique"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "alt.atheism": 0.5876051187515259,
+          "comp.graphics": 0.5161641240119934,
+          "comp.os.ms-windows.misc": 0.3417421579360962,
+          "comp.sys.ibm.pc.hardware": 0.4612376391887665,
+          "comp.sys.mac.hardware": 0.570517897605896,
+          "comp.windows.x": 0.41823136806488037,
+          "misc.forsale": 0.3052765727043152,
+          "rec.autos": 0.39544349908828735,
+          "rec.motorcycles": 0.6579846143722534,
+          "rec.sport.baseball": 0.4798297882080078,
+          "rec.sport.hockey": 0.4444988965988159,
+          "sci.crypt": 0.17978321015834808,
+          "sci.electronics": 0.4206209182739258,
+          "sci.med": 0.342872679233551,
+          "sci.space": 0.5404051542282104,
+          "soc.religion.christian": 0.3405578136444092,
+          "talk.politics.guns": 0.5082869529724121,
+          "talk.politics.mideast": 0.23714309930801392,
+          "talk.politics.misc": 0.15325680375099182,
+          "talk.religion.misc": 0.3121469020843506,
+          "__mean__": 0.41068026050925255
+        },
+        "token_overlap_f1": {
+          "alt.atheism": 0.4,
+          "comp.graphics": 0.4,
+          "comp.os.ms-windows.misc": 0.0,
+          "comp.sys.ibm.pc.hardware": 0.22222222222222224,
+          "comp.sys.mac.hardware": 0.28571428571428575,
+          "comp.windows.x": 0.28571428571428575,
+          "misc.forsale": 0.0,
+          "rec.autos": 0.0,
+          "rec.motorcycles": 0.0,
+          "rec.sport.baseball": 0.3333333333333333,
+          "rec.sport.hockey": 0.3333333333333333,
+          "sci.crypt": 0.0,
+          "sci.electronics": 0.4,
+          "sci.med": 0.0,
+          "sci.space": 0.3333333333333333,
+          "soc.religion.christian": 0.3333333333333333,
+          "talk.politics.guns": 0.0,
+          "talk.politics.mideast": 0.0,
+          "talk.politics.misc": 0.0,
+          "talk.religion.misc": 0.0,
+          "__mean__": 0.16634920634920633
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "20newsgroups",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.3,
+        "chunk_size": 1000,
+        "top_k": 5,
+        "pagerank_alpha": 0.5,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "alt.atheism": {
+          "generated": "Atheism and Debate"
+        },
+        "comp.graphics": {
+          "generated": "Computer Graphics Software"
+        },
+        "comp.os.ms-windows.misc": {
+          "generated": "Microsoft Windows Discussion"
+        },
+        "comp.sys.ibm.pc.hardware": {
+          "generated": "486 Computer Hardware Discussions"
+        },
+        "comp.sys.mac.hardware": {
+          "generated": "Macintosh Computer Discussions"
+        },
+        "comp.windows.x": {
+          "generated": "X Programming and Graphics"
+        },
+        "misc.forsale": {
+          "generated": "Computer Equipment Sales"
+        },
+        "rec.autos": {
+          "generated": "Used Car Discussions"
+        },
+        "rec.motorcycles": {
+          "generated": "Motorcycle Enthusiasts' Stories"
+        },
+        "rec.sport.baseball": {
+          "generated": "Baseball Discussion Forum"
+        },
+        "rec.sport.hockey": {
+          "generated": "NHL Hockey News and Rumors"
+        },
+        "sci.crypt": {
+          "generated": "Clipper Chip Controversy"
+        },
+        "sci.electronics": {
+          "generated": "Ham Radio Electronics"
+        },
+        "sci.med": {
+          "generated": "Critique of Alternative Medicine"
+        },
+        "sci.space": {
+          "generated": "Critique of NASA Policy"
+        },
+        "soc.religion.christian": {
+          "generated": "Christian Theological Debates"
+        },
+        "talk.politics.guns": {
+          "generated": "Gun Rights and Government Overreach"
+        },
+        "talk.politics.mideast": {
+          "generated": "Anti-Israel Sentiment"
+        },
+        "talk.politics.misc": {
+          "generated": "Right-Wing Conservative Rhetoric"
+        },
+        "talk.religion.misc": {
+          "generated": "Christian Apologetics Critique"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "alt.atheism": 0.5876051187515259,
+          "comp.graphics": 0.6513491868972778,
+          "comp.os.ms-windows.misc": 0.38223227858543396,
+          "comp.sys.ibm.pc.hardware": 0.4689229130744934,
+          "comp.sys.mac.hardware": 0.5409893989562988,
+          "comp.windows.x": 0.32499799132347107,
+          "misc.forsale": 0.32718855142593384,
+          "rec.autos": 0.33149904012680054,
+          "rec.motorcycles": 0.5971284508705139,
+          "rec.sport.baseball": 0.5104324817657471,
+          "rec.sport.hockey": 0.4312576353549957,
+          "sci.crypt": 0.1797831952571869,
+          "sci.electronics": 0.5256191492080688,
+          "sci.med": 0.34287264943122864,
+          "sci.space": 0.3733265697956085,
+          "soc.religion.christian": 0.34055787324905396,
+          "talk.politics.guns": 0.5566631555557251,
+          "talk.politics.mideast": 0.21892666816711426,
+          "talk.politics.misc": 0.31586211919784546,
+          "talk.religion.misc": 0.3050103783607483,
+          "__mean__": 0.4156112402677536
+        },
+        "token_overlap_f1": {
+          "alt.atheism": 0.4,
+          "comp.graphics": 0.4,
+          "comp.os.ms-windows.misc": 0.0,
+          "comp.sys.ibm.pc.hardware": 0.22222222222222224,
+          "comp.sys.mac.hardware": 0.0,
+          "comp.windows.x": 0.28571428571428575,
+          "misc.forsale": 0.0,
+          "rec.autos": 0.0,
+          "rec.motorcycles": 0.0,
+          "rec.sport.baseball": 0.3333333333333333,
+          "rec.sport.hockey": 0.25,
+          "sci.crypt": 0.0,
+          "sci.electronics": 0.4,
+          "sci.med": 0.0,
+          "sci.space": 0.0,
+          "soc.religion.christian": 0.3333333333333333,
+          "talk.politics.guns": 0.0,
+          "talk.politics.mideast": 0.0,
+          "talk.politics.misc": 0.0,
+          "talk.religion.misc": 0.0,
+          "__mean__": 0.13123015873015872
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "20newsgroups",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.3,
+        "chunk_size": 1000,
+        "top_k": 5,
+        "pagerank_alpha": 0.85,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "alt.atheism": {
+          "generated": "Atheism and Criticism"
+        },
+        "comp.graphics": {
+          "generated": "Graphics Software Discussion"
+        },
+        "comp.os.ms-windows.misc": {
+          "generated": "Windows Customization"
+        },
+        "comp.sys.ibm.pc.hardware": {
+          "generated": "486 PC Hardware Discussions"
+        },
+        "comp.sys.mac.hardware": {
+          "generated": "Macintosh Hardware Upgrades"
+        },
+        "comp.windows.x": {
+          "generated": "X Programming Tools and Techniques"
+        },
+        "misc.forsale": {
+          "generated": "Old Computer Equipment"
+        },
+        "rec.autos": {
+          "generated": "Used Car Discussions"
+        },
+        "rec.motorcycles": {
+          "generated": "Motorcycle Culture and Community"
+        },
+        "rec.sport.baseball": {
+          "generated": "Baseball Statistic Debate"
+        },
+        "rec.sport.hockey": {
+          "generated": "1990 NHL Season"
+        },
+        "sci.crypt": {
+          "generated": "Clipper Chip Controversy"
+        },
+        "sci.electronics": {
+          "generated": "Ham Radio and Electronics"
+        },
+        "sci.med": {
+          "generated": "Critique of Alternative Medicine"
+        },
+        "sci.space": {
+          "generated": "Criticism of Space Programs"
+        },
+        "soc.religion.christian": {
+          "generated": "Christian Theological Debates"
+        },
+        "talk.politics.guns": {
+          "generated": "Gun Rights Advocacy"
+        },
+        "talk.politics.mideast": {
+          "generated": "Israel-Palestine Conflict"
+        },
+        "talk.politics.misc": {
+          "generated": "Anti-Government Homosexuality"
+        },
+        "talk.religion.misc": {
+          "generated": "Christian Apologetics Critique"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "alt.atheism": 0.5916393995285034,
+          "comp.graphics": 0.5413703918457031,
+          "comp.os.ms-windows.misc": 0.3417421579360962,
+          "comp.sys.ibm.pc.hardware": 0.4527996778488159,
+          "comp.sys.mac.hardware": 0.570517897605896,
+          "comp.windows.x": 0.29207146167755127,
+          "misc.forsale": 0.1341628134250641,
+          "rec.autos": 0.33149904012680054,
+          "rec.motorcycles": 0.5997285842895508,
+          "rec.sport.baseball": 0.4798297882080078,
+          "rec.sport.hockey": 0.48428875207901,
+          "sci.crypt": 0.17978321015834808,
+          "sci.electronics": 0.5328600406646729,
+          "sci.med": 0.342872679233551,
+          "sci.space": 0.5259538888931274,
+          "soc.religion.christian": 0.3405578136444092,
+          "talk.politics.guns": 0.5082869529724121,
+          "talk.politics.mideast": 0.23714309930801392,
+          "talk.politics.misc": 0.19715699553489685,
+          "talk.religion.misc": 0.3050103783607483,
+          "__mean__": 0.39946375116705896
+        },
+        "token_overlap_f1": {
+          "alt.atheism": 0.4,
+          "comp.graphics": 0.4,
+          "comp.os.ms-windows.misc": 0.0,
+          "comp.sys.ibm.pc.hardware": 0.4444444444444445,
+          "comp.sys.mac.hardware": 0.28571428571428575,
+          "comp.windows.x": 0.25,
+          "misc.forsale": 0.0,
+          "rec.autos": 0.0,
+          "rec.motorcycles": 0.0,
+          "rec.sport.baseball": 0.3333333333333333,
+          "rec.sport.hockey": 0.0,
+          "sci.crypt": 0.0,
+          "sci.electronics": 0.3333333333333333,
+          "sci.med": 0.0,
+          "sci.space": 0.3333333333333333,
+          "soc.religion.christian": 0.3333333333333333,
+          "talk.politics.guns": 0.0,
+          "talk.politics.mideast": 0.0,
+          "talk.politics.misc": 0.0,
+          "talk.religion.misc": 0.0,
+          "__mean__": 0.15567460317460316
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "20newsgroups",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.3,
+        "chunk_size": 1000,
+        "top_k": 5,
+        "pagerank_alpha": 0.95,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "alt.atheism": {
+          "generated": "Atheism and Criticism"
+        },
+        "comp.graphics": {
+          "generated": "Graphics File Formats"
+        },
+        "comp.os.ms-windows.misc": {
+          "generated": "Windows Customization"
+        },
+        "comp.sys.ibm.pc.hardware": {
+          "generated": "486 Era Computer Hardware"
+        },
+        "comp.sys.mac.hardware": {
+          "generated": "Macintosh Hardware Upgrades"
+        },
+        "comp.windows.x": {
+          "generated": "X Programming and Graphics"
+        },
+        "misc.forsale": {
+          "generated": "Old Computer Sales"
+        },
+        "rec.autos": {
+          "generated": "Used Car Discussions"
+        },
+        "rec.motorcycles": {
+          "generated": "Motorcycle Culture and Community"
+        },
+        "rec.sport.baseball": {
+          "generated": "Baseball Statistic Debate"
+        },
+        "rec.sport.hockey": {
+          "generated": "NHL Hockey Playoffs 1990"
+        },
+        "sci.crypt": {
+          "generated": "Clipper Chip Controversy"
+        },
+        "sci.electronics": {
+          "generated": "Radio Electronics Hobbyists"
+        },
+        "sci.med": {
+          "generated": "Critique of Alternative Medicine"
+        },
+        "sci.space": {
+          "generated": "Criticism of Space Policy"
+        },
+        "soc.religion.christian": {
+          "generated": "Christian Theological Debates"
+        },
+        "talk.politics.guns": {
+          "generated": "Gun Rights and Self-Defense"
+        },
+        "talk.politics.mideast": {
+          "generated": "Israel-Palestine Conflict"
+        },
+        "talk.politics.misc": {
+          "generated": "Anti-Gay Activism"
+        },
+        "talk.religion.misc": {
+          "generated": "Christian Apologetics Critique"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "alt.atheism": 0.5916393995285034,
+          "comp.graphics": 0.516333281993866,
+          "comp.os.ms-windows.misc": 0.3417421281337738,
+          "comp.sys.ibm.pc.hardware": 0.4612376391887665,
+          "comp.sys.mac.hardware": 0.5705177783966064,
+          "comp.windows.x": 0.32499799132347107,
+          "misc.forsale": 0.3052765727043152,
+          "rec.autos": 0.33149904012680054,
+          "rec.motorcycles": 0.5997287034988403,
+          "rec.sport.baseball": 0.47982972860336304,
+          "rec.sport.hockey": 0.5068948864936829,
+          "sci.crypt": 0.1797831952571869,
+          "sci.electronics": 0.5457576513290405,
+          "sci.med": 0.34287264943122864,
+          "sci.space": 0.4908427596092224,
+          "soc.religion.christian": 0.34055787324905396,
+          "talk.politics.guns": 0.42305988073349,
+          "talk.politics.mideast": 0.2371431142091751,
+          "talk.politics.misc": 0.18917742371559143,
+          "talk.religion.misc": 0.3050103783607483,
+          "__mean__": 0.4041951037943363
+        },
+        "token_overlap_f1": {
+          "alt.atheism": 0.4,
+          "comp.graphics": 0.4,
+          "comp.os.ms-windows.misc": 0.0,
+          "comp.sys.ibm.pc.hardware": 0.22222222222222224,
+          "comp.sys.mac.hardware": 0.28571428571428575,
+          "comp.windows.x": 0.28571428571428575,
+          "misc.forsale": 0.0,
+          "rec.autos": 0.0,
+          "rec.motorcycles": 0.0,
+          "rec.sport.baseball": 0.3333333333333333,
+          "rec.sport.hockey": 0.28571428571428575,
+          "sci.crypt": 0.0,
+          "sci.electronics": 0.4,
+          "sci.med": 0.0,
+          "sci.space": 0.3333333333333333,
+          "soc.religion.christian": 0.3333333333333333,
+          "talk.politics.guns": 0.0,
+          "talk.politics.mideast": 0.0,
+          "talk.politics.misc": 0.0,
+          "talk.religion.misc": 0.0,
+          "__mean__": 0.16396825396825396
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "20newsgroups",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.3,
+        "chunk_size": 1000,
+        "top_k": 10,
+        "pagerank_alpha": 0.5,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "alt.atheism": {
+          "generated": "Atheism and Christianity Debate"
+        },
+        "comp.graphics": {
+          "generated": "Computer Graphics Software"
+        },
+        "comp.os.ms-windows.misc": {
+          "generated": "Microsoft Windows Discussion"
+        },
+        "comp.sys.ibm.pc.hardware": {
+          "generated": "Personal Computer Hardware"
+        },
+        "comp.sys.mac.hardware": {
+          "generated": "Macintosh Hardware Discussions"
+        },
+        "comp.windows.x": {
+          "generated": "X Window System Programming"
+        },
+        "misc.forsale": {
+          "generated": "Used Electronics Marketplace"
+        },
+        "rec.autos": {
+          "generated": "Used Car Discussions"
+        },
+        "rec.motorcycles": {
+          "generated": "Motorcycle Riding Culture"
+        },
+        "rec.sport.baseball": {
+          "generated": "Baseball Discussion Forum"
+        },
+        "rec.sport.hockey": {
+          "generated": "1993 NHL Season"
+        },
+        "sci.crypt": {
+          "generated": "Clipper Chip Controversy"
+        },
+        "sci.electronics": {
+          "generated": "Ham Radio and Electronics"
+        },
+        "sci.med": {
+          "generated": "Critique of Alternative Medicine"
+        },
+        "sci.space": {
+          "generated": "Critique of Space Policy"
+        },
+        "soc.religion.christian": {
+          "generated": "Christian Theological Debates"
+        },
+        "talk.politics.guns": {
+          "generated": "Gun Rights and Militia"
+        },
+        "talk.politics.mideast": {
+          "generated": "Middle East Conflict"
+        },
+        "talk.politics.misc": {
+          "generated": "Anti-Government Sentiment"
+        },
+        "talk.religion.misc": {
+          "generated": "Christianity vs Fundamentalism"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "alt.atheism": 0.5512354373931885,
+          "comp.graphics": 0.6513491868972778,
+          "comp.os.ms-windows.misc": 0.38223227858543396,
+          "comp.sys.ibm.pc.hardware": 0.5161631107330322,
+          "comp.sys.mac.hardware": 0.6721688508987427,
+          "comp.windows.x": 0.41823136806488037,
+          "misc.forsale": 0.399490088224411,
+          "rec.autos": 0.33149904012680054,
+          "rec.motorcycles": 0.6067428588867188,
+          "rec.sport.baseball": 0.5104324817657471,
+          "rec.sport.hockey": 0.46110063791275024,
+          "sci.crypt": 0.1797831952571869,
+          "sci.electronics": 0.5328600406646729,
+          "sci.med": 0.34287264943122864,
+          "sci.space": 0.49043917655944824,
+          "soc.religion.christian": 0.34055787324905396,
+          "talk.politics.guns": 0.47899487614631653,
+          "talk.politics.mideast": 0.35345202684402466,
+          "talk.politics.misc": 0.2797129154205322,
+          "talk.religion.misc": 0.25889673829078674,
+          "__mean__": 0.43791074156761167
+        },
+        "token_overlap_f1": {
+          "alt.atheism": 0.3333333333333333,
+          "comp.graphics": 0.4,
+          "comp.os.ms-windows.misc": 0.0,
+          "comp.sys.ibm.pc.hardware": 0.25,
+          "comp.sys.mac.hardware": 0.28571428571428575,
+          "comp.windows.x": 0.28571428571428575,
+          "misc.forsale": 0.0,
+          "rec.autos": 0.0,
+          "rec.motorcycles": 0.0,
+          "rec.sport.baseball": 0.3333333333333333,
+          "rec.sport.hockey": 0.0,
+          "sci.crypt": 0.0,
+          "sci.electronics": 0.3333333333333333,
+          "sci.med": 0.0,
+          "sci.space": 0.3333333333333333,
+          "soc.religion.christian": 0.3333333333333333,
+          "talk.politics.guns": 0.0,
+          "talk.politics.mideast": 0.0,
+          "talk.politics.misc": 0.0,
+          "talk.religion.misc": 0.0,
+          "__mean__": 0.14440476190476192
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "20newsgroups",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.3,
+        "chunk_size": 1000,
+        "top_k": 10,
+        "pagerank_alpha": 0.85,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "alt.atheism": {
+          "generated": "Atheism and Christian Debate"
+        },
+        "comp.graphics": {
+          "generated": "Computer Graphics Software"
+        },
+        "comp.os.ms-windows.misc": {
+          "generated": "Microsoft Windows Discussion"
+        },
+        "comp.sys.ibm.pc.hardware": {
+          "generated": "PC Hardware Discussions"
+        },
+        "comp.sys.mac.hardware": {
+          "generated": "Macintosh Computer Enthusiasts"
+        },
+        "comp.windows.x": {
+          "generated": "X Window System Programming"
+        },
+        "misc.forsale": {
+          "generated": "Old Computer Sales"
+        },
+        "rec.autos": {
+          "generated": "Used Car Discussions"
+        },
+        "rec.motorcycles": {
+          "generated": "Motorcycle Riding Culture"
+        },
+        "rec.sport.baseball": {
+          "generated": "Baseball Statistical Debate"
+        },
+        "rec.sport.hockey": {
+          "generated": "1993 NHL Season"
+        },
+        "sci.crypt": {
+          "generated": "Clipper Chip Controversy"
+        },
+        "sci.electronics": {
+          "generated": "Electronics Hobbyists Network"
+        },
+        "sci.med": {
+          "generated": "Critique of Alternative Medicine"
+        },
+        "sci.space": {
+          "generated": "Criticism of NASA"
+        },
+        "soc.religion.christian": {
+          "generated": "Christian Theological Debates"
+        },
+        "talk.politics.guns": {
+          "generated": "Gun Rights Debate"
+        },
+        "talk.politics.mideast": {
+          "generated": "Middle East Conflict"
+        },
+        "talk.politics.misc": {
+          "generated": "Anti-Gay Conservative Rhetoric"
+        },
+        "talk.religion.misc": {
+          "generated": "Christianity vs. Atheism Debate"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "alt.atheism": 0.5536398887634277,
+          "comp.graphics": 0.6513491868972778,
+          "comp.os.ms-windows.misc": 0.38223227858543396,
+          "comp.sys.ibm.pc.hardware": 0.5138421058654785,
+          "comp.sys.mac.hardware": 0.4907727539539337,
+          "comp.windows.x": 0.41823136806488037,
+          "misc.forsale": 0.3052765727043152,
+          "rec.autos": 0.33149904012680054,
+          "rec.motorcycles": 0.6067428588867188,
+          "rec.sport.baseball": 0.46521127223968506,
+          "rec.sport.hockey": 0.46110063791275024,
+          "sci.crypt": 0.1797831952571869,
+          "sci.electronics": 0.5410417318344116,
+          "sci.med": 0.34287264943122864,
+          "sci.space": 0.4960238039493561,
+          "soc.religion.christian": 0.34055787324905396,
+          "talk.politics.guns": 0.5258546471595764,
+          "talk.politics.mideast": 0.35345202684402466,
+          "talk.politics.misc": 0.23154227435588837,
+          "talk.religion.misc": 0.31721943616867065,
+          "__mean__": 0.425412280112505
+        },
+        "token_overlap_f1": {
+          "alt.atheism": 0.3333333333333333,
+          "comp.graphics": 0.4,
+          "comp.os.ms-windows.misc": 0.0,
+          "comp.sys.ibm.pc.hardware": 0.5,
+          "comp.sys.mac.hardware": 0.0,
+          "comp.windows.x": 0.28571428571428575,
+          "misc.forsale": 0.0,
+          "rec.autos": 0.0,
+          "rec.motorcycles": 0.0,
+          "rec.sport.baseball": 0.3333333333333333,
+          "rec.sport.hockey": 0.0,
+          "sci.crypt": 0.0,
+          "sci.electronics": 0.4,
+          "sci.med": 0.0,
+          "sci.space": 0.0,
+          "soc.religion.christian": 0.3333333333333333,
+          "talk.politics.guns": 0.0,
+          "talk.politics.mideast": 0.0,
+          "talk.politics.misc": 0.0,
+          "talk.religion.misc": 0.0,
+          "__mean__": 0.12928571428571428
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "20newsgroups",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.3,
+        "chunk_size": 1000,
+        "top_k": 10,
+        "pagerank_alpha": 0.95,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "alt.atheism": {
+          "generated": "Atheism and Christianity Debate"
+        },
+        "comp.graphics": {
+          "generated": "Graphics Software Discussion"
+        },
+        "comp.os.ms-windows.misc": {
+          "generated": "Microsoft Windows Discussion"
+        },
+        "comp.sys.ibm.pc.hardware": {
+          "generated": "PC Hard Drive Performance"
+        },
+        "comp.sys.mac.hardware": {
+          "generated": "Macintosh Computer Upgrades"
+        },
+        "comp.windows.x": {
+          "generated": "X Window System Programming"
+        },
+        "misc.forsale": {
+          "generated": "Old Computer Sales"
+        },
+        "rec.autos": {
+          "generated": "Used Car Discussions"
+        },
+        "rec.motorcycles": {
+          "generated": "Motorcycle Riding Culture"
+        },
+        "rec.sport.baseball": {
+          "generated": "Baseball Statistical Debate"
+        },
+        "rec.sport.hockey": {
+          "generated": "1993 NHL Season"
+        },
+        "sci.crypt": {
+          "generated": "Clipper Chip Controversy"
+        },
+        "sci.electronics": {
+          "generated": "Electronics Hobbyists Network"
+        },
+        "sci.med": {
+          "generated": "Critique of Alternative Medicine"
+        },
+        "sci.space": {
+          "generated": "Criticism of NASA"
+        },
+        "soc.religion.christian": {
+          "generated": "Christian Theological Debates"
+        },
+        "talk.politics.guns": {
+          "generated": "Gun Rights Advocacy"
+        },
+        "talk.politics.mideast": {
+          "generated": "Middle East Conflict"
+        },
+        "talk.politics.misc": {
+          "generated": "Anti-Gay Conservative Rhetoric"
+        },
+        "talk.religion.misc": {
+          "generated": "Christianity vs. Fundamentalism"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "alt.atheism": 0.5512354373931885,
+          "comp.graphics": 0.5413704514503479,
+          "comp.os.ms-windows.misc": 0.38223227858543396,
+          "comp.sys.ibm.pc.hardware": 0.2932429313659668,
+          "comp.sys.mac.hardware": 0.47825586795806885,
+          "comp.windows.x": 0.41823136806488037,
+          "misc.forsale": 0.3052765727043152,
+          "rec.autos": 0.33149904012680054,
+          "rec.motorcycles": 0.6067428588867188,
+          "rec.sport.baseball": 0.46521127223968506,
+          "rec.sport.hockey": 0.46110063791275024,
+          "sci.crypt": 0.1797831952571869,
+          "sci.electronics": 0.5410417318344116,
+          "sci.med": 0.34287264943122864,
+          "sci.space": 0.4960238039493561,
+          "soc.religion.christian": 0.34055787324905396,
+          "talk.politics.guns": 0.5082869529724121,
+          "talk.politics.mideast": 0.35345202684402466,
+          "talk.politics.misc": 0.23154227435588837,
+          "talk.religion.misc": 0.24434411525726318,
+          "__mean__": 0.4036151669919491
+        },
+        "token_overlap_f1": {
+          "alt.atheism": 0.3333333333333333,
+          "comp.graphics": 0.4,
+          "comp.os.ms-windows.misc": 0.0,
+          "comp.sys.ibm.pc.hardware": 0.22222222222222224,
+          "comp.sys.mac.hardware": 0.0,
+          "comp.windows.x": 0.28571428571428575,
+          "misc.forsale": 0.0,
+          "rec.autos": 0.0,
+          "rec.motorcycles": 0.0,
+          "rec.sport.baseball": 0.3333333333333333,
+          "rec.sport.hockey": 0.0,
+          "sci.crypt": 0.0,
+          "sci.electronics": 0.4,
+          "sci.med": 0.0,
+          "sci.space": 0.0,
+          "soc.religion.christian": 0.3333333333333333,
+          "talk.politics.guns": 0.0,
+          "talk.politics.mideast": 0.0,
+          "talk.politics.misc": 0.0,
+          "talk.religion.misc": 0.0,
+          "__mean__": 0.11539682539682539
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "20newsgroups",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.5,
+        "chunk_size": 1000,
+        "top_k": 3,
+        "pagerank_alpha": 0.5,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "alt.atheism": {
+          "generated": "Atheism and Criticism"
+        },
+        "comp.graphics": {
+          "generated": "Computer Graphics Community"
+        },
+        "comp.os.ms-windows.misc": {
+          "generated": "Windows 3.1 Issues"
+        },
+        "comp.sys.ibm.pc.hardware": {
+          "generated": "486 Computer Upgrades"
+        },
+        "comp.sys.mac.hardware": {
+          "generated": "Macintosh Hardware Developments"
+        },
+        "comp.windows.x": {
+          "generated": "X Server Software Requests"
+        },
+        "misc.forsale": {
+          "generated": "Used Item Sales and Wants"
+        },
+        "rec.autos": {
+          "generated": "Car Enthusiast Discussions"
+        },
+        "rec.motorcycles": {
+          "generated": "Motorcycle Sales and Safety"
+        },
+        "rec.sport.baseball": {
+          "generated": "Baseball Statistical Analysis"
+        },
+        "rec.sport.hockey": {
+          "generated": "NHL Hockey Discussion"
+        },
+        "sci.crypt": {
+          "generated": "Clipper Chip Controversy"
+        },
+        "sci.electronics": {
+          "generated": "Telephone and Copy Protection"
+        },
+        "sci.med": {
+          "generated": "Philosophical Quotations"
+        },
+        "sci.space": {
+          "generated": "Criticism of NASA Funding"
+        },
+        "soc.religion.christian": {
+          "generated": "Christian Theological Discussions"
+        },
+        "talk.politics.guns": {
+          "generated": "Gun Rights Advocacy"
+        },
+        "talk.politics.mideast": {
+          "generated": "Israel-Palestine Conflict"
+        },
+        "talk.politics.misc": {
+          "generated": "Anti-LGBT and Drug Regulation"
+        },
+        "talk.religion.misc": {
+          "generated": "Critique of Fundamentalism"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "alt.atheism": 0.5916393995285034,
+          "comp.graphics": 0.5917418003082275,
+          "comp.os.ms-windows.misc": 0.35729992389678955,
+          "comp.sys.ibm.pc.hardware": 0.35422277450561523,
+          "comp.sys.mac.hardware": 0.6343652606010437,
+          "comp.windows.x": 0.32486748695373535,
+          "misc.forsale": 0.3933837115764618,
+          "rec.autos": 0.38329777121543884,
+          "rec.motorcycles": 0.6046783924102783,
+          "rec.sport.baseball": 0.5246131420135498,
+          "rec.sport.hockey": 0.5859643220901489,
+          "sci.crypt": 0.1797831952571869,
+          "sci.electronics": 0.11115023493766785,
+          "sci.med": 0.1385761946439743,
+          "sci.space": 0.32021665573120117,
+          "soc.religion.christian": 0.34563276171684265,
+          "talk.politics.guns": 0.5082869529724121,
+          "talk.politics.mideast": 0.2371431142091751,
+          "talk.politics.misc": 0.13749244809150696,
+          "talk.religion.misc": 0.19888615608215332,
+          "__mean__": 0.37616208493709563
+        },
+        "token_overlap_f1": {
+          "alt.atheism": 0.4,
+          "comp.graphics": 0.4,
+          "comp.os.ms-windows.misc": 0.0,
+          "comp.sys.ibm.pc.hardware": 0.0,
+          "comp.sys.mac.hardware": 0.28571428571428575,
+          "comp.windows.x": 0.28571428571428575,
+          "misc.forsale": 0.0,
+          "rec.autos": 0.0,
+          "rec.motorcycles": 0.0,
+          "rec.sport.baseball": 0.3333333333333333,
+          "rec.sport.hockey": 0.3333333333333333,
+          "sci.crypt": 0.0,
+          "sci.electronics": 0.0,
+          "sci.med": 0.0,
+          "sci.space": 0.0,
+          "soc.religion.christian": 0.3333333333333333,
+          "talk.politics.guns": 0.0,
+          "talk.politics.mideast": 0.0,
+          "talk.politics.misc": 0.0,
+          "talk.religion.misc": 0.0,
+          "__mean__": 0.11857142857142858
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "20newsgroups",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.5,
+        "chunk_size": 1000,
+        "top_k": 3,
+        "pagerank_alpha": 0.85,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "alt.atheism": {
+          "generated": "Atheism and Criticism"
+        },
+        "comp.graphics": {
+          "generated": "Graphics Software Discussion"
+        },
+        "comp.os.ms-windows.misc": {
+          "generated": "DOS and Windows Criticism"
+        },
+        "comp.sys.ibm.pc.hardware": {
+          "generated": "486 Computer Hardware Discussions"
+        },
+        "comp.sys.mac.hardware": {
+          "generated": "Macintosh Hardware Discussion"
+        },
+        "comp.windows.x": {
+          "generated": "X Window Software"
+        },
+        "misc.forsale": {
+          "generated": "Old Computer Equipment"
+        },
+        "rec.autos": {
+          "generated": "Car Buying Discussions"
+        },
+        "rec.motorcycles": {
+          "generated": "Motorcycle Sales and Enthusiasm"
+        },
+        "rec.sport.baseball": {
+          "generated": "Baseball Statistical Analysis"
+        },
+        "rec.sport.hockey": {
+          "generated": "NHL Hockey Discussion"
+        },
+        "sci.crypt": {
+          "generated": "Clipper Chip Controversy"
+        },
+        "sci.electronics": {
+          "generated": "Consumer Electronics Advice"
+        },
+        "sci.med": {
+          "generated": "Critical Thinking Forum"
+        },
+        "sci.space": {
+          "generated": "Space Program Critique"
+        },
+        "soc.religion.christian": {
+          "generated": "Christianity and Criticism"
+        },
+        "talk.politics.guns": {
+          "generated": "Gun Rights Advocacy"
+        },
+        "talk.politics.mideast": {
+          "generated": "Israel-Palestine Conflict"
+        },
+        "talk.politics.misc": {
+          "generated": "Anti-Gay Agenda"
+        },
+        "talk.religion.misc": {
+          "generated": "Critique of Fundamentalism"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "alt.atheism": 0.5916393995285034,
+          "comp.graphics": 0.5413703918457031,
+          "comp.os.ms-windows.misc": 0.43488073348999023,
+          "comp.sys.ibm.pc.hardware": 0.468922883272171,
+          "comp.sys.mac.hardware": 0.6751573085784912,
+          "comp.windows.x": 0.5528674125671387,
+          "misc.forsale": 0.1341628134250641,
+          "rec.autos": 0.28242212533950806,
+          "rec.motorcycles": 0.5841962099075317,
+          "rec.sport.baseball": 0.5246131420135498,
+          "rec.sport.hockey": 0.5859643220901489,
+          "sci.crypt": 0.17978321015834808,
+          "sci.electronics": 0.47139954566955566,
+          "sci.med": 0.1797836571931839,
+          "sci.space": 0.5435426831245422,
+          "soc.religion.christian": 0.4131828546524048,
+          "talk.politics.guns": 0.5082869529724121,
+          "talk.politics.mideast": 0.23714309930801392,
+          "talk.politics.misc": 0.20342671871185303,
+          "talk.religion.misc": 0.19888612627983093,
+          "__mean__": 0.41558157950639724
+        },
+        "token_overlap_f1": {
+          "alt.atheism": 0.4,
+          "comp.graphics": 0.4,
+          "comp.os.ms-windows.misc": 0.0,
+          "comp.sys.ibm.pc.hardware": 0.22222222222222224,
+          "comp.sys.mac.hardware": 0.28571428571428575,
+          "comp.windows.x": 0.3333333333333333,
+          "misc.forsale": 0.0,
+          "rec.autos": 0.0,
+          "rec.motorcycles": 0.0,
+          "rec.sport.baseball": 0.3333333333333333,
+          "rec.sport.hockey": 0.3333333333333333,
+          "sci.crypt": 0.0,
+          "sci.electronics": 0.4,
+          "sci.med": 0.0,
+          "sci.space": 0.4,
+          "soc.religion.christian": 0.0,
+          "talk.politics.guns": 0.0,
+          "talk.politics.mideast": 0.0,
+          "talk.politics.misc": 0.0,
+          "talk.religion.misc": 0.0,
+          "__mean__": 0.15539682539682537
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "20newsgroups",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.5,
+        "chunk_size": 1000,
+        "top_k": 3,
+        "pagerank_alpha": 0.95,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "alt.atheism": {
+          "generated": "Atheism and Criticism"
+        },
+        "comp.graphics": {
+          "generated": "Graphics Software Discussion"
+        },
+        "comp.os.ms-windows.misc": {
+          "generated": "DOS vs OS/2 Discussion"
+        },
+        "comp.sys.ibm.pc.hardware": {
+          "generated": "486 PC Hardware Discussion"
+        },
+        "comp.sys.mac.hardware": {
+          "generated": "Macintosh Hardware Discussion"
+        },
+        "comp.windows.x": {
+          "generated": "Compiling X11 on Suns"
+        },
+        "misc.forsale": {
+          "generated": "Old Computer Sales"
+        },
+        "rec.autos": {
+          "generated": "American Muscle Cars"
+        },
+        "rec.motorcycles": {
+          "generated": "Motorcycle Sales and Enthusiasts"
+        },
+        "rec.sport.baseball": {
+          "generated": "Baseball Statistical Analysis"
+        },
+        "rec.sport.hockey": {
+          "generated": "NHL Hockey Discussion"
+        },
+        "sci.crypt": {
+          "generated": "Clipper Chip Controversy"
+        },
+        "sci.electronics": {
+          "generated": "Radar Detector Laws"
+        },
+        "sci.med": {
+          "generated": "Alternative Health Perspectives"
+        },
+        "sci.space": {
+          "generated": "Space Program Critique"
+        },
+        "soc.religion.christian": {
+          "generated": "Homosexuality and Christianity"
+        },
+        "talk.politics.guns": {
+          "generated": "Gun Rights Advocacy"
+        },
+        "talk.politics.mideast": {
+          "generated": "Israel-Palestine Conflict"
+        },
+        "talk.politics.misc": {
+          "generated": "Anti-LGBT Sentiment"
+        },
+        "talk.religion.misc": {
+          "generated": "Critique of Religious Authority"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "alt.atheism": 0.5916393995285034,
+          "comp.graphics": 0.5413704514503479,
+          "comp.os.ms-windows.misc": 0.2635639011859894,
+          "comp.sys.ibm.pc.hardware": 0.4562382698059082,
+          "comp.sys.mac.hardware": 0.6751571893692017,
+          "comp.windows.x": 0.20345869660377502,
+          "misc.forsale": 0.3052765727043152,
+          "rec.autos": 0.41871023178100586,
+          "rec.motorcycles": 0.6552397012710571,
+          "rec.sport.baseball": 0.5246131420135498,
+          "rec.sport.hockey": 0.5859643220901489,
+          "sci.crypt": 0.1797831952571869,
+          "sci.electronics": 0.12486747652292252,
+          "sci.med": 0.1891004741191864,
+          "sci.space": 0.5435428023338318,
+          "soc.religion.christian": 0.3919401168823242,
+          "talk.politics.guns": 0.5082869529724121,
+          "talk.politics.mideast": 0.2371431142091751,
+          "talk.politics.misc": 0.15325677394866943,
+          "talk.religion.misc": 0.304560124874115,
+          "__mean__": 0.3926856454461813
+        },
+        "token_overlap_f1": {
+          "alt.atheism": 0.4,
+          "comp.graphics": 0.4,
+          "comp.os.ms-windows.misc": 0.0,
+          "comp.sys.ibm.pc.hardware": 0.4444444444444445,
+          "comp.sys.mac.hardware": 0.28571428571428575,
+          "comp.windows.x": 0.0,
+          "misc.forsale": 0.0,
+          "rec.autos": 0.0,
+          "rec.motorcycles": 0.0,
+          "rec.sport.baseball": 0.3333333333333333,
+          "rec.sport.hockey": 0.3333333333333333,
+          "sci.crypt": 0.0,
+          "sci.electronics": 0.0,
+          "sci.med": 0.0,
+          "sci.space": 0.4,
+          "soc.religion.christian": 0.0,
+          "talk.politics.guns": 0.0,
+          "talk.politics.mideast": 0.0,
+          "talk.politics.misc": 0.0,
+          "talk.religion.misc": 0.0,
+          "__mean__": 0.1298412698412698
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "20newsgroups",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.5,
+        "chunk_size": 1000,
+        "top_k": 5,
+        "pagerank_alpha": 0.5,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "alt.atheism": {
+          "generated": "Atheism and Criticism"
+        },
+        "comp.graphics": {
+          "generated": "Computer Graphics Software"
+        },
+        "comp.os.ms-windows.misc": {
+          "generated": "Windows Configuration Issues"
+        },
+        "comp.sys.ibm.pc.hardware": {
+          "generated": "486 Computer Hardware"
+        },
+        "comp.sys.mac.hardware": {
+          "generated": "Macintosh Hardware Discussion"
+        },
+        "comp.windows.x": {
+          "generated": "X Window System Issues"
+        },
+        "misc.forsale": {
+          "generated": "Vintage Electronics Sales"
+        },
+        "rec.autos": {
+          "generated": "Car Enthusiast Discussions"
+        },
+        "rec.motorcycles": {
+          "generated": "Motorcycle Sales and Culture"
+        },
+        "rec.sport.baseball": {
+          "generated": "Baseball Strategy Debate"
+        },
+        "rec.sport.hockey": {
+          "generated": "NHL Hockey Discussion"
+        },
+        "sci.crypt": {
+          "generated": "Clipper Chip Controversy"
+        },
+        "sci.electronics": {
+          "generated": "Telephone and Electronics"
+        },
+        "sci.med": {
+          "generated": "Skepticism and Inquiry"
+        },
+        "sci.space": {
+          "generated": "Space Program Critique"
+        },
+        "soc.religion.christian": {
+          "generated": "Christian Theological Debates"
+        },
+        "talk.politics.guns": {
+          "generated": "Gun Rights Advocacy"
+        },
+        "talk.politics.mideast": {
+          "generated": "Israel-Palestine Conflict"
+        },
+        "talk.politics.misc": {
+          "generated": "Anti-Government Sentiment"
+        },
+        "talk.religion.misc": {
+          "generated": "Critique of Fundamentalism"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "alt.atheism": 0.5916393995285034,
+          "comp.graphics": 0.6513491868972778,
+          "comp.os.ms-windows.misc": 0.41845566034317017,
+          "comp.sys.ibm.pc.hardware": 0.47829076647758484,
+          "comp.sys.mac.hardware": 0.6751573085784912,
+          "comp.windows.x": 0.419963538646698,
+          "misc.forsale": 0.30157339572906494,
+          "rec.autos": 0.3832976818084717,
+          "rec.motorcycles": 0.6438278555870056,
+          "rec.sport.baseball": 0.47178325057029724,
+          "rec.sport.hockey": 0.5859643220901489,
+          "sci.crypt": 0.17978321015834808,
+          "sci.electronics": 0.5542649626731873,
+          "sci.med": 0.18062132596969604,
+          "sci.space": 0.5435426831245422,
+          "soc.religion.christian": 0.3405578136444092,
+          "talk.politics.guns": 0.5082869529724121,
+          "talk.politics.mideast": 0.23714309930801392,
+          "talk.politics.misc": 0.27971288561820984,
+          "talk.religion.misc": 0.19888612627983093,
+          "__mean__": 0.4322050713002682
+        },
+        "token_overlap_f1": {
+          "alt.atheism": 0.4,
+          "comp.graphics": 0.4,
+          "comp.os.ms-windows.misc": 0.0,
+          "comp.sys.ibm.pc.hardware": 0.25,
+          "comp.sys.mac.hardware": 0.28571428571428575,
+          "comp.windows.x": 0.28571428571428575,
+          "misc.forsale": 0.0,
+          "rec.autos": 0.0,
+          "rec.motorcycles": 0.0,
+          "rec.sport.baseball": 0.3333333333333333,
+          "rec.sport.hockey": 0.3333333333333333,
+          "sci.crypt": 0.0,
+          "sci.electronics": 0.4,
+          "sci.med": 0.0,
+          "sci.space": 0.4,
+          "soc.religion.christian": 0.3333333333333333,
+          "talk.politics.guns": 0.0,
+          "talk.politics.mideast": 0.0,
+          "talk.politics.misc": 0.0,
+          "talk.religion.misc": 0.0,
+          "__mean__": 0.1710714285714286
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "20newsgroups",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.5,
+        "chunk_size": 1000,
+        "top_k": 5,
+        "pagerank_alpha": 0.85,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "alt.atheism": {
+          "generated": "Atheism and Misconceptions"
+        },
+        "comp.graphics": {
+          "generated": "Graphics Software Requests"
+        },
+        "comp.os.ms-windows.misc": {
+          "generated": "Microsoft Operating Systems Debate"
+        },
+        "comp.sys.ibm.pc.hardware": {
+          "generated": "486 PC Hardware Discussions"
+        },
+        "comp.sys.mac.hardware": {
+          "generated": "Macintosh Hardware Discussion"
+        },
+        "comp.windows.x": {
+          "generated": "X11 Server Installation"
+        },
+        "misc.forsale": {
+          "generated": "Old Computer Sales"
+        },
+        "rec.autos": {
+          "generated": "Car Enthusiast Discussions"
+        },
+        "rec.motorcycles": {
+          "generated": "Classic Motorcycle Sales"
+        },
+        "rec.sport.baseball": {
+          "generated": "Baseball Statistical Analysis"
+        },
+        "rec.sport.hockey": {
+          "generated": "NHL Hockey Discussion"
+        },
+        "sci.crypt": {
+          "generated": "Clipper Chip Controversy"
+        },
+        "sci.electronics": {
+          "generated": "Electronics and Technology"
+        },
+        "sci.med": {
+          "generated": "MSG Controversy Discussion"
+        },
+        "sci.space": {
+          "generated": "Space Program Critique"
+        },
+        "soc.religion.christian": {
+          "generated": "Christianity and Critique"
+        },
+        "talk.politics.guns": {
+          "generated": "Gun Rights Debate"
+        },
+        "talk.politics.mideast": {
+          "generated": "Israel-Palestine Conflict"
+        },
+        "talk.politics.misc": {
+          "generated": "Anti-LGBT and Drug Regulation"
+        },
+        "talk.religion.misc": {
+          "generated": "Critique of Fundamentalism"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "alt.atheism": 0.5898979902267456,
+          "comp.graphics": 0.5994800329208374,
+          "comp.os.ms-windows.misc": 0.3792259693145752,
+          "comp.sys.ibm.pc.hardware": 0.4527997672557831,
+          "comp.sys.mac.hardware": 0.6751571893692017,
+          "comp.windows.x": 0.3295033574104309,
+          "misc.forsale": 0.3052765727043152,
+          "rec.autos": 0.38329777121543884,
+          "rec.motorcycles": 0.6268413662910461,
+          "rec.sport.baseball": 0.5246131420135498,
+          "rec.sport.hockey": 0.5859643220901489,
+          "sci.crypt": 0.1797831952571869,
+          "sci.electronics": 0.7345508337020874,
+          "sci.med": 0.03174974396824837,
+          "sci.space": 0.5435428023338318,
+          "soc.religion.christian": 0.41827094554901123,
+          "talk.politics.guns": 0.5258546471595764,
+          "talk.politics.mideast": 0.2371431142091751,
+          "talk.politics.misc": 0.13749244809150696,
+          "talk.religion.misc": 0.19888615608215332,
+          "__mean__": 0.42296656835824253
+        },
+        "token_overlap_f1": {
+          "alt.atheism": 0.4,
+          "comp.graphics": 0.4,
+          "comp.os.ms-windows.misc": 0.0,
+          "comp.sys.ibm.pc.hardware": 0.4444444444444445,
+          "comp.sys.mac.hardware": 0.28571428571428575,
+          "comp.windows.x": 0.0,
+          "misc.forsale": 0.0,
+          "rec.autos": 0.0,
+          "rec.motorcycles": 0.0,
+          "rec.sport.baseball": 0.3333333333333333,
+          "rec.sport.hockey": 0.3333333333333333,
+          "sci.crypt": 0.0,
+          "sci.electronics": 0.4,
+          "sci.med": 0.0,
+          "sci.space": 0.4,
+          "soc.religion.christian": 0.0,
+          "talk.politics.guns": 0.0,
+          "talk.politics.mideast": 0.0,
+          "talk.politics.misc": 0.0,
+          "talk.religion.misc": 0.0,
+          "__mean__": 0.14984126984126983
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "20newsgroups",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.5,
+        "chunk_size": 1000,
+        "top_k": 5,
+        "pagerank_alpha": 0.95,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "alt.atheism": {
+          "generated": "Atheism and Misconceptions"
+        },
+        "comp.graphics": {
+          "generated": "Graphics File Conversion"
+        },
+        "comp.os.ms-windows.misc": {
+          "generated": "Microsoft Operating Systems Debate"
+        },
+        "comp.sys.ibm.pc.hardware": {
+          "generated": "486 PC Hardware Upgrades"
+        },
+        "comp.sys.mac.hardware": {
+          "generated": "Macintosh Hardware Discussion"
+        },
+        "comp.windows.x": {
+          "generated": "X11 Installation Issues"
+        },
+        "misc.forsale": {
+          "generated": "Old Computer Sales"
+        },
+        "rec.autos": {
+          "generated": "Car Buying Discussions"
+        },
+        "rec.motorcycles": {
+          "generated": "Motorcycle Buying Advice"
+        },
+        "rec.sport.baseball": {
+          "generated": "Baseball Statistical Analysis"
+        },
+        "rec.sport.hockey": {
+          "generated": "NHL 1992-1993 Discussion"
+        },
+        "sci.crypt": {
+          "generated": "Clipper Chip Controversy"
+        },
+        "sci.electronics": {
+          "generated": "Radar Detector Laws"
+        },
+        "sci.med": {
+          "generated": "MSG Controversy"
+        },
+        "sci.space": {
+          "generated": "Space Program Critique"
+        },
+        "soc.religion.christian": {
+          "generated": "Christian Homosexuality Debate"
+        },
+        "talk.politics.guns": {
+          "generated": "Gun Rights Debate"
+        },
+        "talk.politics.mideast": {
+          "generated": "Israel-Palestine Conflict"
+        },
+        "talk.politics.misc": {
+          "generated": "Anti-Gay and Government Criticism"
+        },
+        "talk.religion.misc": {
+          "generated": "Critique of Fundamentalism"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "alt.atheism": 0.5898979902267456,
+          "comp.graphics": 0.5161640644073486,
+          "comp.os.ms-windows.misc": 0.3792259693145752,
+          "comp.sys.ibm.pc.hardware": 0.42148375511169434,
+          "comp.sys.mac.hardware": 0.6751571893692017,
+          "comp.windows.x": 0.3000248670578003,
+          "misc.forsale": 0.3052765727043152,
+          "rec.autos": 0.28242215514183044,
+          "rec.motorcycles": 0.5795720815658569,
+          "rec.sport.baseball": 0.5246131420135498,
+          "rec.sport.hockey": 0.48690515756607056,
+          "sci.crypt": 0.1797831952571869,
+          "sci.electronics": 0.12486747652292252,
+          "sci.med": 0.07838569581508636,
+          "sci.space": 0.5435428023338318,
+          "soc.religion.christian": 0.3100135028362274,
+          "talk.politics.guns": 0.5258546471595764,
+          "talk.politics.mideast": 0.2371431142091751,
+          "talk.politics.misc": 0.23749569058418274,
+          "talk.religion.misc": 0.19888615608215332,
+          "__mean__": 0.37483576126396656
+        },
+        "token_overlap_f1": {
+          "alt.atheism": 0.4,
+          "comp.graphics": 0.4,
+          "comp.os.ms-windows.misc": 0.0,
+          "comp.sys.ibm.pc.hardware": 0.4444444444444445,
+          "comp.sys.mac.hardware": 0.28571428571428575,
+          "comp.windows.x": 0.0,
+          "misc.forsale": 0.0,
+          "rec.autos": 0.0,
+          "rec.motorcycles": 0.0,
+          "rec.sport.baseball": 0.3333333333333333,
+          "rec.sport.hockey": 0.0,
+          "sci.crypt": 0.0,
+          "sci.electronics": 0.0,
+          "sci.med": 0.0,
+          "sci.space": 0.4,
+          "soc.religion.christian": 0.3333333333333333,
+          "talk.politics.guns": 0.0,
+          "talk.politics.mideast": 0.0,
+          "talk.politics.misc": 0.0,
+          "talk.religion.misc": 0.0,
+          "__mean__": 0.12984126984126984
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "20newsgroups",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.5,
+        "chunk_size": 1000,
+        "top_k": 10,
+        "pagerank_alpha": 0.5,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "alt.atheism": {
+          "generated": "Atheism and Critique"
+        },
+        "comp.graphics": {
+          "generated": "Computer Graphics Software"
+        },
+        "comp.os.ms-windows.misc": {
+          "generated": "Microsoft Windows Discussion"
+        },
+        "comp.sys.ibm.pc.hardware": {
+          "generated": "486 PC Hardware Discussions"
+        },
+        "comp.sys.mac.hardware": {
+          "generated": "Macintosh Hardware Discussion"
+        },
+        "comp.windows.x": {
+          "generated": "X Window System Programming"
+        },
+        "misc.forsale": {
+          "generated": "Used Electronics Marketplace"
+        },
+        "rec.autos": {
+          "generated": "Used Car Discussions"
+        },
+        "rec.motorcycles": {
+          "generated": "Motorcycle Enthusiasts"
+        },
+        "rec.sport.baseball": {
+          "generated": "Baseball Statistical Analysis"
+        },
+        "rec.sport.hockey": {
+          "generated": "NHL Hockey Discussion"
+        },
+        "sci.crypt": {
+          "generated": "Clipper Chip Controversy"
+        },
+        "sci.electronics": {
+          "generated": "Electronics and Hacking"
+        },
+        "sci.med": {
+          "generated": "Critique of Conventional Medicine"
+        },
+        "sci.space": {
+          "generated": "Criticism of NASA Funding"
+        },
+        "soc.religion.christian": {
+          "generated": "Christianity and Critique"
+        },
+        "talk.politics.guns": {
+          "generated": "Gun Rights Debate"
+        },
+        "talk.politics.mideast": {
+          "generated": "Israel-Palestine Conflict"
+        },
+        "talk.politics.misc": {
+          "generated": "Anti-Government Sentiment"
+        },
+        "talk.religion.misc": {
+          "generated": "Christianity Critique and Debate"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "alt.atheism": 0.5852658748626709,
+          "comp.graphics": 0.6513491868972778,
+          "comp.os.ms-windows.misc": 0.38223230838775635,
+          "comp.sys.ibm.pc.hardware": 0.4527996778488159,
+          "comp.sys.mac.hardware": 0.6751573085784912,
+          "comp.windows.x": 0.41823136806488037,
+          "misc.forsale": 0.3994901180267334,
+          "rec.autos": 0.33149904012680054,
+          "rec.motorcycles": 0.6579846143722534,
+          "rec.sport.baseball": 0.5246131420135498,
+          "rec.sport.hockey": 0.5859643220901489,
+          "sci.crypt": 0.17978321015834808,
+          "sci.electronics": 0.5687809586524963,
+          "sci.med": 0.3451078534126282,
+          "sci.space": 0.32021665573120117,
+          "soc.religion.christian": 0.41827094554901123,
+          "talk.politics.guns": 0.5258547067642212,
+          "talk.politics.mideast": 0.23714309930801392,
+          "talk.politics.misc": 0.27971288561820984,
+          "talk.religion.misc": 0.37912964820861816,
+          "__mean__": 0.44592934623360636
+        },
+        "token_overlap_f1": {
+          "alt.atheism": 0.4,
+          "comp.graphics": 0.4,
+          "comp.os.ms-windows.misc": 0.0,
+          "comp.sys.ibm.pc.hardware": 0.4444444444444445,
+          "comp.sys.mac.hardware": 0.28571428571428575,
+          "comp.windows.x": 0.28571428571428575,
+          "misc.forsale": 0.0,
+          "rec.autos": 0.0,
+          "rec.motorcycles": 0.0,
+          "rec.sport.baseball": 0.3333333333333333,
+          "rec.sport.hockey": 0.3333333333333333,
+          "sci.crypt": 0.0,
+          "sci.electronics": 0.4,
+          "sci.med": 0.0,
+          "sci.space": 0.0,
+          "soc.religion.christian": 0.0,
+          "talk.politics.guns": 0.0,
+          "talk.politics.mideast": 0.0,
+          "talk.politics.misc": 0.0,
+          "talk.religion.misc": 0.0,
+          "__mean__": 0.14412698412698413
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "20newsgroups",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.5,
+        "chunk_size": 1000,
+        "top_k": 10,
+        "pagerank_alpha": 0.85,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "alt.atheism": {
+          "generated": "Atheism and Criticism"
+        },
+        "comp.graphics": {
+          "generated": "Graphics File Conversion"
+        },
+        "comp.os.ms-windows.misc": {
+          "generated": "Microsoft Windows Issues"
+        },
+        "comp.sys.ibm.pc.hardware": {
+          "generated": "486 PC Hardware Discussions"
+        },
+        "comp.sys.mac.hardware": {
+          "generated": "Macintosh Hardware Discussion"
+        },
+        "comp.windows.x": {
+          "generated": "X Window System Issues"
+        },
+        "misc.forsale": {
+          "generated": "Old Computer Sales"
+        },
+        "rec.autos": {
+          "generated": "American Muscle Cars"
+        },
+        "rec.motorcycles": {
+          "generated": "Motorcycle Enthusiasts' Forum"
+        },
+        "rec.sport.baseball": {
+          "generated": "Baseball Discussion Forum"
+        },
+        "rec.sport.hockey": {
+          "generated": "NHL Hockey Discussion"
+        },
+        "sci.crypt": {
+          "generated": "Clipper Chip Controversy"
+        },
+        "sci.electronics": {
+          "generated": "Electronics and Technology"
+        },
+        "sci.med": {
+          "generated": "Health and Medical Debate"
+        },
+        "sci.space": {
+          "generated": "Space Program Critique"
+        },
+        "soc.religion.christian": {
+          "generated": "Christianity and Theology Debate"
+        },
+        "talk.politics.guns": {
+          "generated": "Gun Rights Debate"
+        },
+        "talk.politics.mideast": {
+          "generated": "Israel-Palestine Conflict"
+        },
+        "talk.politics.misc": {
+          "generated": "Anti-Gay and Government Criticism"
+        },
+        "talk.religion.misc": {
+          "generated": "Critique of Fundamentalism"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "alt.atheism": 0.5916393995285034,
+          "comp.graphics": 0.5161640644073486,
+          "comp.os.ms-windows.misc": 0.44899284839630127,
+          "comp.sys.ibm.pc.hardware": 0.4527997672557831,
+          "comp.sys.mac.hardware": 0.6751571893692017,
+          "comp.windows.x": 0.419963538646698,
+          "misc.forsale": 0.3052765727043152,
+          "rec.autos": 0.41871023178100586,
+          "rec.motorcycles": 0.604406476020813,
+          "rec.sport.baseball": 0.5104324817657471,
+          "rec.sport.hockey": 0.5859643220901489,
+          "sci.crypt": 0.1797831952571869,
+          "sci.electronics": 0.7345508337020874,
+          "sci.med": 0.3052528500556946,
+          "sci.space": 0.5435428023338318,
+          "soc.religion.christian": 0.3502751588821411,
+          "talk.politics.guns": 0.5258546471595764,
+          "talk.politics.mideast": 0.2371431142091751,
+          "talk.politics.misc": 0.23749569058418274,
+          "talk.religion.misc": 0.19888615608215332,
+          "__mean__": 0.4421145670115948
+        },
+        "token_overlap_f1": {
+          "alt.atheism": 0.4,
+          "comp.graphics": 0.4,
+          "comp.os.ms-windows.misc": 0.0,
+          "comp.sys.ibm.pc.hardware": 0.4444444444444445,
+          "comp.sys.mac.hardware": 0.28571428571428575,
+          "comp.windows.x": 0.28571428571428575,
+          "misc.forsale": 0.0,
+          "rec.autos": 0.0,
+          "rec.motorcycles": 0.0,
+          "rec.sport.baseball": 0.3333333333333333,
+          "rec.sport.hockey": 0.3333333333333333,
+          "sci.crypt": 0.0,
+          "sci.electronics": 0.4,
+          "sci.med": 0.0,
+          "sci.space": 0.4,
+          "soc.religion.christian": 0.0,
+          "talk.politics.guns": 0.0,
+          "talk.politics.mideast": 0.0,
+          "talk.politics.misc": 0.0,
+          "talk.religion.misc": 0.0,
+          "__mean__": 0.16412698412698412
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "20newsgroups",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.5,
+        "chunk_size": 1000,
+        "top_k": 10,
+        "pagerank_alpha": 0.95,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "alt.atheism": {
+          "generated": "Atheism and Misconceptions"
+        },
+        "comp.graphics": {
+          "generated": "Graphics File Conversion"
+        },
+        "comp.os.ms-windows.misc": {
+          "generated": "Microsoft Operating Systems"
+        },
+        "comp.sys.ibm.pc.hardware": {
+          "generated": "486 PC Hardware Discussions"
+        },
+        "comp.sys.mac.hardware": {
+          "generated": "Macintosh Hardware Discussion"
+        },
+        "comp.windows.x": {
+          "generated": "X11 Installation and Troubleshooting"
+        },
+        "misc.forsale": {
+          "generated": "Old Computer Sales"
+        },
+        "rec.autos": {
+          "generated": "American Muscle Cars"
+        },
+        "rec.motorcycles": {
+          "generated": "Motorcycle Enthusiasts"
+        },
+        "rec.sport.baseball": {
+          "generated": "Baseball Statistical Analysis"
+        },
+        "rec.sport.hockey": {
+          "generated": "NHL Hockey Discussion"
+        },
+        "sci.crypt": {
+          "generated": "Clipper Chip Controversy"
+        },
+        "sci.electronics": {
+          "generated": "Radar Detector Laws"
+        },
+        "sci.med": {
+          "generated": "MSG and Health Effects"
+        },
+        "sci.space": {
+          "generated": "Space Program Commercialization"
+        },
+        "soc.religion.christian": {
+          "generated": "Christianity and Homosexuality"
+        },
+        "talk.politics.guns": {
+          "generated": "Gun Rights Debate"
+        },
+        "talk.politics.mideast": {
+          "generated": "Israel-Palestine Conflict"
+        },
+        "talk.politics.misc": {
+          "generated": "Anti-LGBT and Anti-Government Sentiment"
+        },
+        "talk.religion.misc": {
+          "generated": "Christianity and Morality"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "alt.atheism": 0.5898979902267456,
+          "comp.graphics": 0.5161640644073486,
+          "comp.os.ms-windows.misc": 0.4893559217453003,
+          "comp.sys.ibm.pc.hardware": 0.4527997672557831,
+          "comp.sys.mac.hardware": 0.6751571893692017,
+          "comp.windows.x": 0.28981661796569824,
+          "misc.forsale": 0.3052765727043152,
+          "rec.autos": 0.41871023178100586,
+          "rec.motorcycles": 0.6579846143722534,
+          "rec.sport.baseball": 0.5246131420135498,
+          "rec.sport.hockey": 0.5859643220901489,
+          "sci.crypt": 0.1797831952571869,
+          "sci.electronics": 0.12486747652292252,
+          "sci.med": 0.1518104076385498,
+          "sci.space": 0.49762728810310364,
+          "soc.religion.christian": 0.4017515182495117,
+          "talk.politics.guns": 0.5258546471595764,
+          "talk.politics.mideast": 0.2371431142091751,
+          "talk.politics.misc": 0.21479910612106323,
+          "talk.religion.misc": 0.3202713131904602,
+          "__mean__": 0.407982425019145
+        },
+        "token_overlap_f1": {
+          "alt.atheism": 0.4,
+          "comp.graphics": 0.4,
+          "comp.os.ms-windows.misc": 0.0,
+          "comp.sys.ibm.pc.hardware": 0.4444444444444445,
+          "comp.sys.mac.hardware": 0.28571428571428575,
+          "comp.windows.x": 0.0,
+          "misc.forsale": 0.0,
+          "rec.autos": 0.0,
+          "rec.motorcycles": 0.0,
+          "rec.sport.baseball": 0.3333333333333333,
+          "rec.sport.hockey": 0.3333333333333333,
+          "sci.crypt": 0.0,
+          "sci.electronics": 0.0,
+          "sci.med": 0.0,
+          "sci.space": 0.4,
+          "soc.religion.christian": 0.0,
+          "talk.politics.guns": 0.0,
+          "talk.politics.mideast": 0.0,
+          "talk.politics.misc": 0.0,
+          "talk.religion.misc": 0.0,
+          "__mean__": 0.1298412698412698
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "20newsgroups",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.7,
+        "chunk_size": 1000,
+        "top_k": 3,
+        "pagerank_alpha": 0.5,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "alt.atheism": {
+          "generated": "Bob Beauchaine's Rants"
+        },
+        "comp.graphics": {
+          "generated": "Computer Graphics Software"
+        },
+        "comp.os.ms-windows.misc": {
+          "generated": "Old Computer Problems"
+        },
+        "comp.sys.ibm.pc.hardware": {
+          "generated": "Old Computer Issues"
+        },
+        "comp.sys.mac.hardware": {
+          "generated": "Apple Computer Hardware Issues"
+        },
+        "comp.windows.x": {
+          "generated": "X11/X Window System Issues"
+        },
+        "misc.forsale": {
+          "generated": "Old Computer Sales"
+        },
+        "rec.autos": {
+          "generated": "European Car Maintenance"
+        },
+        "rec.motorcycles": {
+          "generated": "Motorcycle Riding Advice"
+        },
+        "rec.sport.baseball": {
+          "generated": "Baseball Discussion Forum"
+        },
+        "rec.sport.hockey": {
+          "generated": "ESPN Hockey Criticism"
+        },
+        "sci.crypt": {
+          "generated": "Clipper Chip Controversy"
+        },
+        "sci.electronics": {
+          "generated": "Electronics and Technical Errors"
+        },
+        "sci.med": {
+          "generated": "Food Allergy Concerns"
+        },
+        "sci.space": {
+          "generated": "Space Exploration and Research"
+        },
+        "soc.religion.christian": {
+          "generated": "Christianity and Homosexuality"
+        },
+        "talk.politics.guns": {
+          "generated": "Gun Control Debate"
+        },
+        "talk.politics.mideast": {
+          "generated": "Armenian Genocide Denial"
+        },
+        "talk.politics.misc": {
+          "generated": "Anti-Gay Conservative Rhetoric"
+        },
+        "talk.religion.misc": {
+          "generated": "Defending Established Positions"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "alt.atheism": 0.1400081068277359,
+          "comp.graphics": 0.6513491868972778,
+          "comp.os.ms-windows.misc": 0.24131625890731812,
+          "comp.sys.ibm.pc.hardware": 0.39742976427078247,
+          "comp.sys.mac.hardware": 0.5313143730163574,
+          "comp.windows.x": 0.3292251229286194,
+          "misc.forsale": 0.3052765727043152,
+          "rec.autos": 0.3927890360355377,
+          "rec.motorcycles": 0.555732250213623,
+          "rec.sport.baseball": 0.5104324817657471,
+          "rec.sport.hockey": 0.4989466667175293,
+          "sci.crypt": 0.1797831952571869,
+          "sci.electronics": 0.591497540473938,
+          "sci.med": -0.0269867405295372,
+          "sci.space": 0.6225169897079468,
+          "soc.religion.christian": 0.4017515182495117,
+          "talk.politics.guns": 0.5444152355194092,
+          "talk.politics.mideast": 0.08742637932300568,
+          "talk.politics.misc": 0.23154227435588837,
+          "talk.religion.misc": 0.09930499643087387,
+          "__mean__": 0.3642535604536533
+        },
+        "token_overlap_f1": {
+          "alt.atheism": 0.0,
+          "comp.graphics": 0.4,
+          "comp.os.ms-windows.misc": 0.0,
+          "comp.sys.ibm.pc.hardware": 0.0,
+          "comp.sys.mac.hardware": 0.25,
+          "comp.windows.x": 0.0,
+          "misc.forsale": 0.0,
+          "rec.autos": 0.0,
+          "rec.motorcycles": 0.0,
+          "rec.sport.baseball": 0.3333333333333333,
+          "rec.sport.hockey": 0.3333333333333333,
+          "sci.crypt": 0.0,
+          "sci.electronics": 0.3333333333333333,
+          "sci.med": 0.0,
+          "sci.space": 0.3333333333333333,
+          "soc.religion.christian": 0.0,
+          "talk.politics.guns": 0.0,
+          "talk.politics.mideast": 0.0,
+          "talk.politics.misc": 0.0,
+          "talk.religion.misc": 0.0,
+          "__mean__": 0.09916666666666665
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "20newsgroups",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.7,
+        "chunk_size": 1000,
+        "top_k": 3,
+        "pagerank_alpha": 0.85,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "alt.atheism": {
+          "generated": "Anti-Globalization Rants"
+        },
+        "comp.graphics": {
+          "generated": "Computer Graphics Software"
+        },
+        "comp.os.ms-windows.misc": {
+          "generated": "Old Computer Issues"
+        },
+        "comp.sys.ibm.pc.hardware": {
+          "generated": "Computer Hardware Discussions"
+        },
+        "comp.sys.mac.hardware": {
+          "generated": "Macintosh Hardware Issues"
+        },
+        "comp.windows.x": {
+          "generated": "X11/X Window System Issues"
+        },
+        "misc.forsale": {
+          "generated": "Old Computer Sales"
+        },
+        "rec.autos": {
+          "generated": "Classic Car Discussion"
+        },
+        "rec.motorcycles": {
+          "generated": "Motorcycle Culture and Advice"
+        },
+        "rec.sport.baseball": {
+          "generated": "Baseball Discussion Forum"
+        },
+        "rec.sport.hockey": {
+          "generated": "ESPN Hockey Criticism"
+        },
+        "sci.crypt": {
+          "generated": "Clipper Chip Controversy"
+        },
+        "sci.electronics": {
+          "generated": "Electronics and Technical Errors"
+        },
+        "sci.med": {
+          "generated": "Food Allergy Concerns"
+        },
+        "sci.space": {
+          "generated": "Space Exploration Economics"
+        },
+        "soc.religion.christian": {
+          "generated": "Christian Theological Critique"
+        },
+        "talk.politics.guns": {
+          "generated": "Gun Control Debate"
+        },
+        "talk.politics.mideast": {
+          "generated": "Armenian Genocide Denial"
+        },
+        "talk.politics.misc": {
+          "generated": "Homosexuality and Statistical Debate"
+        },
+        "talk.religion.misc": {
+          "generated": "Biblical Interpretation Debates"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "alt.atheism": 0.19664502143859863,
+          "comp.graphics": 0.6513491868972778,
+          "comp.os.ms-windows.misc": 0.20940080285072327,
+          "comp.sys.ibm.pc.hardware": 0.4975358247756958,
+          "comp.sys.mac.hardware": 0.5965296030044556,
+          "comp.windows.x": 0.3292251527309418,
+          "misc.forsale": 0.3052765727043152,
+          "rec.autos": 0.3317073583602905,
+          "rec.motorcycles": 0.5961564779281616,
+          "rec.sport.baseball": 0.5104324817657471,
+          "rec.sport.hockey": 0.4989466667175293,
+          "sci.crypt": 0.1797831952571869,
+          "sci.electronics": 0.591497540473938,
+          "sci.med": -0.0269867405295372,
+          "sci.space": 0.49078357219696045,
+          "soc.religion.christian": 0.31276893615722656,
+          "talk.politics.guns": 0.5444152355194092,
+          "talk.politics.mideast": 0.08742637932300568,
+          "talk.politics.misc": 0.05768601596355438,
+          "talk.religion.misc": 0.25219178199768066,
+          "__mean__": 0.36063855327665806
+        },
+        "token_overlap_f1": {
+          "alt.atheism": 0.0,
+          "comp.graphics": 0.4,
+          "comp.os.ms-windows.misc": 0.0,
+          "comp.sys.ibm.pc.hardware": 0.25,
+          "comp.sys.mac.hardware": 0.28571428571428575,
+          "comp.windows.x": 0.0,
+          "misc.forsale": 0.0,
+          "rec.autos": 0.0,
+          "rec.motorcycles": 0.0,
+          "rec.sport.baseball": 0.3333333333333333,
+          "rec.sport.hockey": 0.3333333333333333,
+          "sci.crypt": 0.0,
+          "sci.electronics": 0.3333333333333333,
+          "sci.med": 0.0,
+          "sci.space": 0.4,
+          "soc.religion.christian": 0.3333333333333333,
+          "talk.politics.guns": 0.0,
+          "talk.politics.mideast": 0.0,
+          "talk.politics.misc": 0.0,
+          "talk.religion.misc": 0.0,
+          "__mean__": 0.13345238095238096
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "20newsgroups",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.7,
+        "chunk_size": 1000,
+        "top_k": 3,
+        "pagerank_alpha": 0.95,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "alt.atheism": {
+          "generated": "Anti-Globalization Rants"
+        },
+        "comp.graphics": {
+          "generated": "Computer Graphics Software"
+        },
+        "comp.os.ms-windows.misc": {
+          "generated": "Windows Resource Management"
+        },
+        "comp.sys.ibm.pc.hardware": {
+          "generated": "Computer Hardware Debate"
+        },
+        "comp.sys.mac.hardware": {
+          "generated": "Macintosh Technical Issues"
+        },
+        "comp.windows.x": {
+          "generated": "X11/X Window System Issues"
+        },
+        "misc.forsale": {
+          "generated": "Old Computer Sales"
+        },
+        "rec.autos": {
+          "generated": "Criticism of Industry Practices"
+        },
+        "rec.motorcycles": {
+          "generated": "British Car Ownership"
+        },
+        "rec.sport.baseball": {
+          "generated": "Baseball Discussion Forum"
+        },
+        "rec.sport.hockey": {
+          "generated": "ESPN Hockey Criticism"
+        },
+        "sci.crypt": {
+          "generated": "Clipper Chip Controversy"
+        },
+        "sci.electronics": {
+          "generated": "Electronics and Technical Errors"
+        },
+        "sci.med": {
+          "generated": "Food Allergy Concerns"
+        },
+        "sci.space": {
+          "generated": "Space Exploration and Research"
+        },
+        "soc.religion.christian": {
+          "generated": "Christian Theological Critique"
+        },
+        "talk.politics.guns": {
+          "generated": "Gun Control Debate"
+        },
+        "talk.politics.mideast": {
+          "generated": "Armenian Genocide Denial"
+        },
+        "talk.politics.misc": {
+          "generated": "Homosexuality and Statistical Debate"
+        },
+        "talk.religion.misc": {
+          "generated": "Interpretation of Sacred Texts"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "alt.atheism": 0.19664502143859863,
+          "comp.graphics": 0.6513491868972778,
+          "comp.os.ms-windows.misc": 0.29325729608535767,
+          "comp.sys.ibm.pc.hardware": 0.42253100872039795,
+          "comp.sys.mac.hardware": 0.509634792804718,
+          "comp.windows.x": 0.3292251527309418,
+          "misc.forsale": 0.3052765727043152,
+          "rec.autos": 0.09770011156797409,
+          "rec.motorcycles": 0.28887486457824707,
+          "rec.sport.baseball": 0.5104324817657471,
+          "rec.sport.hockey": 0.4989466667175293,
+          "sci.crypt": 0.1797831952571869,
+          "sci.electronics": 0.591497540473938,
+          "sci.med": -0.0269867405295372,
+          "sci.space": 0.6225169897079468,
+          "soc.religion.christian": 0.31276893615722656,
+          "talk.politics.guns": 0.5444152355194092,
+          "talk.politics.mideast": 0.08742637932300568,
+          "talk.politics.misc": 0.05768601596355438,
+          "talk.religion.misc": 0.2744651436805725,
+          "__mean__": 0.3373722925782204
+        },
+        "token_overlap_f1": {
+          "alt.atheism": 0.0,
+          "comp.graphics": 0.4,
+          "comp.os.ms-windows.misc": 0.0,
+          "comp.sys.ibm.pc.hardware": 0.25,
+          "comp.sys.mac.hardware": 0.0,
+          "comp.windows.x": 0.0,
+          "misc.forsale": 0.0,
+          "rec.autos": 0.0,
+          "rec.motorcycles": 0.0,
+          "rec.sport.baseball": 0.3333333333333333,
+          "rec.sport.hockey": 0.3333333333333333,
+          "sci.crypt": 0.0,
+          "sci.electronics": 0.3333333333333333,
+          "sci.med": 0.0,
+          "sci.space": 0.3333333333333333,
+          "soc.religion.christian": 0.3333333333333333,
+          "talk.politics.guns": 0.0,
+          "talk.politics.mideast": 0.0,
+          "talk.politics.misc": 0.0,
+          "talk.religion.misc": 0.0,
+          "__mean__": 0.11583333333333332
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "20newsgroups",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.7,
+        "chunk_size": 1000,
+        "top_k": 5,
+        "pagerank_alpha": 0.5,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "alt.atheism": {
+          "generated": "Conspiracy Theorist Rants"
+        },
+        "comp.graphics": {
+          "generated": "Computer Graphics Standards"
+        },
+        "comp.os.ms-windows.misc": {
+          "generated": "Windows 3.1 Troubleshooting"
+        },
+        "comp.sys.ibm.pc.hardware": {
+          "generated": "Old Computer Issues"
+        },
+        "comp.sys.mac.hardware": {
+          "generated": "Macintosh Hardware Issues"
+        },
+        "comp.windows.x": {
+          "generated": "X Window System Issues"
+        },
+        "misc.forsale": {
+          "generated": "Old Computer Sales"
+        },
+        "rec.autos": {
+          "generated": "Automotive Discussion Forum"
+        },
+        "rec.motorcycles": {
+          "generated": "Motorcycle Riding Advice"
+        },
+        "rec.sport.baseball": {
+          "generated": "Baseball Discussion Forum"
+        },
+        "rec.sport.hockey": {
+          "generated": "ESPN Hockey Coverage Criticism"
+        },
+        "sci.crypt": {
+          "generated": "Clipper Chip Controversy"
+        },
+        "sci.electronics": {
+          "generated": "Electronics and Technology Corrections"
+        },
+        "sci.med": {
+          "generated": "Food Allergy Concerns"
+        },
+        "sci.space": {
+          "generated": "Space Exploration Economics"
+        },
+        "soc.religion.christian": {
+          "generated": "Christian Theological Critique"
+        },
+        "talk.politics.guns": {
+          "generated": "Gun Control Debate"
+        },
+        "talk.politics.mideast": {
+          "generated": "Armenian Genocide Debate"
+        },
+        "talk.politics.misc": {
+          "generated": "Anti-Gay Conservative Rhetoric"
+        },
+        "talk.religion.misc": {
+          "generated": "Interpretation of Sacred Texts"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "alt.atheism": 0.365100622177124,
+          "comp.graphics": 0.5411540865898132,
+          "comp.os.ms-windows.misc": 0.30331385135650635,
+          "comp.sys.ibm.pc.hardware": 0.39742976427078247,
+          "comp.sys.mac.hardware": 0.5965296030044556,
+          "comp.windows.x": 0.419963538646698,
+          "misc.forsale": 0.3052765727043152,
+          "rec.autos": 0.32778871059417725,
+          "rec.motorcycles": 0.555732250213623,
+          "rec.sport.baseball": 0.5104324817657471,
+          "rec.sport.hockey": 0.44568830728530884,
+          "sci.crypt": 0.1797831952571869,
+          "sci.electronics": 0.6313254237174988,
+          "sci.med": -0.0269867405295372,
+          "sci.space": 0.49078357219696045,
+          "soc.religion.christian": 0.31276893615722656,
+          "talk.politics.guns": 0.5444152355194092,
+          "talk.politics.mideast": 0.14409321546554565,
+          "talk.politics.misc": 0.23154227435588837,
+          "talk.religion.misc": 0.2744651436805725,
+          "__mean__": 0.3775300022214651
+        },
+        "token_overlap_f1": {
+          "alt.atheism": 0.0,
+          "comp.graphics": 0.4,
+          "comp.os.ms-windows.misc": 0.0,
+          "comp.sys.ibm.pc.hardware": 0.0,
+          "comp.sys.mac.hardware": 0.28571428571428575,
+          "comp.windows.x": 0.28571428571428575,
+          "misc.forsale": 0.0,
+          "rec.autos": 0.0,
+          "rec.motorcycles": 0.0,
+          "rec.sport.baseball": 0.3333333333333333,
+          "rec.sport.hockey": 0.28571428571428575,
+          "sci.crypt": 0.0,
+          "sci.electronics": 0.3333333333333333,
+          "sci.med": 0.0,
+          "sci.space": 0.4,
+          "soc.religion.christian": 0.3333333333333333,
+          "talk.politics.guns": 0.0,
+          "talk.politics.mideast": 0.0,
+          "talk.politics.misc": 0.0,
+          "talk.religion.misc": 0.0,
+          "__mean__": 0.13285714285714287
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "20newsgroups",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.7,
+        "chunk_size": 1000,
+        "top_k": 5,
+        "pagerank_alpha": 0.85,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "alt.atheism": {
+          "generated": "Critique and Debate"
+        },
+        "comp.graphics": {
+          "generated": "Computer Graphics and Multimedia"
+        },
+        "comp.os.ms-windows.misc": {
+          "generated": "Windows Technical Issues"
+        },
+        "comp.sys.ibm.pc.hardware": {
+          "generated": "Old Computer Hardware Issues"
+        },
+        "comp.sys.mac.hardware": {
+          "generated": "Macintosh Hardware Issues"
+        },
+        "comp.windows.x": {
+          "generated": "X Window System Issues"
+        },
+        "misc.forsale": {
+          "generated": "Old Computer Sales"
+        },
+        "rec.autos": {
+          "generated": "Automotive Consumer Issues"
+        },
+        "rec.motorcycles": {
+          "generated": "Motorcycle Riding Advice"
+        },
+        "rec.sport.baseball": {
+          "generated": "Baseball Discussion Forum"
+        },
+        "rec.sport.hockey": {
+          "generated": "ESPN Hockey Coverage"
+        },
+        "sci.crypt": {
+          "generated": "Clipper Chip Controversy"
+        },
+        "sci.electronics": {
+          "generated": "Electronics and Technology Discussions"
+        },
+        "sci.med": {
+          "generated": "MSG Controversy"
+        },
+        "sci.space": {
+          "generated": "Space Exploration Economics"
+        },
+        "soc.religion.christian": {
+          "generated": "Christian Theological Critique"
+        },
+        "talk.politics.guns": {
+          "generated": "Gun Control Debate"
+        },
+        "talk.politics.mideast": {
+          "generated": "Armenian Genocide Denial"
+        },
+        "talk.politics.misc": {
+          "generated": "Homosexuality and Public Policy"
+        },
+        "talk.religion.misc": {
+          "generated": "Biblical Scholarship and Criticism"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "alt.atheism": 0.22057151794433594,
+          "comp.graphics": 0.617571234703064,
+          "comp.os.ms-windows.misc": 0.40750598907470703,
+          "comp.sys.ibm.pc.hardware": 0.4614909887313843,
+          "comp.sys.mac.hardware": 0.5965297222137451,
+          "comp.windows.x": 0.419963538646698,
+          "misc.forsale": 0.3052765727043152,
+          "rec.autos": 0.33956947922706604,
+          "rec.motorcycles": 0.5557321906089783,
+          "rec.sport.baseball": 0.5104324817657471,
+          "rec.sport.hockey": 0.5169846415519714,
+          "sci.crypt": 0.17978321015834808,
+          "sci.electronics": 0.6534392833709717,
+          "sci.med": 0.07838568836450577,
+          "sci.space": 0.49078369140625,
+          "soc.religion.christian": 0.31276899576187134,
+          "talk.politics.guns": 0.5444152355194092,
+          "talk.politics.mideast": 0.08742642402648926,
+          "talk.politics.misc": 0.09845449030399323,
+          "talk.religion.misc": 0.2218819260597229,
+          "__mean__": 0.38094836510717867
+        },
+        "token_overlap_f1": {
+          "alt.atheism": 0.0,
+          "comp.graphics": 0.3333333333333333,
+          "comp.os.ms-windows.misc": 0.0,
+          "comp.sys.ibm.pc.hardware": 0.22222222222222224,
+          "comp.sys.mac.hardware": 0.28571428571428575,
+          "comp.windows.x": 0.28571428571428575,
+          "misc.forsale": 0.0,
+          "rec.autos": 0.0,
+          "rec.motorcycles": 0.0,
+          "rec.sport.baseball": 0.3333333333333333,
+          "rec.sport.hockey": 0.3333333333333333,
+          "sci.crypt": 0.0,
+          "sci.electronics": 0.3333333333333333,
+          "sci.med": 0.0,
+          "sci.space": 0.4,
+          "soc.religion.christian": 0.3333333333333333,
+          "talk.politics.guns": 0.0,
+          "talk.politics.mideast": 0.0,
+          "talk.politics.misc": 0.0,
+          "talk.religion.misc": 0.0,
+          "__mean__": 0.14301587301587304
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "20newsgroups",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.7,
+        "chunk_size": 1000,
+        "top_k": 5,
+        "pagerank_alpha": 0.95,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "alt.atheism": {
+          "generated": "Criticisms of Authority"
+        },
+        "comp.graphics": {
+          "generated": "Computer Graphics and Multimedia"
+        },
+        "comp.os.ms-windows.misc": {
+          "generated": "Windows 3.1 Optimization"
+        },
+        "comp.sys.ibm.pc.hardware": {
+          "generated": "Computer Hardware Discussions"
+        },
+        "comp.sys.mac.hardware": {
+          "generated": "Macintosh Technical Issues"
+        },
+        "comp.windows.x": {
+          "generated": "X Window System Issues"
+        },
+        "misc.forsale": {
+          "generated": "Old Computer Sales"
+        },
+        "rec.autos": {
+          "generated": "Automotive Consumer Issues"
+        },
+        "rec.motorcycles": {
+          "generated": "Motorcycle Culture and Safety"
+        },
+        "rec.sport.baseball": {
+          "generated": "Baseball Discussion Forum"
+        },
+        "rec.sport.hockey": {
+          "generated": "ESPN Hockey Coverage"
+        },
+        "sci.crypt": {
+          "generated": "Clipper Chip Controversy"
+        },
+        "sci.electronics": {
+          "generated": "Electronics and Engineering"
+        },
+        "sci.med": {
+          "generated": "Food Allergy Debate"
+        },
+        "sci.space": {
+          "generated": "Space Exploration Economics"
+        },
+        "soc.religion.christian": {
+          "generated": "Christian Theological Critique"
+        },
+        "talk.politics.guns": {
+          "generated": "Gun Control Debate"
+        },
+        "talk.politics.mideast": {
+          "generated": "Armenian Genocide Denial"
+        },
+        "talk.politics.misc": {
+          "generated": "Homosexuality and Public Policy"
+        },
+        "talk.religion.misc": {
+          "generated": "Biblical Scholarship and Criticism"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "alt.atheism": 0.18520811200141907,
+          "comp.graphics": 0.617571234703064,
+          "comp.os.ms-windows.misc": 0.26501017808914185,
+          "comp.sys.ibm.pc.hardware": 0.497535765171051,
+          "comp.sys.mac.hardware": 0.509634792804718,
+          "comp.windows.x": 0.419963538646698,
+          "misc.forsale": 0.3052765727043152,
+          "rec.autos": 0.33956947922706604,
+          "rec.motorcycles": 0.5427811741828918,
+          "rec.sport.baseball": 0.5104324817657471,
+          "rec.sport.hockey": 0.5169846415519714,
+          "sci.crypt": 0.17978321015834808,
+          "sci.electronics": 0.7424742579460144,
+          "sci.med": 0.03845543414354324,
+          "sci.space": 0.49078369140625,
+          "soc.religion.christian": 0.31276899576187134,
+          "talk.politics.guns": 0.5444152355194092,
+          "talk.politics.mideast": 0.08742642402648926,
+          "talk.politics.misc": 0.09845449030399323,
+          "talk.religion.misc": 0.2218819260597229,
+          "__mean__": 0.37132058180868627
+        },
+        "token_overlap_f1": {
+          "alt.atheism": 0.0,
+          "comp.graphics": 0.3333333333333333,
+          "comp.os.ms-windows.misc": 0.0,
+          "comp.sys.ibm.pc.hardware": 0.25,
+          "comp.sys.mac.hardware": 0.0,
+          "comp.windows.x": 0.28571428571428575,
+          "misc.forsale": 0.0,
+          "rec.autos": 0.0,
+          "rec.motorcycles": 0.0,
+          "rec.sport.baseball": 0.3333333333333333,
+          "rec.sport.hockey": 0.3333333333333333,
+          "sci.crypt": 0.0,
+          "sci.electronics": 0.4,
+          "sci.med": 0.0,
+          "sci.space": 0.4,
+          "soc.religion.christian": 0.3333333333333333,
+          "talk.politics.guns": 0.0,
+          "talk.politics.mideast": 0.0,
+          "talk.politics.misc": 0.0,
+          "talk.religion.misc": 0.0,
+          "__mean__": 0.13345238095238096
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "20newsgroups",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.7,
+        "chunk_size": 1000,
+        "top_k": 10,
+        "pagerank_alpha": 0.5,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "alt.atheism": {
+          "generated": "Atheism and Critique"
+        },
+        "comp.graphics": {
+          "generated": "Computer Graphics Software"
+        },
+        "comp.os.ms-windows.misc": {
+          "generated": "Windows 3.1 Technical Issues"
+        },
+        "comp.sys.ibm.pc.hardware": {
+          "generated": "Old Computer Hardware Issues"
+        },
+        "comp.sys.mac.hardware": {
+          "generated": "Macintosh Technical Support"
+        },
+        "comp.windows.x": {
+          "generated": "X Window System Issues"
+        },
+        "misc.forsale": {
+          "generated": "Old Computer Sales"
+        },
+        "rec.autos": {
+          "generated": "Automotive Consumer Issues"
+        },
+        "rec.motorcycles": {
+          "generated": "Motorcycle Riding and Safety"
+        },
+        "rec.sport.baseball": {
+          "generated": "Baseball Discussion Forum"
+        },
+        "rec.sport.hockey": {
+          "generated": "ESPN Hockey Coverage"
+        },
+        "sci.crypt": {
+          "generated": "Clipper Chip Controversy"
+        },
+        "sci.electronics": {
+          "generated": "Electronics and Technology"
+        },
+        "sci.med": {
+          "generated": "Food Allergy Concerns"
+        },
+        "sci.space": {
+          "generated": "Space Exploration and Development"
+        },
+        "soc.religion.christian": {
+          "generated": "Christian Theological Critique"
+        },
+        "talk.politics.guns": {
+          "generated": "Gun Control Debate"
+        },
+        "talk.politics.mideast": {
+          "generated": "Armenian Genocide Debate"
+        },
+        "talk.politics.misc": {
+          "generated": "Anti-Gay and Libertarian"
+        },
+        "talk.religion.misc": {
+          "generated": "Critical Thinking and Debate"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "alt.atheism": 0.5852658748626709,
+          "comp.graphics": 0.6513491868972778,
+          "comp.os.ms-windows.misc": 0.30448898673057556,
+          "comp.sys.ibm.pc.hardware": 0.4614909887313843,
+          "comp.sys.mac.hardware": 0.6138945817947388,
+          "comp.windows.x": 0.419963538646698,
+          "misc.forsale": 0.3052765727043152,
+          "rec.autos": 0.3395695090293884,
+          "rec.motorcycles": 0.5725880861282349,
+          "rec.sport.baseball": 0.5104324817657471,
+          "rec.sport.hockey": 0.5169845819473267,
+          "sci.crypt": 0.1797831952571869,
+          "sci.electronics": 0.7345508337020874,
+          "sci.med": -0.0269867405295372,
+          "sci.space": 0.5818777084350586,
+          "soc.religion.christian": 0.31276893615722656,
+          "talk.politics.guns": 0.5444152355194092,
+          "talk.politics.mideast": 0.14409321546554565,
+          "talk.politics.misc": 0.21473388373851776,
+          "talk.religion.misc": 0.25536999106407166,
+          "__mean__": 0.4110955324023962
+        },
+        "token_overlap_f1": {
+          "alt.atheism": 0.4,
+          "comp.graphics": 0.4,
+          "comp.os.ms-windows.misc": 0.0,
+          "comp.sys.ibm.pc.hardware": 0.22222222222222224,
+          "comp.sys.mac.hardware": 0.0,
+          "comp.windows.x": 0.28571428571428575,
+          "misc.forsale": 0.0,
+          "rec.autos": 0.0,
+          "rec.motorcycles": 0.0,
+          "rec.sport.baseball": 0.3333333333333333,
+          "rec.sport.hockey": 0.3333333333333333,
+          "sci.crypt": 0.0,
+          "sci.electronics": 0.4,
+          "sci.med": 0.0,
+          "sci.space": 0.3333333333333333,
+          "soc.religion.christian": 0.3333333333333333,
+          "talk.politics.guns": 0.0,
+          "talk.politics.mideast": 0.0,
+          "talk.politics.misc": 0.0,
+          "talk.religion.misc": 0.0,
+          "__mean__": 0.15206349206349207
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "20newsgroups",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.7,
+        "chunk_size": 1000,
+        "top_k": 10,
+        "pagerank_alpha": 0.85,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "alt.atheism": {
+          "generated": "Atheism and Critique"
+        },
+        "comp.graphics": {
+          "generated": "Computer Graphics Standards"
+        },
+        "comp.os.ms-windows.misc": {
+          "generated": "[no label generated]"
+        },
+        "comp.sys.ibm.pc.hardware": {
+          "generated": "Computer Hardware Discussions"
+        },
+        "comp.sys.mac.hardware": {
+          "generated": "Macintosh Hardware Issues"
+        },
+        "comp.windows.x": {
+          "generated": "X Window System Issues"
+        },
+        "misc.forsale": {
+          "generated": "Old Computer Sales"
+        },
+        "rec.autos": {
+          "generated": "Automotive Consumer Complaints"
+        },
+        "rec.motorcycles": {
+          "generated": "Motorcycle Riding and Safety"
+        },
+        "rec.sport.baseball": {
+          "generated": "Baseball Discussion Forum"
+        },
+        "rec.sport.hockey": {
+          "generated": "ESPN Hockey Coverage"
+        },
+        "sci.crypt": {
+          "generated": "Clipper Chip Controversy"
+        },
+        "sci.electronics": {
+          "generated": "Electronics and Technology"
+        },
+        "sci.med": {
+          "generated": "Food Allergy Debate"
+        },
+        "sci.space": {
+          "generated": "Space Exploration and Development"
+        },
+        "soc.religion.christian": {
+          "generated": "Christian Theological Debates"
+        },
+        "talk.politics.guns": {
+          "generated": "Gun Control Debate"
+        },
+        "talk.politics.mideast": {
+          "generated": "Armenian Genocide Debate"
+        },
+        "talk.politics.misc": {
+          "generated": "Homosexuality and Politics"
+        },
+        "talk.religion.misc": {
+          "generated": "Biblical Interpretation and Criticism"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "alt.atheism": 0.5852658748626709,
+          "comp.graphics": 0.5411540269851685,
+          "comp.os.ms-windows.misc": 0.10640900582075119,
+          "comp.sys.ibm.pc.hardware": 0.497535765171051,
+          "comp.sys.mac.hardware": 0.5965297222137451,
+          "comp.windows.x": 0.419963538646698,
+          "misc.forsale": 0.3052765727043152,
+          "rec.autos": 0.3570612668991089,
+          "rec.motorcycles": 0.5725880861282349,
+          "rec.sport.baseball": 0.5104324817657471,
+          "rec.sport.hockey": 0.5169846415519714,
+          "sci.crypt": 0.17978321015834808,
+          "sci.electronics": 0.7345508933067322,
+          "sci.med": 0.03845543414354324,
+          "sci.space": 0.5818777084350586,
+          "soc.religion.christian": 0.3405578136444092,
+          "talk.politics.guns": 0.5444152355194092,
+          "talk.politics.mideast": 0.14409318566322327,
+          "talk.politics.misc": 0.2963319420814514,
+          "talk.religion.misc": 0.21565565466880798,
+          "__mean__": 0.40424610301852226
+        },
+        "token_overlap_f1": {
+          "alt.atheism": 0.4,
+          "comp.graphics": 0.4,
+          "comp.os.ms-windows.misc": 0.0,
+          "comp.sys.ibm.pc.hardware": 0.25,
+          "comp.sys.mac.hardware": 0.28571428571428575,
+          "comp.windows.x": 0.28571428571428575,
+          "misc.forsale": 0.0,
+          "rec.autos": 0.0,
+          "rec.motorcycles": 0.0,
+          "rec.sport.baseball": 0.3333333333333333,
+          "rec.sport.hockey": 0.3333333333333333,
+          "sci.crypt": 0.0,
+          "sci.electronics": 0.4,
+          "sci.med": 0.0,
+          "sci.space": 0.3333333333333333,
+          "soc.religion.christian": 0.3333333333333333,
+          "talk.politics.guns": 0.0,
+          "talk.politics.mideast": 0.0,
+          "talk.politics.misc": 0.3333333333333333,
+          "talk.religion.misc": 0.0,
+          "__mean__": 0.1844047619047619
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "20newsgroups",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.7,
+        "chunk_size": 1000,
+        "top_k": 10,
+        "pagerank_alpha": 0.95,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "alt.atheism": {
+          "generated": "Atheism and Critique"
+        },
+        "comp.graphics": {
+          "generated": "Computer Graphics Software"
+        },
+        "comp.os.ms-windows.misc": {
+          "generated": "[no label generated]"
+        },
+        "comp.sys.ibm.pc.hardware": {
+          "generated": "PC Hardware Discussions"
+        },
+        "comp.sys.mac.hardware": {
+          "generated": "Macintosh Technical Issues"
+        },
+        "comp.windows.x": {
+          "generated": "X11 Software Development"
+        },
+        "misc.forsale": {
+          "generated": "Old Computer Sales"
+        },
+        "rec.autos": {
+          "generated": "Radar Detector Controversy"
+        },
+        "rec.motorcycles": {
+          "generated": "Motorcycle Culture and Safety"
+        },
+        "rec.sport.baseball": {
+          "generated": "Baseball Discussion Forum"
+        },
+        "rec.sport.hockey": {
+          "generated": "ESPN Hockey Coverage"
+        },
+        "sci.crypt": {
+          "generated": "Clipper Chip Controversy"
+        },
+        "sci.electronics": {
+          "generated": "Electronics and Technology"
+        },
+        "sci.med": {
+          "generated": "Food Allergy Debate"
+        },
+        "sci.space": {
+          "generated": "Space Exploration and Development"
+        },
+        "soc.religion.christian": {
+          "generated": "Christian Theological Debates"
+        },
+        "talk.politics.guns": {
+          "generated": "Gun Control Debate"
+        },
+        "talk.politics.mideast": {
+          "generated": "Armenian Genocide Debate"
+        },
+        "talk.politics.misc": {
+          "generated": "Anti-Government Sentiment"
+        },
+        "talk.religion.misc": {
+          "generated": "Biblical Interpretation Debates"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "alt.atheism": 0.5852658748626709,
+          "comp.graphics": 0.6513491868972778,
+          "comp.os.ms-windows.misc": 0.10640900582075119,
+          "comp.sys.ibm.pc.hardware": 0.5138421058654785,
+          "comp.sys.mac.hardware": 0.509634792804718,
+          "comp.windows.x": 0.29704245924949646,
+          "misc.forsale": 0.3052765727043152,
+          "rec.autos": 0.09127669036388397,
+          "rec.motorcycles": 0.5427811741828918,
+          "rec.sport.baseball": 0.5104324817657471,
+          "rec.sport.hockey": 0.5169846415519714,
+          "sci.crypt": 0.17978321015834808,
+          "sci.electronics": 0.7345508933067322,
+          "sci.med": 0.03845543414354324,
+          "sci.space": 0.5818777084350586,
+          "soc.religion.christian": 0.3405578136444092,
+          "talk.politics.guns": 0.5444152355194092,
+          "talk.politics.mideast": 0.14409318566322327,
+          "talk.politics.misc": 0.27971288561820984,
+          "talk.religion.misc": 0.25219178199768066,
+          "__mean__": 0.38629665672779084
+        },
+        "token_overlap_f1": {
+          "alt.atheism": 0.4,
+          "comp.graphics": 0.4,
+          "comp.os.ms-windows.misc": 0.0,
+          "comp.sys.ibm.pc.hardware": 0.5,
+          "comp.sys.mac.hardware": 0.0,
+          "comp.windows.x": 0.0,
+          "misc.forsale": 0.0,
+          "rec.autos": 0.0,
+          "rec.motorcycles": 0.0,
+          "rec.sport.baseball": 0.3333333333333333,
+          "rec.sport.hockey": 0.3333333333333333,
+          "sci.crypt": 0.0,
+          "sci.electronics": 0.4,
+          "sci.med": 0.0,
+          "sci.space": 0.3333333333333333,
+          "soc.religion.christian": 0.3333333333333333,
+          "talk.politics.guns": 0.0,
+          "talk.politics.mideast": 0.0,
+          "talk.politics.misc": 0.0,
+          "talk.religion.misc": 0.0,
+          "__mean__": 0.15166666666666667
+        }
+      }
+    }
+  ],
+  "best_config": {
+    "similarity_threshold": 0.5,
+    "top_k": 10,
+    "pagerank_alpha": 0.5
+  },
+  "best_dev_metrics": {
+    "semantic_similarity": {
+      "alt.atheism": 0.5852658748626709,
+      "comp.graphics": 0.6513491868972778,
+      "comp.os.ms-windows.misc": 0.38223230838775635,
+      "comp.sys.ibm.pc.hardware": 0.4527996778488159,
+      "comp.sys.mac.hardware": 0.6751573085784912,
+      "comp.windows.x": 0.41823136806488037,
+      "misc.forsale": 0.3994901180267334,
+      "rec.autos": 0.33149904012680054,
+      "rec.motorcycles": 0.6579846143722534,
+      "rec.sport.baseball": 0.5246131420135498,
+      "rec.sport.hockey": 0.5859643220901489,
+      "sci.crypt": 0.17978321015834808,
+      "sci.electronics": 0.5687809586524963,
+      "sci.med": 0.3451078534126282,
+      "sci.space": 0.32021665573120117,
+      "soc.religion.christian": 0.41827094554901123,
+      "talk.politics.guns": 0.5258547067642212,
+      "talk.politics.mideast": 0.23714309930801392,
+      "talk.politics.misc": 0.27971288561820984,
+      "talk.religion.misc": 0.37912964820861816,
+      "__mean__": 0.44592934623360636
+    },
+    "token_overlap_f1": {
+      "alt.atheism": 0.4,
+      "comp.graphics": 0.4,
+      "comp.os.ms-windows.misc": 0.0,
+      "comp.sys.ibm.pc.hardware": 0.4444444444444445,
+      "comp.sys.mac.hardware": 0.28571428571428575,
+      "comp.windows.x": 0.28571428571428575,
+      "misc.forsale": 0.0,
+      "rec.autos": 0.0,
+      "rec.motorcycles": 0.0,
+      "rec.sport.baseball": 0.3333333333333333,
+      "rec.sport.hockey": 0.3333333333333333,
+      "sci.crypt": 0.0,
+      "sci.electronics": 0.4,
+      "sci.med": 0.0,
+      "sci.space": 0.0,
+      "soc.religion.christian": 0.0,
+      "talk.politics.guns": 0.0,
+      "talk.politics.mideast": 0.0,
+      "talk.politics.misc": 0.0,
+      "talk.religion.misc": 0.0,
+      "__mean__": 0.14412698412698413
+    }
+  },
+  "test_result": {
+    "config": {
+      "dataset": "20newsgroups",
+      "split": "test",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_batch_size": 256,
+      "embedding_device": "cpu",
+      "similarity_threshold": 0.5,
+      "chunk_size": 1000,
+      "top_k": 10,
+      "pagerank_alpha": 0.5,
+      "labeling_model": "llama-3.1-8b-instant",
+      "max_doc_words": 300,
+      "cache_dir": "cache",
+      "use_cache": true,
+      "output_dir": "results"
+    },
+    "labels": {
+      "alt.atheism": {
+        "generated": "Atheism and Free Speech"
+      },
+      "comp.graphics": {
+        "generated": "Computer Graphics Software"
+      },
+      "comp.os.ms-windows.misc": {
+        "generated": "Windows Software Development"
+      },
+      "comp.sys.ibm.pc.hardware": {
+        "generated": "Computer Hardware Reviews"
+      },
+      "comp.sys.mac.hardware": {
+        "generated": "Macintosh Hardware Discussions"
+      },
+      "comp.windows.x": {
+        "generated": "X Window System Programming"
+      },
+      "misc.forsale": {
+        "generated": "Computer Equipment Sales"
+      },
+      "rec.autos": {
+        "generated": "Automotive Discussion Forum"
+      },
+      "rec.motorcycles": {
+        "generated": "Motorcycle Enthusiasts' Forum"
+      },
+      "rec.sport.baseball": {
+        "generated": "Baseball Analysis and Discussion"
+      },
+      "rec.sport.hockey": {
+        "generated": "NHL Hockey Fan Discussions"
+      },
+      "sci.crypt": {
+        "generated": "Clipper Chip Opposition"
+      },
+      "sci.electronics": {
+        "generated": "Computer Hardware Discussions"
+      },
+      "sci.med": {
+        "generated": "Alternative Health Perspectives"
+      },
+      "sci.space": {
+        "generated": "Space and Astronomy Issues"
+      },
+      "soc.religion.christian": {
+        "generated": "Christian Biblical Interpretation"
+      },
+      "talk.politics.guns": {
+        "generated": "Gun Rights Debate"
+      },
+      "talk.politics.mideast": {
+        "generated": "Israel-Palestine Debate"
+      },
+      "talk.politics.misc": {
+        "generated": "Anti-Government and Homophobia"
+      },
+      "talk.religion.misc": {
+        "generated": "Cult and Christianity Critique"
+      }
+    },
+    "metrics": {
+      "semantic_similarity": {
+        "alt.atheism": 0.5260024666786194,
+        "comp.graphics": 0.6513491868972778,
+        "comp.os.ms-windows.misc": 0.37815770506858826,
+        "comp.sys.ibm.pc.hardware": 0.4107685387134552,
+        "comp.sys.mac.hardware": 0.6721688508987427,
+        "comp.windows.x": 0.41823136806488037,
+        "misc.forsale": 0.32718855142593384,
+        "rec.autos": 0.32778871059417725,
+        "rec.motorcycles": 0.604406476020813,
+        "rec.sport.baseball": 0.5104156136512756,
+        "rec.sport.hockey": 0.5379015207290649,
+        "sci.crypt": 0.23694348335266113,
+        "sci.electronics": 0.33505871891975403,
+        "sci.med": 0.1891004741191864,
+        "sci.space": 0.5744822025299072,
+        "soc.religion.christian": 0.2475108802318573,
+        "talk.politics.guns": 0.5258546471595764,
+        "talk.politics.mideast": 0.24904246628284454,
+        "talk.politics.misc": 0.2827809453010559,
+        "talk.religion.misc": 0.355951726436615,
+        "__mean__": 0.41805522665381434
+      },
+      "token_overlap_f1": {
+        "alt.atheism": 0.3333333333333333,
+        "comp.graphics": 0.4,
+        "comp.os.ms-windows.misc": 0.0,
+        "comp.sys.ibm.pc.hardware": 0.25,
+        "comp.sys.mac.hardware": 0.28571428571428575,
+        "comp.windows.x": 0.28571428571428575,
+        "misc.forsale": 0.0,
+        "rec.autos": 0.0,
+        "rec.motorcycles": 0.0,
+        "rec.sport.baseball": 0.28571428571428575,
+        "rec.sport.hockey": 0.28571428571428575,
+        "sci.crypt": 0.0,
+        "sci.electronics": 0.0,
+        "sci.med": 0.0,
+        "sci.space": 0.3333333333333333,
+        "soc.religion.christian": 0.3333333333333333,
+        "talk.politics.guns": 0.0,
+        "talk.politics.mideast": 0.0,
+        "talk.politics.misc": 0.0,
+        "talk.religion.misc": 0.0,
+        "__mean__": 0.13964285714285712
+      }
+    }
+  }
+}

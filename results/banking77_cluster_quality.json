@@ -1,0 +1,541 @@
+{
+  "Refund_not_showing_up": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.42469653487205505,
+    "kl_divergence": 7.816286217886345,
+    "density": 0.047540983606557376,
+    "nmrd": 0.846454396449909
+  },
+  "activate_my_card": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.5070931613445282,
+    "kl_divergence": 7.239839134048017,
+    "density": 0.049925800296798814,
+    "nmrd": 0.925515837079404
+  },
+  "age_limit": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.43969520926475525,
+    "kl_divergence": 8.343106450813258,
+    "density": 0.06637700534759358,
+    "nmrd": 0.9474901210179622
+  },
+  "apple_pay_or_google_pay": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.33847399055957794,
+    "kl_divergence": 7.040383615551628,
+    "density": 0.06565199919630299,
+    "nmrd": 0.8551614097824626
+  },
+  "atm_support": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.32346390187740326,
+    "kl_divergence": 9.232126081165243,
+    "density": 0.06913890634820867,
+    "nmrd": 0.7710683795790398
+  },
+  "automatic_top_up": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.4413162097334862,
+    "kl_divergence": 7.818668513875158,
+    "density": 0.05774278215223097,
+    "nmrd": 0.8141070564454134
+  },
+  "balance_not_updated_after_bank_transfer": {
+    "voorhees_nn": 0.9,
+    "overlap": 0.28439655900001526,
+    "kl_divergence": 8.756623224784148,
+    "density": 0.05402184707050645,
+    "nmrd": 0.6137789132101318
+  },
+  "balance_not_updated_after_cheque_or_cash_deposit": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.33692365884780884,
+    "kl_divergence": 8.28389401510462,
+    "density": 0.05347810320186011,
+    "nmrd": 0.8486540253806868
+  },
+  "beneficiary_not_allowed": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.2902209609746933,
+    "kl_divergence": 8.247899241259814,
+    "density": 0.04499320124320124,
+    "nmrd": 0.7068558454005219
+  },
+  "cancel_transfer": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.34191179275512695,
+    "kl_divergence": 7.600150293528094,
+    "density": 0.05091871691061974,
+    "nmrd": 0.8433526007783416
+  },
+  "card_about_to_expire": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.4144251346588135,
+    "kl_divergence": 7.579117680965094,
+    "density": 0.06873385012919897,
+    "nmrd": 0.8521346663768019
+  },
+  "card_acceptance": {
+    "voorhees_nn": 0.9,
+    "overlap": 0.3180607259273529,
+    "kl_divergence": 8.053722777812855,
+    "density": 0.08398400304703867,
+    "nmrd": 0.6879430533781185
+  },
+  "card_arrival": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.34151530265808105,
+    "kl_divergence": 8.271569994602393,
+    "density": 0.06034351725186198,
+    "nmrd": 0.7301661748348424
+  },
+  "card_delivery_estimate": {
+    "voorhees_nn": 0.6,
+    "overlap": 0.31634628772735596,
+    "kl_divergence": 8.91043477110705,
+    "density": 0.05483906525573192,
+    "nmrd": 0.7117517032912897
+  },
+  "card_linking": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.3672928363084793,
+    "kl_divergence": 6.849637968357125,
+    "density": 0.06768549657315567,
+    "nmrd": 0.7841122764673745
+  },
+  "card_not_working": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.370552122592926,
+    "kl_divergence": 7.902224686470886,
+    "density": 0.05215985215985216,
+    "nmrd": 0.7553254234069543
+  },
+  "card_payment_fee_charged": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.3716931939125061,
+    "kl_divergence": 7.682936754120409,
+    "density": 0.04527014567582519,
+    "nmrd": 0.8260681470675071
+  },
+  "card_payment_not_recognised": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.26959675550460815,
+    "kl_divergence": 7.601251414278692,
+    "density": 0.05391091797935904,
+    "nmrd": 0.6894342889713668
+  },
+  "card_payment_wrong_exchange_rate": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.43920476734638214,
+    "kl_divergence": 7.409219798522643,
+    "density": 0.05110595136258096,
+    "nmrd": 0.8363950499492926
+  },
+  "card_swallowed": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.4392167925834656,
+    "kl_divergence": 6.389513889488115,
+    "density": 0.09619548407052274,
+    "nmrd": 0.8917120258699246
+  },
+  "cash_withdrawal_charge": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.35461461544036865,
+    "kl_divergence": 8.104682594283691,
+    "density": 0.05058869193944883,
+    "nmrd": 0.8436588080945361
+  },
+  "cash_withdrawal_not_recognised": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.2477080225944519,
+    "kl_divergence": 8.275857597901034,
+    "density": 0.05014982876712329,
+    "nmrd": 0.6520047175953076
+  },
+  "change_pin": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.4982995092868805,
+    "kl_divergence": 6.449838426143296,
+    "density": 0.05442673850509109,
+    "nmrd": 0.9413237042187078
+  },
+  "compromised_card": {
+    "voorhees_nn": 0.8,
+    "overlap": 0.29104870557785034,
+    "kl_divergence": 7.7107251477879055,
+    "density": 0.05928668265721139,
+    "nmrd": 0.6245815837611819
+  },
+  "contactless_not_working": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.3000408560037613,
+    "kl_divergence": 8.755255265537565,
+    "density": 0.08692493946731235,
+    "nmrd": 0.6981976879623354
+  },
+  "country_support": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.30652959644794464,
+    "kl_divergence": 8.574418869445818,
+    "density": 0.054638671875,
+    "nmrd": 0.8199414815012698
+  },
+  "declined_card_payment": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.34186407923698425,
+    "kl_divergence": 7.717458950415854,
+    "density": 0.04888567448837459,
+    "nmrd": 0.7472922166328748
+  },
+  "declined_cash_withdrawal": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.322130024433136,
+    "kl_divergence": 8.349987517621955,
+    "density": 0.050506604540759135,
+    "nmrd": 0.7256121450109133
+  },
+  "declined_transfer": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.3989865779876709,
+    "kl_divergence": 8.516052813255106,
+    "density": 0.0470134558582212,
+    "nmrd": 0.7410629295935764
+  },
+  "direct_debit_payment_not_recognised": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.27912354469299316,
+    "kl_divergence": 7.65519669949894,
+    "density": 0.05041580041580042,
+    "nmrd": 0.7435089172808795
+  },
+  "disposable_card_limits": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.5207021534442902,
+    "kl_divergence": 8.084254698303562,
+    "density": 0.0639811723496251,
+    "nmrd": 0.873434965890796
+  },
+  "edit_personal_details": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.39711546152830124,
+    "kl_divergence": 7.082718844053339,
+    "density": 0.06078971533516988,
+    "nmrd": 0.940007441664356
+  },
+  "exchange_charge": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.4700694978237152,
+    "kl_divergence": 9.08933189037311,
+    "density": 0.055891078618351346,
+    "nmrd": 0.8770117780615305
+  },
+  "exchange_rate": {
+    "voorhees_nn": 0.9,
+    "overlap": 0.5429837107658386,
+    "kl_divergence": 8.048462310673228,
+    "density": 0.054584599797365754,
+    "nmrd": 0.8899752914803783
+  },
+  "exchange_via_app": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.39693689346313477,
+    "kl_divergence": 8.319575220816608,
+    "density": 0.06760253590373916,
+    "nmrd": 0.8108732425353903
+  },
+  "extra_charge_on_statement": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.33101609349250793,
+    "kl_divergence": 8.18201544536156,
+    "density": 0.056168335313083316,
+    "nmrd": 0.765447343136019
+  },
+  "failed_transfer": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.40038637816905975,
+    "kl_divergence": 8.297188237232639,
+    "density": 0.048950880489508804,
+    "nmrd": 0.7350045665143135
+  },
+  "fiat_currency_support": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.4547121226787567,
+    "kl_divergence": 8.935150670078551,
+    "density": 0.058182813355227146,
+    "nmrd": 0.7834712537815146
+  },
+  "get_disposable_virtual_card": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.5094309598207474,
+    "kl_divergence": 7.092579296803715,
+    "density": 0.07115916519989943,
+    "nmrd": 0.8360204629102074
+  },
+  "get_physical_card": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.4473119229078293,
+    "kl_divergence": 7.390611336892386,
+    "density": 0.05982155916337575,
+    "nmrd": 0.8383411813354068
+  },
+  "getting_spare_card": {
+    "voorhees_nn": 0.9,
+    "overlap": 0.3536509871482849,
+    "kl_divergence": 8.699723225632592,
+    "density": 0.06006501625406352,
+    "nmrd": 0.7313371765826154
+  },
+  "getting_virtual_card": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.5521450191736221,
+    "kl_divergence": 7.0672715544267515,
+    "density": 0.06917885264341957,
+    "nmrd": 0.8984042750322077
+  },
+  "lost_or_stolen_card": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.3807533085346222,
+    "kl_divergence": 7.245776390010151,
+    "density": 0.05702805582969125,
+    "nmrd": 0.7301845564774688
+  },
+  "lost_or_stolen_phone": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.3592817634344101,
+    "kl_divergence": 7.154332695520704,
+    "density": 0.05990618717891445,
+    "nmrd": 0.8281887809604281
+  },
+  "order_physical_card": {
+    "voorhees_nn": 0.9,
+    "overlap": 0.3628970980644226,
+    "kl_divergence": 8.091604442450313,
+    "density": 0.05579710144927536,
+    "nmrd": 0.6854454005143619
+  },
+  "passcode_forgotten": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.42987748980522156,
+    "kl_divergence": 7.649151553406182,
+    "density": 0.059649897028537804,
+    "nmrd": 0.9294675128535048
+  },
+  "pending_card_payment": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.40173816680908203,
+    "kl_divergence": 7.9867761197815685,
+    "density": 0.05734069025208266,
+    "nmrd": 0.847099742665515
+  },
+  "pending_cash_withdrawal": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.38182447850704193,
+    "kl_divergence": 8.03178127254275,
+    "density": 0.05787316132143718,
+    "nmrd": 0.7493855041798884
+  },
+  "pending_top_up": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.3558158427476883,
+    "kl_divergence": 7.876149345083814,
+    "density": 0.046313659692064746,
+    "nmrd": 0.6764972565281785
+  },
+  "pending_transfer": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.37834028899669647,
+    "kl_divergence": 8.351626303416378,
+    "density": 0.047342044030785756,
+    "nmrd": 0.672423639855394
+  },
+  "pin_blocked": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.4183347225189209,
+    "kl_divergence": 7.519310678471485,
+    "density": 0.05821846282372598,
+    "nmrd": 0.8250801721541375
+  },
+  "receiving_money": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.22326233983039856,
+    "kl_divergence": 8.48277298174535,
+    "density": 0.05846544071020926,
+    "nmrd": 0.6662908288330243
+  },
+  "request_refund": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.37344545125961304,
+    "kl_divergence": 8.22437399286871,
+    "density": 0.043775108349330114,
+    "nmrd": 0.8305710231019794
+  },
+  "reverted_card_payment?": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.3052798807621002,
+    "kl_divergence": 8.172581255647678,
+    "density": 0.04435393544445576,
+    "nmrd": 0.7041750031204562
+  },
+  "supported_cards_and_currencies": {
+    "voorhees_nn": 0.8,
+    "overlap": 0.2283502072095871,
+    "kl_divergence": 9.043786534285532,
+    "density": 0.06960013384641124,
+    "nmrd": 0.5887233271350728
+  },
+  "terminate_account": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.45574840903282166,
+    "kl_divergence": 6.978795218035286,
+    "density": 0.06066411238825032,
+    "nmrd": 0.9724537161773442
+  },
+  "top_up_by_bank_transfer_charge": {
+    "voorhees_nn": 0.4,
+    "overlap": 0.2946814298629761,
+    "kl_divergence": 9.08596225638178,
+    "density": 0.07403055229142186,
+    "nmrd": 0.6760441542999386
+  },
+  "top_up_by_card_charge": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.33113929629325867,
+    "kl_divergence": 8.283089093361504,
+    "density": 0.09947037404832837,
+    "nmrd": 0.7510741801265147
+  },
+  "top_up_by_cash_or_cheque": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.33052393794059753,
+    "kl_divergence": 7.300641029681534,
+    "density": 0.06390977443609022,
+    "nmrd": 0.7390507136885326
+  },
+  "top_up_failed": {
+    "voorhees_nn": 0.9,
+    "overlap": 0.3331845700740814,
+    "kl_divergence": 7.64019173001427,
+    "density": 0.049442190669371194,
+    "nmrd": 0.6029849711938817
+  },
+  "top_up_limits": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.5755740031599998,
+    "kl_divergence": 7.490394288508108,
+    "density": 0.08126137052759248,
+    "nmrd": 0.8941957874485906
+  },
+  "top_up_reverted": {
+    "voorhees_nn": 0.6,
+    "overlap": 0.3350393772125244,
+    "kl_divergence": 7.939351794981889,
+    "density": 0.05029570843653642,
+    "nmrd": 0.6579221264299485
+  },
+  "topping_up_by_card": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.18693429231643677,
+    "kl_divergence": 7.471618379382008,
+    "density": 0.06474593367797252,
+    "nmrd": 0.5730019053187746
+  },
+  "transaction_charged_twice": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.3220447450876236,
+    "kl_divergence": 8.684434352926866,
+    "density": 0.04435205661211853,
+    "nmrd": 0.81377503054705
+  },
+  "transfer_fee_charged": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.37148359417915344,
+    "kl_divergence": 8.170383260978046,
+    "density": 0.04014181840033652,
+    "nmrd": 0.7749345853190679
+  },
+  "transfer_into_account": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.39213843643665314,
+    "kl_divergence": 6.8824321632685805,
+    "density": 0.07561254590331708,
+    "nmrd": 0.8359825797668063
+  },
+  "transfer_not_received_by_recipient": {
+    "voorhees_nn": 0.6,
+    "overlap": 0.2462119162082672,
+    "kl_divergence": 8.657336110783532,
+    "density": 0.050339325680456286,
+    "nmrd": 0.5440775428120134
+  },
+  "transfer_timing": {
+    "voorhees_nn": 0.8,
+    "overlap": 0.38281893730163574,
+    "kl_divergence": 8.003271423682106,
+    "density": 0.07124379139072848,
+    "nmrd": 0.697904656591544
+  },
+  "unable_to_verify_identity": {
+    "voorhees_nn": 0.7,
+    "overlap": 0.3616364598274231,
+    "kl_divergence": 8.803764299417985,
+    "density": 0.04911209766925638,
+    "nmrd": 0.7164643044573396
+  },
+  "verify_my_identity": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.5252309888601303,
+    "kl_divergence": 7.820544957906912,
+    "density": 0.06499701848539058,
+    "nmrd": 0.8219923885815397
+  },
+  "verify_source_of_funds": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.4246048331260681,
+    "kl_divergence": 7.659534526017631,
+    "density": 0.0831015592077539,
+    "nmrd": 0.9056953602153995
+  },
+  "verify_top_up": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.46522657573223114,
+    "kl_divergence": 7.074122899904157,
+    "density": 0.07553134248049502,
+    "nmrd": 0.9227416395298084
+  },
+  "virtual_card_not_working": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.48026609420776367,
+    "kl_divergence": 6.547309955138922,
+    "density": 0.11629982153480072,
+    "nmrd": 0.7602308955515711
+  },
+  "visa_or_mastercard": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.42493633925914764,
+    "kl_divergence": 7.580699194294209,
+    "density": 0.05411942554799698,
+    "nmrd": 0.8844597826809781
+  },
+  "why_verify_identity": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.4031895697116852,
+    "kl_divergence": 8.475401209057265,
+    "density": 0.053169636459179284,
+    "nmrd": 0.7428051567327472
+  },
+  "wrong_amount_of_cash_received": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.29722827672958374,
+    "kl_divergence": 8.228512268584916,
+    "density": 0.050929368029739776,
+    "nmrd": 0.734321815965075
+  },
+  "wrong_exchange_rate_for_cash_withdrawal": {
+    "voorhees_nn": 1.0,
+    "overlap": 0.36573076248168945,
+    "kl_divergence": 7.959932269644829,
+    "density": 0.04891338255173131,
+    "nmrd": 0.723160987029251
+  }
+}

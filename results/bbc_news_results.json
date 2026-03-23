@@ -1,0 +1,1511 @@
+{
+  "dev_sweep": [
+    {
+      "config": {
+        "dataset": "bbc_news",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.3,
+        "chunk_size": 1000,
+        "top_k": 3,
+        "pagerank_alpha": 0.5,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "business": {
+          "generated": "Business and Economic Trends"
+        },
+        "entertainment": {
+          "generated": "Celebrity and Entertainment News"
+        },
+        "politics": {
+          "generated": "UK Labour Party Election"
+        },
+        "sport": {
+          "generated": "English Rugby Team Dynamics"
+        },
+        "tech": {
+          "generated": "Digital Lifestyle Trends"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "business": 0.5543413162231445,
+          "entertainment": 0.5124951601028442,
+          "politics": 0.31076788902282715,
+          "sport": 0.40420812368392944,
+          "tech": 0.3142952620983124,
+          "__mean__": 0.41922155022621155
+        },
+        "token_overlap_f1": {
+          "business": 0.4,
+          "entertainment": 0.4,
+          "politics": 0.0,
+          "sport": 0.0,
+          "tech": 0.0,
+          "__mean__": 0.16
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "bbc_news",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.3,
+        "chunk_size": 1000,
+        "top_k": 3,
+        "pagerank_alpha": 0.85,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "business": {
+          "generated": "Economic Business Trends"
+        },
+        "entertainment": {
+          "generated": "UK Film Industry News"
+        },
+        "politics": {
+          "generated": "UK General Election 2005"
+        },
+        "sport": {
+          "generated": "English Sports Team Management"
+        },
+        "tech": {
+          "generated": "Digital Consumer Trends"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "business": 0.518362283706665,
+          "entertainment": 0.2685655951499939,
+          "politics": 0.35509616136550903,
+          "sport": 0.4295525550842285,
+          "tech": 0.30903345346450806,
+          "__mean__": 0.3761220097541809
+        },
+        "token_overlap_f1": {
+          "business": 0.5,
+          "entertainment": 0.0,
+          "politics": 0.0,
+          "sport": 0.0,
+          "tech": 0.0,
+          "__mean__": 0.1
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "bbc_news",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.3,
+        "chunk_size": 1000,
+        "top_k": 3,
+        "pagerank_alpha": 0.95,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "business": {
+          "generated": "European Economic Challenges"
+        },
+        "entertainment": {
+          "generated": "Film Awards and Nominations"
+        },
+        "politics": {
+          "generated": "UK General Election 2005"
+        },
+        "sport": {
+          "generated": "English Sports Team Management"
+        },
+        "tech": {
+          "generated": "Digital Content Trends"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "business": 0.24108003079891205,
+          "entertainment": 0.2314145714044571,
+          "politics": 0.35509616136550903,
+          "sport": 0.4295525550842285,
+          "tech": 0.31852197647094727,
+          "__mean__": 0.3151330590248108
+        },
+        "token_overlap_f1": {
+          "business": 0.0,
+          "entertainment": 0.0,
+          "politics": 0.0,
+          "sport": 0.0,
+          "tech": 0.0,
+          "__mean__": 0.0
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "bbc_news",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.3,
+        "chunk_size": 1000,
+        "top_k": 5,
+        "pagerank_alpha": 0.5,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "business": {
+          "generated": "Corporate Mergers and Acquisitions"
+        },
+        "entertainment": {
+          "generated": "2005 Film and Entertainment Awards"
+        },
+        "politics": {
+          "generated": "UK General Election 2005"
+        },
+        "sport": {
+          "generated": "English Rugby and Tennis"
+        },
+        "tech": {
+          "generated": "Digital Lifestyle Trends"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "business": 0.334900826215744,
+          "entertainment": 0.25002360343933105,
+          "politics": 0.35509616136550903,
+          "sport": 0.6071780323982239,
+          "tech": 0.3142952620983124,
+          "__mean__": 0.3722987771034241
+        },
+        "token_overlap_f1": {
+          "business": 0.0,
+          "entertainment": 0.33333333333333337,
+          "politics": 0.0,
+          "sport": 0.0,
+          "tech": 0.0,
+          "__mean__": 0.06666666666666668
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "bbc_news",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.3,
+        "chunk_size": 1000,
+        "top_k": 5,
+        "pagerank_alpha": 0.85,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "business": {
+          "generated": "Global Economic Trends"
+        },
+        "entertainment": {
+          "generated": "UK Film Awards Season"
+        },
+        "politics": {
+          "generated": "UK General Election 2005"
+        },
+        "sport": {
+          "generated": "English Rugby and Tennis"
+        },
+        "tech": {
+          "generated": "\"Digital Home Entertainment\""
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "business": 0.2698415219783783,
+          "entertainment": 0.15529471635818481,
+          "politics": 0.35509616136550903,
+          "sport": 0.6071780323982239,
+          "tech": 0.3542343080043793,
+          "__mean__": 0.34832894802093506
+        },
+        "token_overlap_f1": {
+          "business": 0.0,
+          "entertainment": 0.0,
+          "politics": 0.0,
+          "sport": 0.0,
+          "tech": 0.0,
+          "__mean__": 0.0
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "bbc_news",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.3,
+        "chunk_size": 1000,
+        "top_k": 5,
+        "pagerank_alpha": 0.95,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "business": {
+          "generated": "Global Economic Outlook"
+        },
+        "entertainment": {
+          "generated": "2005 Film Awards Season"
+        },
+        "politics": {
+          "generated": "UK General Election 2005"
+        },
+        "sport": {
+          "generated": "English Rugby and Tennis"
+        },
+        "tech": {
+          "generated": "\"Digital Home Convergence\""
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "business": 0.29895830154418945,
+          "entertainment": 0.1240798681974411,
+          "politics": 0.35509616136550903,
+          "sport": 0.6071780323982239,
+          "tech": 0.2346820831298828,
+          "__mean__": 0.32399888932704923
+        },
+        "token_overlap_f1": {
+          "business": 0.0,
+          "entertainment": 0.0,
+          "politics": 0.0,
+          "sport": 0.0,
+          "tech": 0.0,
+          "__mean__": 0.0
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "bbc_news",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.3,
+        "chunk_size": 1000,
+        "top_k": 10,
+        "pagerank_alpha": 0.5,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "business": {
+          "generated": "Global Economic Trends"
+        },
+        "entertainment": {
+          "generated": "2005 UK Entertainment Industry"
+        },
+        "politics": {
+          "generated": "UK General Election 2005"
+        },
+        "sport": {
+          "generated": "Rugby Union News and Analysis"
+        },
+        "tech": {
+          "generated": "The Digital Revolution"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "business": 0.2698415219783783,
+          "entertainment": 0.42696449160575867,
+          "politics": 0.35509616136550903,
+          "sport": 0.3799459934234619,
+          "tech": 0.4388008713722229,
+          "__mean__": 0.37412980794906614
+        },
+        "token_overlap_f1": {
+          "business": 0.0,
+          "entertainment": 0.4,
+          "politics": 0.0,
+          "sport": 0.0,
+          "tech": 0.0,
+          "__mean__": 0.08
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "bbc_news",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.3,
+        "chunk_size": 1000,
+        "top_k": 10,
+        "pagerank_alpha": 0.85,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "business": {
+          "generated": "Global Economic Trends"
+        },
+        "entertainment": {
+          "generated": "2005 Film Awards Season"
+        },
+        "politics": {
+          "generated": "UK General Election 2005"
+        },
+        "sport": {
+          "generated": "Rugby Union News and Analysis"
+        },
+        "tech": {
+          "generated": "Digital Entertainment Trends"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "business": 0.2698415219783783,
+          "entertainment": 0.1240798681974411,
+          "politics": 0.35509616136550903,
+          "sport": 0.3799459934234619,
+          "tech": 0.3245256841182709,
+          "__mean__": 0.29069784581661223
+        },
+        "token_overlap_f1": {
+          "business": 0.0,
+          "entertainment": 0.0,
+          "politics": 0.0,
+          "sport": 0.0,
+          "tech": 0.0,
+          "__mean__": 0.0
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "bbc_news",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.3,
+        "chunk_size": 1000,
+        "top_k": 10,
+        "pagerank_alpha": 0.95,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "business": {
+          "generated": "Global Economic Outlook"
+        },
+        "entertainment": {
+          "generated": "2005 Film Awards Season"
+        },
+        "politics": {
+          "generated": "UK General Election 2005"
+        },
+        "sport": {
+          "generated": "Six Nations Rugby"
+        },
+        "tech": {
+          "generated": "Digital Lifestyle Trends"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "business": 0.29895830154418945,
+          "entertainment": 0.1240798681974411,
+          "politics": 0.35509616136550903,
+          "sport": 0.417784184217453,
+          "tech": 0.3142952620983124,
+          "__mean__": 0.302042755484581
+        },
+        "token_overlap_f1": {
+          "business": 0.0,
+          "entertainment": 0.0,
+          "politics": 0.0,
+          "sport": 0.0,
+          "tech": 0.0,
+          "__mean__": 0.0
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "bbc_news",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.5,
+        "chunk_size": 1000,
+        "top_k": 3,
+        "pagerank_alpha": 0.5,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "business": {
+          "generated": "German Economic News"
+        },
+        "entertainment": {
+          "generated": "2005 Oscars and Film Awards"
+        },
+        "politics": {
+          "generated": "UK Labour Party Crisis"
+        },
+        "sport": {
+          "generated": "English Football News"
+        },
+        "tech": {
+          "generated": "UK Internet Trends"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "business": 0.29103797674179077,
+          "entertainment": 0.15824255347251892,
+          "politics": 0.33750683069229126,
+          "sport": 0.3618922829627991,
+          "tech": 0.14937308430671692,
+          "__mean__": 0.2596105456352234
+        },
+        "token_overlap_f1": {
+          "business": 0.0,
+          "entertainment": 0.0,
+          "politics": 0.0,
+          "sport": 0.0,
+          "tech": 0.0,
+          "__mean__": 0.0
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "bbc_news",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.5,
+        "chunk_size": 1000,
+        "top_k": 3,
+        "pagerank_alpha": 0.85,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "business": {
+          "generated": "Global Economic Trends"
+        },
+        "entertainment": {
+          "generated": "2005 Academy Awards"
+        },
+        "politics": {
+          "generated": "UK General Election 2005"
+        },
+        "sport": {
+          "generated": "English Football News"
+        },
+        "tech": {
+          "generated": "UK Mobile Internet Adoption"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "business": 0.2698415219783783,
+          "entertainment": 0.14183500409126282,
+          "politics": 0.35509616136550903,
+          "sport": 0.3618922233581543,
+          "tech": 0.15630269050598145,
+          "__mean__": 0.25699352025985717
+        },
+        "token_overlap_f1": {
+          "business": 0.0,
+          "entertainment": 0.0,
+          "politics": 0.0,
+          "sport": 0.0,
+          "tech": 0.0,
+          "__mean__": 0.0
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "bbc_news",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.5,
+        "chunk_size": 1000,
+        "top_k": 3,
+        "pagerank_alpha": 0.95,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "business": {
+          "generated": "European Economic Trends"
+        },
+        "entertainment": {
+          "generated": "2005 Academy Awards"
+        },
+        "politics": {
+          "generated": "UK General Election 2005"
+        },
+        "sport": {
+          "generated": "English Rugby News"
+        },
+        "tech": {
+          "generated": "Mobile Internet Adoption"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "business": 0.21542024612426758,
+          "entertainment": 0.14183500409126282,
+          "politics": 0.35509616136550903,
+          "sport": 0.4333760142326355,
+          "tech": 0.20994466543197632,
+          "__mean__": 0.27113441824913026
+        },
+        "token_overlap_f1": {
+          "business": 0.0,
+          "entertainment": 0.0,
+          "politics": 0.0,
+          "sport": 0.0,
+          "tech": 0.0,
+          "__mean__": 0.0
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "bbc_news",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.5,
+        "chunk_size": 1000,
+        "top_k": 5,
+        "pagerank_alpha": 0.5,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "business": {
+          "generated": "Global Economic Trends"
+        },
+        "entertainment": {
+          "generated": "2004 Entertainment Industry Trends"
+        },
+        "politics": {
+          "generated": "UK General Election 2005"
+        },
+        "sport": {
+          "generated": "English Football and Rugby"
+        },
+        "tech": {
+          "generated": "UK Mobile Technology"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "business": 0.2698415219783783,
+          "entertainment": 0.43285560607910156,
+          "politics": 0.35509616136550903,
+          "sport": 0.5841168165206909,
+          "tech": 0.328866183757782,
+          "__mean__": 0.3941552579402924
+        },
+        "token_overlap_f1": {
+          "business": 0.0,
+          "entertainment": 0.4,
+          "politics": 0.0,
+          "sport": 0.0,
+          "tech": 0.0,
+          "__mean__": 0.08
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "bbc_news",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.5,
+        "chunk_size": 1000,
+        "top_k": 5,
+        "pagerank_alpha": 0.85,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "business": {
+          "generated": "Global Economic Outlook"
+        },
+        "entertainment": {
+          "generated": "2005 Oscars Coverage"
+        },
+        "politics": {
+          "generated": "UK General Election 2005"
+        },
+        "sport": {
+          "generated": "English Rugby News"
+        },
+        "tech": {
+          "generated": "Mobile Internet Adoption"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "business": 0.29895830154418945,
+          "entertainment": 0.13551229238510132,
+          "politics": 0.35509616136550903,
+          "sport": 0.4333760142326355,
+          "tech": 0.20994466543197632,
+          "__mean__": 0.28657748699188235
+        },
+        "token_overlap_f1": {
+          "business": 0.0,
+          "entertainment": 0.0,
+          "politics": 0.0,
+          "sport": 0.0,
+          "tech": 0.0,
+          "__mean__": 0.0
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "bbc_news",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.5,
+        "chunk_size": 1000,
+        "top_k": 5,
+        "pagerank_alpha": 0.95,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "business": {
+          "generated": "Global Economic Outlook"
+        },
+        "entertainment": {
+          "generated": "2005 Oscars Coverage"
+        },
+        "politics": {
+          "generated": "UK General Election 2005"
+        },
+        "sport": {
+          "generated": "English Rugby News"
+        },
+        "tech": {
+          "generated": "Broadband and Mobile Internet"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "business": 0.29895830154418945,
+          "entertainment": 0.13551229238510132,
+          "politics": 0.35509616136550903,
+          "sport": 0.4333760142326355,
+          "tech": 0.17532554268836975,
+          "__mean__": 0.27965366244316103
+        },
+        "token_overlap_f1": {
+          "business": 0.0,
+          "entertainment": 0.0,
+          "politics": 0.0,
+          "sport": 0.0,
+          "tech": 0.0,
+          "__mean__": 0.0
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "bbc_news",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.5,
+        "chunk_size": 1000,
+        "top_k": 10,
+        "pagerank_alpha": 0.5,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "business": {
+          "generated": "Global Economic Trends"
+        },
+        "entertainment": {
+          "generated": "2004 Entertainment Industry"
+        },
+        "politics": {
+          "generated": "UK General Election 2005"
+        },
+        "sport": {
+          "generated": "English Sports News 2005"
+        },
+        "tech": {
+          "generated": "\"UK Digital Revolution\""
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "business": 0.2698415219783783,
+          "entertainment": 0.4510151147842407,
+          "politics": 0.35509616136550903,
+          "sport": 0.4783344268798828,
+          "tech": 0.3371550440788269,
+          "__mean__": 0.37828845381736753
+        },
+        "token_overlap_f1": {
+          "business": 0.0,
+          "entertainment": 0.5,
+          "politics": 0.0,
+          "sport": 0.0,
+          "tech": 0.0,
+          "__mean__": 0.1
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "bbc_news",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.5,
+        "chunk_size": 1000,
+        "top_k": 10,
+        "pagerank_alpha": 0.85,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "business": {
+          "generated": "Global Economic Trends"
+        },
+        "entertainment": {
+          "generated": "2004 Entertainment News"
+        },
+        "politics": {
+          "generated": "UK General Election 2005"
+        },
+        "sport": {
+          "generated": "English and Sports News"
+        },
+        "tech": {
+          "generated": "\"Digital Media Evolution\""
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "business": 0.2698415219783783,
+          "entertainment": 0.34914159774780273,
+          "politics": 0.35509616136550903,
+          "sport": 0.45625317096710205,
+          "tech": 0.36507004499435425,
+          "__mean__": 0.35908049941062925
+        },
+        "token_overlap_f1": {
+          "business": 0.0,
+          "entertainment": 0.5,
+          "politics": 0.0,
+          "sport": 0.0,
+          "tech": 0.0,
+          "__mean__": 0.1
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "bbc_news",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.5,
+        "chunk_size": 1000,
+        "top_k": 10,
+        "pagerank_alpha": 0.95,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "business": {
+          "generated": "Global Economic Trends"
+        },
+        "entertainment": {
+          "generated": "2005 Oscars and Film Industry"
+        },
+        "politics": {
+          "generated": "UK General Election 2005"
+        },
+        "sport": {
+          "generated": "Rugby Union News and Analysis"
+        },
+        "tech": {
+          "generated": "\"Digital Media Evolution\""
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "business": 0.2698414921760559,
+          "entertainment": 0.23235084116458893,
+          "politics": 0.35509616136550903,
+          "sport": 0.3799459934234619,
+          "tech": 0.36507004499435425,
+          "__mean__": 0.320460906624794
+        },
+        "token_overlap_f1": {
+          "business": 0.0,
+          "entertainment": 0.0,
+          "politics": 0.0,
+          "sport": 0.0,
+          "tech": 0.0,
+          "__mean__": 0.0
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "bbc_news",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.7,
+        "chunk_size": 1000,
+        "top_k": 3,
+        "pagerank_alpha": 0.5,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "business": {
+          "generated": "Global Economic Crisis"
+        },
+        "entertainment": {
+          "generated": "2004 Oscar Awards"
+        },
+        "politics": {
+          "generated": "UK General Election 2005"
+        },
+        "sport": {
+          "generated": "English Rugby Team Struggles"
+        },
+        "tech": {
+          "generated": "Emerging Consumer Technologies"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "business": 0.2987738251686096,
+          "entertainment": 0.13276396691799164,
+          "politics": 0.35509616136550903,
+          "sport": 0.3082062900066376,
+          "tech": 0.2740199565887451,
+          "__mean__": 0.2737720400094986
+        },
+        "token_overlap_f1": {
+          "business": 0.0,
+          "entertainment": 0.0,
+          "politics": 0.0,
+          "sport": 0.0,
+          "tech": 0.0,
+          "__mean__": 0.0
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "bbc_news",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.7,
+        "chunk_size": 1000,
+        "top_k": 3,
+        "pagerank_alpha": 0.85,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "business": {
+          "generated": "Global Economic Trends"
+        },
+        "entertainment": {
+          "generated": "2004 Oscar Awards"
+        },
+        "politics": {
+          "generated": "UK General Election 2005"
+        },
+        "sport": {
+          "generated": "Sports Team Performance"
+        },
+        "tech": {
+          "generated": "Technology Industry Trends"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "business": 0.2698415219783783,
+          "entertainment": 0.13276396691799164,
+          "politics": 0.35509616136550903,
+          "sport": 0.5665446519851685,
+          "tech": 0.5089761018753052,
+          "__mean__": 0.36664448082447054
+        },
+        "token_overlap_f1": {
+          "business": 0.0,
+          "entertainment": 0.0,
+          "politics": 0.0,
+          "sport": 0.0,
+          "tech": 0.0,
+          "__mean__": 0.0
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "bbc_news",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.7,
+        "chunk_size": 1000,
+        "top_k": 3,
+        "pagerank_alpha": 0.95,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "business": {
+          "generated": "Global Economic Trends"
+        },
+        "entertainment": {
+          "generated": "2004 Oscar Awards"
+        },
+        "politics": {
+          "generated": "Labour Party Election Crisis"
+        },
+        "sport": {
+          "generated": "Sports Team Performance"
+        },
+        "tech": {
+          "generated": "Consumer Technology Trends"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "business": 0.2698415219783783,
+          "entertainment": 0.13276396691799164,
+          "politics": 0.38047394156455994,
+          "sport": 0.5665446519851685,
+          "tech": 0.33869749307632446,
+          "__mean__": 0.3376643151044846
+        },
+        "token_overlap_f1": {
+          "business": 0.0,
+          "entertainment": 0.0,
+          "politics": 0.0,
+          "sport": 0.0,
+          "tech": 0.0,
+          "__mean__": 0.0
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "bbc_news",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.7,
+        "chunk_size": 1000,
+        "top_k": 5,
+        "pagerank_alpha": 0.5,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "business": {
+          "generated": "Global Economic Outlook"
+        },
+        "entertainment": {
+          "generated": "Oscar Awards and Film Industry"
+        },
+        "politics": {
+          "generated": "UK General Election 2005"
+        },
+        "sport": {
+          "generated": "British Sports Crisis"
+        },
+        "tech": {
+          "generated": "Emerging Consumer Technologies"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "business": 0.29895830154418945,
+          "entertainment": 0.3220718502998352,
+          "politics": 0.35509616136550903,
+          "sport": 0.5504860877990723,
+          "tech": 0.2740199565887451,
+          "__mean__": 0.3601264715194702
+        },
+        "token_overlap_f1": {
+          "business": 0.0,
+          "entertainment": 0.0,
+          "politics": 0.0,
+          "sport": 0.0,
+          "tech": 0.0,
+          "__mean__": 0.0
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "bbc_news",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.7,
+        "chunk_size": 1000,
+        "top_k": 5,
+        "pagerank_alpha": 0.85,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "business": {
+          "generated": "Global Economic Outlook"
+        },
+        "entertainment": {
+          "generated": "Oscar Awards and Film Industry"
+        },
+        "politics": {
+          "generated": "UK Labour Party Election"
+        },
+        "sport": {
+          "generated": "Sports Injury and Recovery"
+        },
+        "tech": {
+          "generated": "Emerging Consumer Technologies"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "business": 0.29895830154418945,
+          "entertainment": 0.3220718502998352,
+          "politics": 0.31076788902282715,
+          "sport": 0.507882833480835,
+          "tech": 0.2740199565887451,
+          "__mean__": 0.34274016618728637
+        },
+        "token_overlap_f1": {
+          "business": 0.0,
+          "entertainment": 0.0,
+          "politics": 0.0,
+          "sport": 0.0,
+          "tech": 0.0,
+          "__mean__": 0.0
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "bbc_news",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.7,
+        "chunk_size": 1000,
+        "top_k": 5,
+        "pagerank_alpha": 0.95,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "business": {
+          "generated": "Global Economic Outlook"
+        },
+        "entertainment": {
+          "generated": "Oscar Awards and Film Industry"
+        },
+        "politics": {
+          "generated": "Labour Party Election Crisis"
+        },
+        "sport": {
+          "generated": "Six Nations Rugby"
+        },
+        "tech": {
+          "generated": "Emerging Consumer Technologies"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "business": 0.29895830154418945,
+          "entertainment": 0.3220718502998352,
+          "politics": 0.38047394156455994,
+          "sport": 0.417784184217453,
+          "tech": 0.2740199565887451,
+          "__mean__": 0.3386616468429565
+        },
+        "token_overlap_f1": {
+          "business": 0.0,
+          "entertainment": 0.0,
+          "politics": 0.0,
+          "sport": 0.0,
+          "tech": 0.0,
+          "__mean__": 0.0
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "bbc_news",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.7,
+        "chunk_size": 1000,
+        "top_k": 10,
+        "pagerank_alpha": 0.5,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "business": {
+          "generated": "Global Economic Trends"
+        },
+        "entertainment": {
+          "generated": "2004 Academy Awards"
+        },
+        "politics": {
+          "generated": "UK General Election 2005"
+        },
+        "sport": {
+          "generated": "Six Nations Rugby"
+        },
+        "tech": {
+          "generated": "Digital Entertainment Revolution"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "business": 0.2698415219783783,
+          "entertainment": 0.13197317719459534,
+          "politics": 0.35509616136550903,
+          "sport": 0.417784184217453,
+          "tech": 0.3929426372051239,
+          "__mean__": 0.3135275363922119
+        },
+        "token_overlap_f1": {
+          "business": 0.0,
+          "entertainment": 0.0,
+          "politics": 0.0,
+          "sport": 0.0,
+          "tech": 0.0,
+          "__mean__": 0.0
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "bbc_news",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.7,
+        "chunk_size": 1000,
+        "top_k": 10,
+        "pagerank_alpha": 0.85,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "business": {
+          "generated": "Global Economic Trends"
+        },
+        "entertainment": {
+          "generated": "2004 Academy Awards"
+        },
+        "politics": {
+          "generated": "UK General Election 2005"
+        },
+        "sport": {
+          "generated": "Six Nations Rugby"
+        },
+        "tech": {
+          "generated": "\"Digital Entertainment Evolution\""
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "business": 0.2698415219783783,
+          "entertainment": 0.13197317719459534,
+          "politics": 0.35509616136550903,
+          "sport": 0.417784184217453,
+          "tech": 0.3692666292190552,
+          "__mean__": 0.3087923347949982
+        },
+        "token_overlap_f1": {
+          "business": 0.0,
+          "entertainment": 0.0,
+          "politics": 0.0,
+          "sport": 0.0,
+          "tech": 0.0,
+          "__mean__": 0.0
+        }
+      }
+    },
+    {
+      "config": {
+        "dataset": "bbc_news",
+        "split": "dev",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "embedding_batch_size": 256,
+        "embedding_device": "cpu",
+        "similarity_threshold": 0.7,
+        "chunk_size": 1000,
+        "top_k": 10,
+        "pagerank_alpha": 0.95,
+        "labeling_model": "llama-3.1-8b-instant",
+        "max_doc_words": 300,
+        "cache_dir": "cache",
+        "use_cache": true,
+        "output_dir": "results"
+      },
+      "labels": {
+        "business": {
+          "generated": "Global Economic Trends"
+        },
+        "entertainment": {
+          "generated": "2004 Academy Awards"
+        },
+        "politics": {
+          "generated": "UK General Election 2005"
+        },
+        "sport": {
+          "generated": "Six Nations Rugby"
+        },
+        "tech": {
+          "generated": "Emerging Consumer Technologies"
+        }
+      },
+      "metrics": {
+        "semantic_similarity": {
+          "business": 0.2698415219783783,
+          "entertainment": 0.13197317719459534,
+          "politics": 0.35509616136550903,
+          "sport": 0.417784184217453,
+          "tech": 0.2740199565887451,
+          "__mean__": 0.2897430002689362
+        },
+        "token_overlap_f1": {
+          "business": 0.0,
+          "entertainment": 0.0,
+          "politics": 0.0,
+          "sport": 0.0,
+          "tech": 0.0,
+          "__mean__": 0.0
+        }
+      }
+    }
+  ],
+  "best_config": {
+    "similarity_threshold": 0.3,
+    "top_k": 3,
+    "pagerank_alpha": 0.5
+  },
+  "best_dev_metrics": {
+    "semantic_similarity": {
+      "business": 0.5543413162231445,
+      "entertainment": 0.5124951601028442,
+      "politics": 0.31076788902282715,
+      "sport": 0.40420812368392944,
+      "tech": 0.3142952620983124,
+      "__mean__": 0.41922155022621155
+    },
+    "token_overlap_f1": {
+      "business": 0.4,
+      "entertainment": 0.4,
+      "politics": 0.0,
+      "sport": 0.0,
+      "tech": 0.0,
+      "__mean__": 0.16
+    }
+  },
+  "test_result": {
+    "config": {
+      "dataset": "bbc_news",
+      "split": "test",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_batch_size": 256,
+      "embedding_device": "cpu",
+      "similarity_threshold": 0.3,
+      "chunk_size": 1000,
+      "top_k": 3,
+      "pagerank_alpha": 0.5,
+      "labeling_model": "llama-3.1-8b-instant",
+      "max_doc_words": 300,
+      "cache_dir": "cache",
+      "use_cache": true,
+      "output_dir": "results"
+    },
+    "labels": {
+      "business": {
+        "generated": "US Corporate Consolidation"
+      },
+      "entertainment": {
+        "generated": "Celebrity and Film Awards"
+      },
+      "politics": {
+        "generated": "UK Conservative Policy"
+      },
+      "sport": {
+        "generated": "Six Nations Rugby"
+      },
+      "tech": {
+        "generated": "Mobile Technology Adoption"
+      }
+    },
+    "metrics": {
+      "semantic_similarity": {
+        "business": 0.3630962669849396,
+        "entertainment": 0.3576897978782654,
+        "politics": 0.3177068829536438,
+        "sport": 0.417784184217453,
+        "tech": 0.32021957635879517,
+        "__mean__": 0.3552993416786194
+      },
+      "token_overlap_f1": {
+        "business": 0.0,
+        "entertainment": 0.0,
+        "politics": 0.0,
+        "sport": 0.0,
+        "tech": 0.0,
+        "__mean__": 0.0
+      }
+    }
+  }
+}

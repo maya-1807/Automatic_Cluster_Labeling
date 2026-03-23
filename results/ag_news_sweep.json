@@ -1,0 +1,1298 @@
+[
+  {
+    "config": {
+      "dataset": "ag_news",
+      "split": "dev",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_batch_size": 256,
+      "embedding_device": "cpu",
+      "similarity_threshold": 0.3,
+      "chunk_size": 1000,
+      "top_k": 3,
+      "pagerank_alpha": 0.5,
+      "labeling_model": "llama-3.1-8b-instant",
+      "max_doc_words": 300,
+      "cache_dir": "cache",
+      "use_cache": true,
+      "output_dir": "results"
+    },
+    "labels": {
+      "Business": {
+        "generated": "Corporate Mergers and Acquisitions"
+      },
+      "Sci/Tech": {
+        "generated": "Microsoft Industry News"
+      },
+      "Sports": {
+        "generated": "Sports Injury Reports"
+      },
+      "World": {
+        "generated": "Iraqi Insurgency Crisis"
+      }
+    },
+    "metrics": {
+      "semantic_similarity": {
+        "Business": 0.3349009156227112,
+        "Sci/Tech": 0.3382163643836975,
+        "Sports": 0.5602295398712158,
+        "World": 0.1944347620010376,
+        "__mean__": 0.3569453954696655
+      },
+      "token_overlap_f1": {
+        "Business": 0.0,
+        "Sci/Tech": 0.0,
+        "Sports": 0.5,
+        "World": 0.0,
+        "__mean__": 0.125
+      }
+    }
+  },
+  {
+    "config": {
+      "dataset": "ag_news",
+      "split": "dev",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_batch_size": 256,
+      "embedding_device": "cpu",
+      "similarity_threshold": 0.3,
+      "chunk_size": 1000,
+      "top_k": 3,
+      "pagerank_alpha": 0.85,
+      "labeling_model": "llama-3.1-8b-instant",
+      "max_doc_words": 300,
+      "cache_dir": "cache",
+      "use_cache": true,
+      "output_dir": "results"
+    },
+    "labels": {
+      "Business": {
+        "generated": "US Stock Market News"
+      },
+      "Sci/Tech": {
+        "generated": "Microsoft Industry News"
+      },
+      "Sports": {
+        "generated": "Sports Upsets"
+      },
+      "World": {
+        "generated": "Iraqi Insurgency Crisis"
+      }
+    },
+    "metrics": {
+      "semantic_similarity": {
+        "Business": 0.2424001693725586,
+        "Sci/Tech": 0.3382163643836975,
+        "Sports": 0.6230760812759399,
+        "World": 0.1944347620010376,
+        "__mean__": 0.3495318442583084
+      },
+      "token_overlap_f1": {
+        "Business": 0.0,
+        "Sci/Tech": 0.0,
+        "Sports": 0.6666666666666666,
+        "World": 0.0,
+        "__mean__": 0.16666666666666666
+      }
+    }
+  },
+  {
+    "config": {
+      "dataset": "ag_news",
+      "split": "dev",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_batch_size": 256,
+      "embedding_device": "cpu",
+      "similarity_threshold": 0.3,
+      "chunk_size": 1000,
+      "top_k": 3,
+      "pagerank_alpha": 0.95,
+      "labeling_model": "llama-3.1-8b-instant",
+      "max_doc_words": 300,
+      "cache_dir": "cache",
+      "use_cache": true,
+      "output_dir": "results"
+    },
+    "labels": {
+      "Business": {
+        "generated": "US Stock Market News"
+      },
+      "Sci/Tech": {
+        "generated": "Microsoft Industry News"
+      },
+      "Sports": {
+        "generated": "Sports Upsets"
+      },
+      "World": {
+        "generated": "Iraqi Insurgency Violence"
+      }
+    },
+    "metrics": {
+      "semantic_similarity": {
+        "Business": 0.2424001693725586,
+        "Sci/Tech": 0.3382163643836975,
+        "Sports": 0.6230760812759399,
+        "World": 0.14331458508968353,
+        "__mean__": 0.3367518000304699
+      },
+      "token_overlap_f1": {
+        "Business": 0.0,
+        "Sci/Tech": 0.0,
+        "Sports": 0.6666666666666666,
+        "World": 0.0,
+        "__mean__": 0.16666666666666666
+      }
+    }
+  },
+  {
+    "config": {
+      "dataset": "ag_news",
+      "split": "dev",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_batch_size": 256,
+      "embedding_device": "cpu",
+      "similarity_threshold": 0.3,
+      "chunk_size": 1000,
+      "top_k": 5,
+      "pagerank_alpha": 0.5,
+      "labeling_model": "llama-3.1-8b-instant",
+      "max_doc_words": 300,
+      "cache_dir": "cache",
+      "use_cache": true,
+      "output_dir": "results"
+    },
+    "labels": {
+      "Business": {
+        "generated": "Corporate Mergers and Acquisitions"
+      },
+      "Sci/Tech": {
+        "generated": "Technology Industry News"
+      },
+      "Sports": {
+        "generated": "Sports Injury News"
+      },
+      "World": {
+        "generated": "Iraqi Insurgency Crisis"
+      }
+    },
+    "metrics": {
+      "semantic_similarity": {
+        "Business": 0.3349009156227112,
+        "Sci/Tech": 0.517946720123291,
+        "Sports": 0.567370593547821,
+        "World": 0.1944347620010376,
+        "__mean__": 0.4036632478237152
+      },
+      "token_overlap_f1": {
+        "Business": 0.0,
+        "Sci/Tech": 0.0,
+        "Sports": 0.5,
+        "World": 0.0,
+        "__mean__": 0.125
+      }
+    }
+  },
+  {
+    "config": {
+      "dataset": "ag_news",
+      "split": "dev",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_batch_size": 256,
+      "embedding_device": "cpu",
+      "similarity_threshold": 0.3,
+      "chunk_size": 1000,
+      "top_k": 5,
+      "pagerank_alpha": 0.85,
+      "labeling_model": "llama-3.1-8b-instant",
+      "max_doc_words": 300,
+      "cache_dir": "cache",
+      "use_cache": true,
+      "output_dir": "results"
+    },
+    "labels": {
+      "Business": {
+        "generated": "US Stock Market News"
+      },
+      "Sci/Tech": {
+        "generated": "Microsoft Industry News"
+      },
+      "Sports": {
+        "generated": "Sports News Updates"
+      },
+      "World": {
+        "generated": "Iraqi Insurgency Crisis"
+      }
+    },
+    "metrics": {
+      "semantic_similarity": {
+        "Business": 0.2424001693725586,
+        "Sci/Tech": 0.3382163643836975,
+        "Sports": 0.569758951663971,
+        "World": 0.1944347620010376,
+        "__mean__": 0.33620256185531616
+      },
+      "token_overlap_f1": {
+        "Business": 0.0,
+        "Sci/Tech": 0.0,
+        "Sports": 0.5,
+        "World": 0.0,
+        "__mean__": 0.125
+      }
+    }
+  },
+  {
+    "config": {
+      "dataset": "ag_news",
+      "split": "dev",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_batch_size": 256,
+      "embedding_device": "cpu",
+      "similarity_threshold": 0.3,
+      "chunk_size": 1000,
+      "top_k": 5,
+      "pagerank_alpha": 0.95,
+      "labeling_model": "llama-3.1-8b-instant",
+      "max_doc_words": 300,
+      "cache_dir": "cache",
+      "use_cache": true,
+      "output_dir": "results"
+    },
+    "labels": {
+      "Business": {
+        "generated": "US Stock Market News"
+      },
+      "Sci/Tech": {
+        "generated": "Microsoft Industry News"
+      },
+      "Sports": {
+        "generated": "Major League Baseball"
+      },
+      "World": {
+        "generated": "Iraqi Insurgency Conflict"
+      }
+    },
+    "metrics": {
+      "semantic_similarity": {
+        "Business": 0.2424001693725586,
+        "Sci/Tech": 0.3382163643836975,
+        "Sports": 0.5616463422775269,
+        "World": 0.1854293942451477,
+        "__mean__": 0.33192306756973267
+      },
+      "token_overlap_f1": {
+        "Business": 0.0,
+        "Sci/Tech": 0.0,
+        "Sports": 0.0,
+        "World": 0.0,
+        "__mean__": 0.0
+      }
+    }
+  },
+  {
+    "config": {
+      "dataset": "ag_news",
+      "split": "dev",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_batch_size": 256,
+      "embedding_device": "cpu",
+      "similarity_threshold": 0.3,
+      "chunk_size": 1000,
+      "top_k": 10,
+      "pagerank_alpha": 0.5,
+      "labeling_model": "llama-3.1-8b-instant",
+      "max_doc_words": 300,
+      "cache_dir": "cache",
+      "use_cache": true,
+      "output_dir": "results"
+    },
+    "labels": {
+      "Business": {
+        "generated": "US Stock Market News"
+      },
+      "Sci/Tech": {
+        "generated": "Technology Industry News"
+      },
+      "Sports": {
+        "generated": "Sports News and Updates"
+      },
+      "World": {
+        "generated": "Iraqi Insurgency Crisis"
+      }
+    },
+    "metrics": {
+      "semantic_similarity": {
+        "Business": 0.2424001693725586,
+        "Sci/Tech": 0.517946720123291,
+        "Sports": 0.5681077837944031,
+        "World": 0.1944347620010376,
+        "__mean__": 0.38072235882282257
+      },
+      "token_overlap_f1": {
+        "Business": 0.0,
+        "Sci/Tech": 0.0,
+        "Sports": 0.4,
+        "World": 0.0,
+        "__mean__": 0.1
+      }
+    }
+  },
+  {
+    "config": {
+      "dataset": "ag_news",
+      "split": "dev",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_batch_size": 256,
+      "embedding_device": "cpu",
+      "similarity_threshold": 0.3,
+      "chunk_size": 1000,
+      "top_k": 10,
+      "pagerank_alpha": 0.85,
+      "labeling_model": "llama-3.1-8b-instant",
+      "max_doc_words": 300,
+      "cache_dir": "cache",
+      "use_cache": true,
+      "output_dir": "results"
+    },
+    "labels": {
+      "Business": {
+        "generated": "US Stock Market News"
+      },
+      "Sci/Tech": {
+        "generated": "Technology Industry News"
+      },
+      "Sports": {
+        "generated": "Sports News Updates"
+      },
+      "World": {
+        "generated": "Iraqi Insurgency Conflict"
+      }
+    },
+    "metrics": {
+      "semantic_similarity": {
+        "Business": 0.2424001693725586,
+        "Sci/Tech": 0.517946720123291,
+        "Sports": 0.569758951663971,
+        "World": 0.1854293942451477,
+        "__mean__": 0.37888380885124207
+      },
+      "token_overlap_f1": {
+        "Business": 0.0,
+        "Sci/Tech": 0.0,
+        "Sports": 0.5,
+        "World": 0.0,
+        "__mean__": 0.125
+      }
+    }
+  },
+  {
+    "config": {
+      "dataset": "ag_news",
+      "split": "dev",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_batch_size": 256,
+      "embedding_device": "cpu",
+      "similarity_threshold": 0.3,
+      "chunk_size": 1000,
+      "top_k": 10,
+      "pagerank_alpha": 0.95,
+      "labeling_model": "llama-3.1-8b-instant",
+      "max_doc_words": 300,
+      "cache_dir": "cache",
+      "use_cache": true,
+      "output_dir": "results"
+    },
+    "labels": {
+      "Business": {
+        "generated": "US Stock Market News"
+      },
+      "Sci/Tech": {
+        "generated": "Technology Industry News"
+      },
+      "Sports": {
+        "generated": "Professional Sports News"
+      },
+      "World": {
+        "generated": "Iraqi Insurgency Conflict"
+      }
+    },
+    "metrics": {
+      "semantic_similarity": {
+        "Business": 0.2424001693725586,
+        "Sci/Tech": 0.517946720123291,
+        "Sports": 0.6565926671028137,
+        "World": 0.1854293942451477,
+        "__mean__": 0.40059223771095276
+      },
+      "token_overlap_f1": {
+        "Business": 0.0,
+        "Sci/Tech": 0.0,
+        "Sports": 0.5,
+        "World": 0.0,
+        "__mean__": 0.125
+      }
+    }
+  },
+  {
+    "config": {
+      "dataset": "ag_news",
+      "split": "dev",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_batch_size": 256,
+      "embedding_device": "cpu",
+      "similarity_threshold": 0.5,
+      "chunk_size": 1000,
+      "top_k": 3,
+      "pagerank_alpha": 0.5,
+      "labeling_model": "llama-3.1-8b-instant",
+      "max_doc_words": 300,
+      "cache_dir": "cache",
+      "use_cache": true,
+      "output_dir": "results"
+    },
+    "labels": {
+      "Business": {
+        "generated": "Best Buy Earnings Reports"
+      },
+      "Sci/Tech": {
+        "generated": "Tech Industry Developments"
+      },
+      "Sports": {
+        "generated": "Sports Team News"
+      },
+      "World": {
+        "generated": "Election and Governance Disputes"
+      }
+    },
+    "metrics": {
+      "semantic_similarity": {
+        "Business": 0.14421986043453217,
+        "Sci/Tech": 0.5998046398162842,
+        "Sports": 0.6038730144500732,
+        "World": 0.08766136318445206,
+        "__mean__": 0.3588897194713354
+      },
+      "token_overlap_f1": {
+        "Business": 0.0,
+        "Sci/Tech": 0.0,
+        "Sports": 0.5,
+        "World": 0.0,
+        "__mean__": 0.125
+      }
+    }
+  },
+  {
+    "config": {
+      "dataset": "ag_news",
+      "split": "dev",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_batch_size": 256,
+      "embedding_device": "cpu",
+      "similarity_threshold": 0.5,
+      "chunk_size": 1000,
+      "top_k": 3,
+      "pagerank_alpha": 0.85,
+      "labeling_model": "llama-3.1-8b-instant",
+      "max_doc_words": 300,
+      "cache_dir": "cache",
+      "use_cache": true,
+      "output_dir": "results"
+    },
+    "labels": {
+      "Business": {
+        "generated": "Corporate Earnings Reports"
+      },
+      "Sci/Tech": {
+        "generated": "Tech Industry Developments"
+      },
+      "Sports": {
+        "generated": "US Sports News"
+      },
+      "World": {
+        "generated": "Middle East Conflict"
+      }
+    },
+    "metrics": {
+      "semantic_similarity": {
+        "Business": 0.2753223180770874,
+        "Sci/Tech": 0.5998046398162842,
+        "Sports": 0.6195052862167358,
+        "World": 0.2724042236804962,
+        "__mean__": 0.4417591169476509
+      },
+      "token_overlap_f1": {
+        "Business": 0.0,
+        "Sci/Tech": 0.0,
+        "Sports": 0.5,
+        "World": 0.0,
+        "__mean__": 0.125
+      }
+    }
+  },
+  {
+    "config": {
+      "dataset": "ag_news",
+      "split": "dev",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_batch_size": 256,
+      "embedding_device": "cpu",
+      "similarity_threshold": 0.5,
+      "chunk_size": 1000,
+      "top_k": 3,
+      "pagerank_alpha": 0.95,
+      "labeling_model": "llama-3.1-8b-instant",
+      "max_doc_words": 300,
+      "cache_dir": "cache",
+      "use_cache": true,
+      "output_dir": "results"
+    },
+    "labels": {
+      "Business": {
+        "generated": "Corporate Earnings Reports"
+      },
+      "Sci/Tech": {
+        "generated": "Technology Industry News"
+      },
+      "Sports": {
+        "generated": "US Sports News"
+      },
+      "World": {
+        "generated": "Middle East Conflict"
+      }
+    },
+    "metrics": {
+      "semantic_similarity": {
+        "Business": 0.2753223180770874,
+        "Sci/Tech": 0.5179466009140015,
+        "Sports": 0.6195052862167358,
+        "World": 0.2724042236804962,
+        "__mean__": 0.42129460722208023
+      },
+      "token_overlap_f1": {
+        "Business": 0.0,
+        "Sci/Tech": 0.0,
+        "Sports": 0.5,
+        "World": 0.0,
+        "__mean__": 0.125
+      }
+    }
+  },
+  {
+    "config": {
+      "dataset": "ag_news",
+      "split": "dev",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_batch_size": 256,
+      "embedding_device": "cpu",
+      "similarity_threshold": 0.5,
+      "chunk_size": 1000,
+      "top_k": 5,
+      "pagerank_alpha": 0.5,
+      "labeling_model": "llama-3.1-8b-instant",
+      "max_doc_words": 300,
+      "cache_dir": "cache",
+      "use_cache": true,
+      "output_dir": "results"
+    },
+    "labels": {
+      "Business": {
+        "generated": "Corporate Earnings Reports"
+      },
+      "Sci/Tech": {
+        "generated": "Technology Industry News"
+      },
+      "Sports": {
+        "generated": "US Olympic News"
+      },
+      "World": {
+        "generated": "Iraq Conflict Developments"
+      }
+    },
+    "metrics": {
+      "semantic_similarity": {
+        "Business": 0.2753223180770874,
+        "Sci/Tech": 0.5179466009140015,
+        "Sports": 0.43525633215904236,
+        "World": 0.1208900585770607,
+        "__mean__": 0.337353827431798
+      },
+      "token_overlap_f1": {
+        "Business": 0.0,
+        "Sci/Tech": 0.0,
+        "Sports": 0.0,
+        "World": 0.0,
+        "__mean__": 0.0
+      }
+    }
+  },
+  {
+    "config": {
+      "dataset": "ag_news",
+      "split": "dev",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_batch_size": 256,
+      "embedding_device": "cpu",
+      "similarity_threshold": 0.5,
+      "chunk_size": 1000,
+      "top_k": 5,
+      "pagerank_alpha": 0.85,
+      "labeling_model": "llama-3.1-8b-instant",
+      "max_doc_words": 300,
+      "cache_dir": "cache",
+      "use_cache": true,
+      "output_dir": "results"
+    },
+    "labels": {
+      "Business": {
+        "generated": "Corporate Earnings Reports"
+      },
+      "Sci/Tech": {
+        "generated": "Computer Industry Shifts"
+      },
+      "Sports": {
+        "generated": "US Sports News"
+      },
+      "World": {
+        "generated": "US-Iraq Conflict"
+      }
+    },
+    "metrics": {
+      "semantic_similarity": {
+        "Business": 0.2753223776817322,
+        "Sci/Tech": 0.4155317544937134,
+        "Sports": 0.6195052862167358,
+        "World": 0.2875044047832489,
+        "__mean__": 0.3994659557938576
+      },
+      "token_overlap_f1": {
+        "Business": 0.0,
+        "Sci/Tech": 0.0,
+        "Sports": 0.5,
+        "World": 0.0,
+        "__mean__": 0.125
+      }
+    }
+  },
+  {
+    "config": {
+      "dataset": "ag_news",
+      "split": "dev",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_batch_size": 256,
+      "embedding_device": "cpu",
+      "similarity_threshold": 0.5,
+      "chunk_size": 1000,
+      "top_k": 5,
+      "pagerank_alpha": 0.95,
+      "labeling_model": "llama-3.1-8b-instant",
+      "max_doc_words": 300,
+      "cache_dir": "cache",
+      "use_cache": true,
+      "output_dir": "results"
+    },
+    "labels": {
+      "Business": {
+        "generated": "Corporate Earnings Reports"
+      },
+      "Sci/Tech": {
+        "generated": "Technology Industry News"
+      },
+      "Sports": {
+        "generated": "US Olympic Coverage"
+      },
+      "World": {
+        "generated": "Iraq Conflict Reports"
+      }
+    },
+    "metrics": {
+      "semantic_similarity": {
+        "Business": 0.2753223180770874,
+        "Sci/Tech": 0.5179466009140015,
+        "Sports": 0.38149896264076233,
+        "World": 0.10455656051635742,
+        "__mean__": 0.31983111053705215
+      },
+      "token_overlap_f1": {
+        "Business": 0.0,
+        "Sci/Tech": 0.0,
+        "Sports": 0.0,
+        "World": 0.0,
+        "__mean__": 0.0
+      }
+    }
+  },
+  {
+    "config": {
+      "dataset": "ag_news",
+      "split": "dev",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_batch_size": 256,
+      "embedding_device": "cpu",
+      "similarity_threshold": 0.5,
+      "chunk_size": 1000,
+      "top_k": 10,
+      "pagerank_alpha": 0.5,
+      "labeling_model": "llama-3.1-8b-instant",
+      "max_doc_words": 300,
+      "cache_dir": "cache",
+      "use_cache": true,
+      "output_dir": "results"
+    },
+    "labels": {
+      "Business": {
+        "generated": "Corporate Earnings Reports"
+      },
+      "Sci/Tech": {
+        "generated": "Technology Industry News"
+      },
+      "Sports": {
+        "generated": "Sports News Updates"
+      },
+      "World": {
+        "generated": "US-Iraq Conflict"
+      }
+    },
+    "metrics": {
+      "semantic_similarity": {
+        "Business": 0.2753223776817322,
+        "Sci/Tech": 0.517946720123291,
+        "Sports": 0.569758951663971,
+        "World": 0.2875044047832489,
+        "__mean__": 0.41263311356306076
+      },
+      "token_overlap_f1": {
+        "Business": 0.0,
+        "Sci/Tech": 0.0,
+        "Sports": 0.5,
+        "World": 0.0,
+        "__mean__": 0.125
+      }
+    }
+  },
+  {
+    "config": {
+      "dataset": "ag_news",
+      "split": "dev",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_batch_size": 256,
+      "embedding_device": "cpu",
+      "similarity_threshold": 0.5,
+      "chunk_size": 1000,
+      "top_k": 10,
+      "pagerank_alpha": 0.85,
+      "labeling_model": "llama-3.1-8b-instant",
+      "max_doc_words": 300,
+      "cache_dir": "cache",
+      "use_cache": true,
+      "output_dir": "results"
+    },
+    "labels": {
+      "Business": {
+        "generated": "Corporate Earnings Reports"
+      },
+      "Sci/Tech": {
+        "generated": "Computer Industry News"
+      },
+      "Sports": {
+        "generated": "Athens Olympics Coverage"
+      },
+      "World": {
+        "generated": "Middle East Conflict"
+      }
+    },
+    "metrics": {
+      "semantic_similarity": {
+        "Business": 0.2753223180770874,
+        "Sci/Tech": 0.46362847089767456,
+        "Sports": 0.2818671464920044,
+        "World": 0.2724042236804962,
+        "__mean__": 0.32330553978681564
+      },
+      "token_overlap_f1": {
+        "Business": 0.0,
+        "Sci/Tech": 0.0,
+        "Sports": 0.0,
+        "World": 0.0,
+        "__mean__": 0.0
+      }
+    }
+  },
+  {
+    "config": {
+      "dataset": "ag_news",
+      "split": "dev",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_batch_size": 256,
+      "embedding_device": "cpu",
+      "similarity_threshold": 0.5,
+      "chunk_size": 1000,
+      "top_k": 10,
+      "pagerank_alpha": 0.95,
+      "labeling_model": "llama-3.1-8b-instant",
+      "max_doc_words": 300,
+      "cache_dir": "cache",
+      "use_cache": true,
+      "output_dir": "results"
+    },
+    "labels": {
+      "Business": {
+        "generated": "Corporate Earnings Reports"
+      },
+      "Sci/Tech": {
+        "generated": "Technology Industry News"
+      },
+      "Sports": {
+        "generated": "Olympics and Sports News"
+      },
+      "World": {
+        "generated": "Iraq Conflict Reports"
+      }
+    },
+    "metrics": {
+      "semantic_similarity": {
+        "Business": 0.2753223776817322,
+        "Sci/Tech": 0.517946720123291,
+        "Sports": 0.6021628379821777,
+        "World": 0.10455645620822906,
+        "__mean__": 0.3749970979988575
+      },
+      "token_overlap_f1": {
+        "Business": 0.0,
+        "Sci/Tech": 0.0,
+        "Sports": 0.4,
+        "World": 0.0,
+        "__mean__": 0.1
+      }
+    }
+  },
+  {
+    "config": {
+      "dataset": "ag_news",
+      "split": "dev",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_batch_size": 256,
+      "embedding_device": "cpu",
+      "similarity_threshold": 0.7,
+      "chunk_size": 1000,
+      "top_k": 3,
+      "pagerank_alpha": 0.5,
+      "labeling_model": "llama-3.1-8b-instant",
+      "max_doc_words": 300,
+      "cache_dir": "cache",
+      "use_cache": true,
+      "output_dir": "results"
+    },
+    "labels": {
+      "Business": {
+        "generated": "Oil Market Developments"
+      },
+      "Sci/Tech": {
+        "generated": "Software Industry News"
+      },
+      "Sports": {
+        "generated": "Sports News Updates"
+      },
+      "World": {
+        "generated": "Global Conflict Reports"
+      }
+    },
+    "metrics": {
+      "semantic_similarity": {
+        "Business": 0.26472008228302,
+        "Sci/Tech": 0.40947145223617554,
+        "Sports": 0.5697590112686157,
+        "World": 0.3093504011631012,
+        "__mean__": 0.3883252367377281
+      },
+      "token_overlap_f1": {
+        "Business": 0.0,
+        "Sci/Tech": 0.0,
+        "Sports": 0.5,
+        "World": 0.0,
+        "__mean__": 0.125
+      }
+    }
+  },
+  {
+    "config": {
+      "dataset": "ag_news",
+      "split": "dev",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_batch_size": 256,
+      "embedding_device": "cpu",
+      "similarity_threshold": 0.7,
+      "chunk_size": 1000,
+      "top_k": 3,
+      "pagerank_alpha": 0.85,
+      "labeling_model": "llama-3.1-8b-instant",
+      "max_doc_words": 300,
+      "cache_dir": "cache",
+      "use_cache": true,
+      "output_dir": "results"
+    },
+    "labels": {
+      "Business": {
+        "generated": "Oil Price Increases"
+      },
+      "Sci/Tech": {
+        "generated": "Corporate Software Updates"
+      },
+      "Sports": {
+        "generated": "Sports News Updates"
+      },
+      "World": {
+        "generated": "Middle East Conflict"
+      }
+    },
+    "metrics": {
+      "semantic_similarity": {
+        "Business": 0.08619988709688187,
+        "Sci/Tech": 0.2207605093717575,
+        "Sports": 0.5697590112686157,
+        "World": 0.2724042236804962,
+        "__mean__": 0.28728090785443783
+      },
+      "token_overlap_f1": {
+        "Business": 0.0,
+        "Sci/Tech": 0.0,
+        "Sports": 0.5,
+        "World": 0.0,
+        "__mean__": 0.125
+      }
+    }
+  },
+  {
+    "config": {
+      "dataset": "ag_news",
+      "split": "dev",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_batch_size": 256,
+      "embedding_device": "cpu",
+      "similarity_threshold": 0.7,
+      "chunk_size": 1000,
+      "top_k": 3,
+      "pagerank_alpha": 0.95,
+      "labeling_model": "llama-3.1-8b-instant",
+      "max_doc_words": 300,
+      "cache_dir": "cache",
+      "use_cache": true,
+      "output_dir": "results"
+    },
+    "labels": {
+      "Business": {
+        "generated": "Oil Price Increases"
+      },
+      "Sci/Tech": {
+        "generated": "Corporate Software Updates"
+      },
+      "Sports": {
+        "generated": "Sports Series Updates"
+      },
+      "World": {
+        "generated": "Middle East Conflict"
+      }
+    },
+    "metrics": {
+      "semantic_similarity": {
+        "Business": 0.08619988709688187,
+        "Sci/Tech": 0.2207605093717575,
+        "Sports": 0.5387511849403381,
+        "World": 0.2724042236804962,
+        "__mean__": 0.27952895127236843
+      },
+      "token_overlap_f1": {
+        "Business": 0.0,
+        "Sci/Tech": 0.0,
+        "Sports": 0.5,
+        "World": 0.0,
+        "__mean__": 0.125
+      }
+    }
+  },
+  {
+    "config": {
+      "dataset": "ag_news",
+      "split": "dev",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_batch_size": 256,
+      "embedding_device": "cpu",
+      "similarity_threshold": 0.7,
+      "chunk_size": 1000,
+      "top_k": 5,
+      "pagerank_alpha": 0.5,
+      "labeling_model": "llama-3.1-8b-instant",
+      "max_doc_words": 300,
+      "cache_dir": "cache",
+      "use_cache": true,
+      "output_dir": "results"
+    },
+    "labels": {
+      "Business": {
+        "generated": "Oil Market Developments"
+      },
+      "Sci/Tech": {
+        "generated": "Software Industry News"
+      },
+      "Sports": {
+        "generated": "Sports News Updates"
+      },
+      "World": {
+        "generated": "Middle East Conflict"
+      }
+    },
+    "metrics": {
+      "semantic_similarity": {
+        "Business": 0.26472008228302,
+        "Sci/Tech": 0.40947145223617554,
+        "Sports": 0.5697590112686157,
+        "World": 0.2724042236804962,
+        "__mean__": 0.3790886923670769
+      },
+      "token_overlap_f1": {
+        "Business": 0.0,
+        "Sci/Tech": 0.0,
+        "Sports": 0.5,
+        "World": 0.0,
+        "__mean__": 0.125
+      }
+    }
+  },
+  {
+    "config": {
+      "dataset": "ag_news",
+      "split": "dev",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_batch_size": 256,
+      "embedding_device": "cpu",
+      "similarity_threshold": 0.7,
+      "chunk_size": 1000,
+      "top_k": 5,
+      "pagerank_alpha": 0.85,
+      "labeling_model": "llama-3.1-8b-instant",
+      "max_doc_words": 300,
+      "cache_dir": "cache",
+      "use_cache": true,
+      "output_dir": "results"
+    },
+    "labels": {
+      "Business": {
+        "generated": "Oil Price Fluctuations"
+      },
+      "Sci/Tech": {
+        "generated": "Software Industry News"
+      },
+      "Sports": {
+        "generated": "Sports News Reports"
+      },
+      "World": {
+        "generated": "Middle East Conflict"
+      }
+    },
+    "metrics": {
+      "semantic_similarity": {
+        "Business": 0.116921067237854,
+        "Sci/Tech": 0.40947145223617554,
+        "Sports": 0.593237042427063,
+        "World": 0.2724042236804962,
+        "__mean__": 0.3480084463953972
+      },
+      "token_overlap_f1": {
+        "Business": 0.0,
+        "Sci/Tech": 0.0,
+        "Sports": 0.5,
+        "World": 0.0,
+        "__mean__": 0.125
+      }
+    }
+  },
+  {
+    "config": {
+      "dataset": "ag_news",
+      "split": "dev",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_batch_size": 256,
+      "embedding_device": "cpu",
+      "similarity_threshold": 0.7,
+      "chunk_size": 1000,
+      "top_k": 5,
+      "pagerank_alpha": 0.95,
+      "labeling_model": "llama-3.1-8b-instant",
+      "max_doc_words": 300,
+      "cache_dir": "cache",
+      "use_cache": true,
+      "output_dir": "results"
+    },
+    "labels": {
+      "Business": {
+        "generated": "Oil Price Fluctuations"
+      },
+      "Sci/Tech": {
+        "generated": "Software Industry News"
+      },
+      "Sports": {
+        "generated": "Major League Baseball"
+      },
+      "World": {
+        "generated": "Middle East Conflict"
+      }
+    },
+    "metrics": {
+      "semantic_similarity": {
+        "Business": 0.116921067237854,
+        "Sci/Tech": 0.40947145223617554,
+        "Sports": 0.5616464018821716,
+        "World": 0.2724042236804962,
+        "__mean__": 0.34011078625917435
+      },
+      "token_overlap_f1": {
+        "Business": 0.0,
+        "Sci/Tech": 0.0,
+        "Sports": 0.0,
+        "World": 0.0,
+        "__mean__": 0.0
+      }
+    }
+  },
+  {
+    "config": {
+      "dataset": "ag_news",
+      "split": "dev",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_batch_size": 256,
+      "embedding_device": "cpu",
+      "similarity_threshold": 0.7,
+      "chunk_size": 1000,
+      "top_k": 10,
+      "pagerank_alpha": 0.5,
+      "labeling_model": "llama-3.1-8b-instant",
+      "max_doc_words": 300,
+      "cache_dir": "cache",
+      "use_cache": true,
+      "output_dir": "results"
+    },
+    "labels": {
+      "Business": {
+        "generated": "Oil Market Developments"
+      },
+      "Sci/Tech": {
+        "generated": "Software Industry News"
+      },
+      "Sports": {
+        "generated": "Sports News Updates"
+      },
+      "World": {
+        "generated": "Middle East Conflict"
+      }
+    },
+    "metrics": {
+      "semantic_similarity": {
+        "Business": 0.26472008228302,
+        "Sci/Tech": 0.40947145223617554,
+        "Sports": 0.5697590112686157,
+        "World": 0.2724042236804962,
+        "__mean__": 0.3790886923670769
+      },
+      "token_overlap_f1": {
+        "Business": 0.0,
+        "Sci/Tech": 0.0,
+        "Sports": 0.5,
+        "World": 0.0,
+        "__mean__": 0.125
+      }
+    }
+  },
+  {
+    "config": {
+      "dataset": "ag_news",
+      "split": "dev",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_batch_size": 256,
+      "embedding_device": "cpu",
+      "similarity_threshold": 0.7,
+      "chunk_size": 1000,
+      "top_k": 10,
+      "pagerank_alpha": 0.85,
+      "labeling_model": "llama-3.1-8b-instant",
+      "max_doc_words": 300,
+      "cache_dir": "cache",
+      "use_cache": true,
+      "output_dir": "results"
+    },
+    "labels": {
+      "Business": {
+        "generated": "Oil Price Fluctuations"
+      },
+      "Sci/Tech": {
+        "generated": "Software Industry News"
+      },
+      "Sports": {
+        "generated": "Sports News and Updates"
+      },
+      "World": {
+        "generated": "Middle East Conflict"
+      }
+    },
+    "metrics": {
+      "semantic_similarity": {
+        "Business": 0.11692104488611221,
+        "Sci/Tech": 0.40947145223617554,
+        "Sports": 0.5681077837944031,
+        "World": 0.272404283285141,
+        "__mean__": 0.34172614105045795
+      },
+      "token_overlap_f1": {
+        "Business": 0.0,
+        "Sci/Tech": 0.0,
+        "Sports": 0.4,
+        "World": 0.0,
+        "__mean__": 0.1
+      }
+    }
+  },
+  {
+    "config": {
+      "dataset": "ag_news",
+      "split": "dev",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_batch_size": 256,
+      "embedding_device": "cpu",
+      "similarity_threshold": 0.7,
+      "chunk_size": 1000,
+      "top_k": 10,
+      "pagerank_alpha": 0.95,
+      "labeling_model": "llama-3.1-8b-instant",
+      "max_doc_words": 300,
+      "cache_dir": "cache",
+      "use_cache": true,
+      "output_dir": "results"
+    },
+    "labels": {
+      "Business": {
+        "generated": "Oil Price Fluctuations"
+      },
+      "Sci/Tech": {
+        "generated": "Software Industry News"
+      },
+      "Sports": {
+        "generated": "Major League Baseball"
+      },
+      "World": {
+        "generated": "Middle East Conflict"
+      }
+    },
+    "metrics": {
+      "semantic_similarity": {
+        "Business": 0.116921067237854,
+        "Sci/Tech": 0.40947145223617554,
+        "Sports": 0.5616464018821716,
+        "World": 0.2724042236804962,
+        "__mean__": 0.34011078625917435
+      },
+      "token_overlap_f1": {
+        "Business": 0.0,
+        "Sci/Tech": 0.0,
+        "Sports": 0.0,
+        "World": 0.0,
+        "__mean__": 0.0
+      }
+    }
+  }
+]
