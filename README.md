@@ -1,5 +1,7 @@
 # Automatic Cluster Labeling via Graph-Guided RAG
 
+**📄 Read the full paper: [Automatic_Cluster_Labeling_via_Graph_Guided_RAG.pdf](./Automatic_Cluster_Labeling_via_Graph_Guided_RAG.pdf)**
+
 Automatically generates descriptive labels for document clusters using a graph-based retrieval-augmented generation (RAG) approach. The pipeline builds a similarity graph per cluster, uses PageRank to select the most representative documents, and prompts an LLM to generate a concise label.
 
 ## Pipeline Overview
